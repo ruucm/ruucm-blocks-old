@@ -18,6 +18,7 @@ const HoverWrapper = styled.span`
   ${props =>
     props.boxShadow &&
     css`
+      display: inline-block;
       &:hover {
         box-shadow: ${props.boxShadow} !important;
       }

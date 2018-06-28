@@ -2,7 +2,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n  ', ';\n  ', ';\n'], ['\n  ', ';\n  ', ';\n  ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n      &:hover {\n        color: ', ' !important;\n      }\n    '], ['\n      &:hover {\n        color: ', ' !important;\n      }\n    ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n      &:hover {\n        box-shadow: ', ' !important;\n      }\n    '], ['\n      &:hover {\n        box-shadow: ', ' !important;\n      }\n    ']),
+    _templateObject3 = _taggedTemplateLiteral(['\n      display: inline-block;\n      &:hover {\n        box-shadow: ', ' !important;\n      }\n    '], ['\n      display: inline-block;\n      &:hover {\n        box-shadow: ', ' !important;\n      }\n    ']),
     _templateObject4 = _taggedTemplateLiteral(['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    '], ['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    ']);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
