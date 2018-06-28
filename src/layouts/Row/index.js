@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import { log } from 'ruucm-util';
-import bootstrapGrid from '../../libs/bootstrap-grid';
+import React from 'react'
+import styled from 'styled-components'
+import bootstrapGrid from '../../libs/bootstrap-grid'
 
 const RowWrapper = styled.div`
-  ${bootstrapGrid}
-`;
+  ${bootstrapGrid};
+`
 
-const Row = ({children}) => {
+const Row = ({ children }) => {
   return (
     <RowWrapper>
-      <div className='row'>{children}</div>
+      <div className="row">{children}</div>
     </RowWrapper>
-  )}
+  )
+}
 
-export default Row;
+export default Row
