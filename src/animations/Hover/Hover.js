@@ -16,6 +16,13 @@ const HoverWrapper = styled.span`
       }
     `};
   ${props =>
+    props.boxShadow &&
+    css`
+      &:hover {
+        box-shadow: ${props.boxShadow} !important;
+      }
+    `};
+  ${props =>
     props.transition &&
     props.transition.target &&
     props.transition.time &&

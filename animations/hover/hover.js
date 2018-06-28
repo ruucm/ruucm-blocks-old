@@ -1,8 +1,9 @@
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n  ', ';\n'], ['\n  ', ';\n  ', ';\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n  ', ';\n  ', ';\n'], ['\n  ', ';\n  ', ';\n  ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n      &:hover {\n        color: ', ' !important;\n      }\n    '], ['\n      &:hover {\n        color: ', ' !important;\n      }\n    ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    '], ['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    ']);
+    _templateObject3 = _taggedTemplateLiteral(['\n      &:hover {\n        box-shadow: ', ' !important;\n      }\n    '], ['\n      &:hover {\n        box-shadow: ', ' !important;\n      }\n    ']),
+    _templateObject4 = _taggedTemplateLiteral(['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    '], ['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    ']);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -24,7 +25,9 @@ import styled, { css } from 'styled-components';
 var HoverWrapper = styled.span(_templateObject, function (props) {
   return props.color && css(_templateObject2, props.color);
 }, function (props) {
-  return props.transition && props.transition.target && props.transition.time && css(_templateObject3, props.transition.target, props.transition.time + 'ms', props.transition.target, props.transition.time + 'ms');
+  return props.boxShadow && css(_templateObject3, props.boxShadow);
+}, function (props) {
+  return props.transition && props.transition.target && props.transition.time && css(_templateObject4, props.transition.target, props.transition.time + 'ms', props.transition.target, props.transition.time + 'ms');
 });
 
 var Hover = function (_Component) {
