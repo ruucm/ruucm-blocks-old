@@ -1,0 +1,116 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ruucm-blocks",
+        "scope": null,
+        "escapedName": "ruucm-blocks",
+        "name": "ruucm-blocks",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/mac/A Carver/vagrant-local/www/magharbor/public_html/wp-content/mag-harbor-rgb"
+    ],
+    [
+      {
+        "raw": "ruucm-blocks",
+        "scope": null,
+        "escapedName": "ruucm-blocks",
+        "name": "ruucm-blocks",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/mac/A Carver/vagrant-local/www/magharbor/public_html/wp-content/mag-harbor-rgb"
+    ],
+    [
+      {
+        "raw": "ruucm-blocks@^0.5.0",
+        "scope": null,
+        "escapedName": "ruucm-blocks",
+        "name": "ruucm-blocks",
+        "rawSpec": "^0.5.0",
+        "spec": ">=0.5.0 <0.6.0",
+        "type": "range"
+      },
+      "/Users/mac/A Carver/vagrant-local/www/magharbor/public_html/wp-content/mag-harbor-rgb"
+    ]
+  ],
+  "_from": "ruucm-blocks@^0.5.0",
+  "_id": "ruucm-blocks@0.5.0",
+  "_inCache": true,
+  "_location": "/ruucm-blocks",
+  "_nodeVersion": "6.14.2",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/ruucm-blocks_0.5.0_1530142249023_0.34482942217351176"
+  },
+  "_npmUser": {
+    "name": "ruucm",
+    "email": "ruucm.a@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {
+    "fbjs": "0.8.17",
+    "loose-envify": "1.3.1",
+    "object-assign": "4.1.1"
+  },
+  "_requested": {
+    "raw": "ruucm-blocks@^0.5.0",
+    "scope": null,
+    "escapedName": "ruucm-blocks",
+    "name": "ruucm-blocks",
+    "rawSpec": "^0.5.0",
+    "spec": ">=0.5.0 <0.6.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ruucm-blocks/-/ruucm-blocks-0.5.0.tgz",
+  "_shasum": "7fd8a248c5a9b7f414a2c93d724d5f4abe450709",
+  "_shrinkwrap": null,
+  "_spec": "ruucm-blocks@^0.5.0",
+  "_where": "/Users/mac/A Carver/vagrant-local/www/magharbor/public_html/wp-content/mag-harbor-rgb",
+  "author": {
+    "name": "ruucm"
+  },
+  "dependencies": {
+    "babel-plugin-file-loader": "^1.0.0",
+    "react": "^16.4.1",
+    "styled-components": "3.3.0"
+  },
+  "description": "Frequently used react blocks for me",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "7fd8a248c5a9b7f414a2c93d724d5f4abe450709",
+    "tarball": "https://registry.npmjs.org/ruucm-blocks/-/ruucm-blocks-0.5.0.tgz",
+    "fileCount": 118,
+    "unpackedSize": 10730672
+  },
+  "gitHead": "0369a6d5263a07d67cb519097bf0d16489b3bc9b",
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "ruucm",
+      "email": "ruucm.a@gmail.com"
+    }
+  ],
+  "name": "ruucm-blocks",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "start": "babel --watch --copy-files src -d ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.5.0"
+}
