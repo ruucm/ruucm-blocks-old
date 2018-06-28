@@ -20,9 +20,6 @@ import fontExtraBoldWOFF from './fontFiles/NanumSquareExtraBold.woff'
 import fontExtraBoldWOFF2 from './fontFiles/NanumSquareExtraBold.woff'
 
 const NanumSquare = css`
-  body {
-    background: blueviolet !important;
-  }
   /**
   *  NanumSquare Light
   */
