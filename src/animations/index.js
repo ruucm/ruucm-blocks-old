@@ -1,3 +1,4 @@
 import Hover from './Hover'
+import TestAnim from './TestAnim'
 
-export { Hover }
+export { Hover, TestAnim }
