@@ -1,6 +1,6 @@
 /**
  *
- * Target
+ * Animate
  *
  */
 
@@ -9,8 +9,8 @@ import ReactDOM from 'react-dom';
 import { compose, lifecycle } from 'recompose';
 import { log } from 'ruucm-util';
 
-var Target = function Target(props) {
-  log('props(Target)', props);
+var Animate = function Animate(props) {
+  log('props(Animate)', props);
   return React.createElement(
     'div',
     { style: props.style },
@@ -29,4 +29,4 @@ var enhance = compose(lifecycle({
   }
 }));
 
-export default enhance(Target);
+export default enhance(Animate);

@@ -14,7 +14,7 @@ var Target = function Target(props) {
   return React.createElement(
     'div',
     { style: props.style },
-    props.formOpened ? 'opened - ' : 'not opened - ',
+    props.formOpened ? 'target opened - ' : 'target not opened - ',
     props.children
   );
 };

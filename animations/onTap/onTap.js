@@ -14,14 +14,7 @@ var onTap = function onTap(props) {
   return React.createElement(
     'div',
     {
-      ref: function ref(node) {
-        dom = node;
-      }
-      // onClick={() => {
-      //   log('dom', dom)
-      //   props.animate(dom)
-      // }}
-      , onClick: function onClick() {
+      onClick: function onClick() {
         props.openForm(true);
       },
       style: props.style

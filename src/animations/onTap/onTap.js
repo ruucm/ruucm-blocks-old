@@ -13,13 +13,6 @@ const onTap = props => {
   log('props(onTap)', props)
   return (
     <div
-      ref={node => {
-        dom = node
-      }}
-      // onClick={() => {
-      //   log('dom', dom)
-      //   props.animate(dom)
-      // }}
       onClick={() => {
         props.openForm(true)
       }}

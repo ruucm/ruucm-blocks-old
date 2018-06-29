@@ -1,6 +1,6 @@
 /**
  *
- * Target
+ * Animate
  *
  */
 
@@ -9,8 +9,8 @@ import ReactDOM from 'react-dom'
 import { compose, lifecycle } from 'recompose'
 import { log } from 'ruucm-util'
 
-const Target = props => {
-  log('props(Target)', props)
+const Animate = props => {
+  log('props(Animate)', props)
   return (
     <div style={props.style}>
       {props.formOpened ? 'target opened - ' : 'target not opened - '}
@@ -31,4 +31,4 @@ const enhance = compose(
   })
 )
 
-export default enhance(Target)
+export default enhance(Animate)
