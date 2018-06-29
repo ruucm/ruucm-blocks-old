@@ -1,6 +1,6 @@
 import { TweenMax, Elastic } from 'gsap'
 
-const duration = 10
+const duration = 4
 
 export default {
   show(target, cb) {
