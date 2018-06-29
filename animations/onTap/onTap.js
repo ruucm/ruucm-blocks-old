@@ -1,5 +1,3 @@
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 /**
  *
  * onTap
@@ -13,29 +11,42 @@ import { log } from 'ruucm-util';
 import animation from './animation';
 
 var onTap = function onTap(props) {
+  log('props(onTap)', props);
   var dom = void 0;
+
+  var otherProps = Object.assign({}, props);
+  delete otherProps.children;
   return React.createElement(
     'div',
-    _extends({}, props, {
+    {
+      style: props.style,
       ref: function ref(node) {
         dom = node;
       },
       onClick: function onClick() {
-        // animate(this)
         log('dom', dom);
-        animate(dom);
+        // animate(dom)
       }
-    }),
-    props.children
+    },
+    React.Children.map(props.children, function (child) {
+      return React.cloneElement(child, otherProps);
+    })
   );
 };
 
-var animate = function animate(dom) {
-  animation.hide(dom);
-};
+// const animate = dom => {
+//   animation.hide(dom)
+// }
 
 // Component enhancer
-var enhance = compose(lifecycle({
+var enhance = compose(withHandlers({
+  animate: function animate(props) {
+    return function (dom) {
+      log('animate!!!!');
+      animation.hide(dom);
+    };
+  }
+}), lifecycle({
   componentDidMount: function componentDidMount() {},
   componentWillUnmount: function componentWillUnmount() {}
 }));
