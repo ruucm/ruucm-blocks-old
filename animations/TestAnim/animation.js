@@ -1,6 +1,6 @@
 import { TweenMax, Elastic } from 'gsap';
 
-var duration = 0.5;
+var duration = 10;
 
 export default {
   show: function show(target, cb) {
