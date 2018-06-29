@@ -6,8 +6,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { compose, lifecycle } from 'recompose';
+import { compose, lifecycle, withHandlers } from 'recompose';
 import { log } from 'ruucm-util';
+
+import animation from './animation';
 
 var Animate = function Animate(props) {
   log('props(Animate)', props);
@@ -19,7 +21,14 @@ var Animate = function Animate(props) {
   );
 };
 
-var enhance = compose(lifecycle({
+var enhance = compose(withHandlers({
+  animate: function animate(props) {
+    return function (dom) {
+      log('animate!!!!');
+      animation.hide(dom);
+    };
+  }
+}), lifecycle({
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
     // Animate When Trigger State change Detected
     if (newProps.formOpened != this.props.formOpened) {

@@ -26,14 +26,14 @@ var Frame = function Frame(props) {
 };
 
 // Component enhancer
-var enhance = compose(withHandlers({
-  animate: function animate(props) {
-    return function (dom) {
-      log('animate!!!!');
-      animation.hide(dom);
-    };
-  }
-}), lifecycle({
+var enhance = compose(
+// withHandlers({
+//   animate: props => dom => {
+//     log('animate!!!!')
+//     animation.hide(dom)
+//   },
+// }),
+lifecycle({
   componentDidMount: function componentDidMount() {},
   componentWillUnmount: function componentWillUnmount() {}
 }));

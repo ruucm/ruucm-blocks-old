@@ -27,12 +27,12 @@ const Frame = props => {
 
 // Component enhancer
 const enhance = compose(
-  withHandlers({
-    animate: props => dom => {
-      log('animate!!!!')
-      animation.hide(dom)
-    },
-  }),
+  // withHandlers({
+  //   animate: props => dom => {
+  //     log('animate!!!!')
+  //     animation.hide(dom)
+  //   },
+  // }),
   lifecycle({
     componentDidMount() {},
     componentWillUnmount() {},
