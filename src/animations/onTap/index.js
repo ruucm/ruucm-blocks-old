@@ -1,3 +1,3 @@
-import TestAnim from './TestAnim'
+import onTap from './onTap'
 
-export default TestAnim
+export default onTap
