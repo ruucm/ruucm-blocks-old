@@ -12,31 +12,18 @@ import animation from './animation'
 
 const Frame = props => {
   log('props(Frame)', props)
-  let dom
 
   const otherProps = Object.assign({}, props)
   delete otherProps.children
+
   return (
-    <div
-      style={props.style}
-      ref={node => {
-        dom = node
-      }}
-      onClick={() => {
-        log('dom', dom)
-        // animate(dom)
-      }}
-    >
+    <div style={props.style}>
       {React.Children.map(props.children, child =>
         React.cloneElement(child, otherProps)
       )}
     </div>
   )
 }
-
-// const animate = dom => {
-//   animation.hide(dom)
-// }
 
 // Component enhancer
 const enhance = compose(

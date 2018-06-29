@@ -16,10 +16,13 @@ var onTap = function onTap(props) {
     {
       ref: function ref(node) {
         dom = node;
-      },
-      onClick: function onClick() {
-        log('dom', dom);
-        props.animate(dom);
+      }
+      // onClick={() => {
+      //   log('dom', dom)
+      //   props.animate(dom)
+      // }}
+      , onClick: function onClick() {
+        props.openForm(true);
       },
       style: props.style
     },

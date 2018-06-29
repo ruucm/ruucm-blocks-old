@@ -12,31 +12,18 @@ import animation from './animation';
 
 var Frame = function Frame(props) {
   log('props(Frame)', props);
-  var dom = void 0;
 
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
+
   return React.createElement(
     'div',
-    {
-      style: props.style,
-      ref: function ref(node) {
-        dom = node;
-      },
-      onClick: function onClick() {
-        log('dom', dom);
-        // animate(dom)
-      }
-    },
+    { style: props.style },
     React.Children.map(props.children, function (child) {
       return React.cloneElement(child, otherProps);
     })
   );
 };
-
-// const animate = dom => {
-//   animation.hide(dom)
-// }
 
 // Component enhancer
 var enhance = compose(withHandlers({

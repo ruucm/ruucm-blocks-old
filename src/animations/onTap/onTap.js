@@ -16,9 +16,12 @@ const onTap = props => {
       ref={node => {
         dom = node
       }}
+      // onClick={() => {
+      //   log('dom', dom)
+      //   props.animate(dom)
+      // }}
       onClick={() => {
-        log('dom', dom)
-        props.animate(dom)
+        props.openForm(true)
       }}
       style={props.style}
     >
