@@ -1,6 +1,6 @@
 /**
  *
- * onTap
+ * Frame
  *
  */
 
@@ -10,8 +10,8 @@ import { log } from 'ruucm-util'
 
 import animation from './animation'
 
-const onTap = props => {
-  log('props(onTap)', props)
+const Frame = props => {
+  log('props(Frame)', props)
   let dom
 
   const otherProps = Object.assign({}, props)
@@ -52,4 +52,4 @@ const enhance = compose(
   })
 )
 
-export default enhance(onTap)
+export default enhance(Frame)
