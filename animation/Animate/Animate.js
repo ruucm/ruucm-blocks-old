@@ -22,20 +22,27 @@ var Animate = function Animate(props) {
 };
 
 var enhance = compose(withHandlers({
-  animate: function animate(props) {
+  start: function start(props) {
     return function (dom) {
-      log('animate!!!!');
-      // animation.show(dom)
       animation.start(dom, props);
+    };
+  },
+  rewind: function rewind(props) {
+    return function (dom) {
+      animation.rewind(dom, props);
     };
   }
 }), lifecycle({
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-    log('newProps', newProps);
     // Animate When Trigger State change Detected
-    if (newProps.animStarted != this.props.animStarted) {
+    if (newProps.animStarted && newProps.animStarted != this.props.animStarted) {
       var dom = ReactDOM.findDOMNode(this);
-      this.props.animate(dom);
+      animation.start(dom, this.props);
+    }
+
+    if (!newProps.animStarted && newProps.animStarted != this.props.animStarted) {
+      var dom = ReactDOM.findDOMNode(this);
+      animation.rewind(dom, this.props);
     }
   }
 }));

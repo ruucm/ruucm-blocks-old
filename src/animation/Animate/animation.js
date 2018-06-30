@@ -31,10 +31,22 @@ export default {
         // cb()
       },
       transformOrigin: '0px 0px',
-      ease: Elastic.easeIn.config(0.25, 1),
+      ease: Elastic.easeOut.config(0.25, 1),
     }
     if (props.scale) merge(options, { scale: props.scale })
     if (props.opacity) merge(options, { opacity: props.opacity })
+    return TweenMax.to(target, duration, options)
+  },
+  rewind(target, props) {
+    let options = {
+      onComplete() {
+        // cb()
+      },
+      transformOrigin: '0px 0px',
+      ease: Elastic.easeIn.config(0.25, 1),
+    }
+    if (props.scale) merge(options, { scale: 1 })
+    if (props.opacity) merge(options, { opacity: 1 })
     return TweenMax.to(target, duration, options)
   },
 }

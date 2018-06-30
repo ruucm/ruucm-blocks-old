@@ -23,19 +23,30 @@ const Animate = props => {
 
 const enhance = compose(
   withHandlers({
-    animate: props => dom => {
-      log('animate!!!!')
-      // animation.show(dom)
+    start: props => dom => {
       animation.start(dom, props)
+    },
+    rewind: props => dom => {
+      animation.rewind(dom, props)
     },
   }),
   lifecycle({
     componentWillReceiveProps(newProps) {
-      log('newProps', newProps)
       // Animate When Trigger State change Detected
-      if (newProps.animStarted != this.props.animStarted) {
+      if (
+        newProps.animStarted &&
+        newProps.animStarted != this.props.animStarted
+      ) {
         var dom = ReactDOM.findDOMNode(this)
-        this.props.animate(dom)
+        animation.start(dom, this.props)
+      }
+
+      if (
+        !newProps.animStarted &&
+        newProps.animStarted != this.props.animStarted
+      ) {
+        var dom = ReactDOM.findDOMNode(this)
+        animation.rewind(dom, this.props)
       }
     },
   })
