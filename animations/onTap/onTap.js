@@ -19,7 +19,6 @@ var onTap = function onTap(props) {
       },
       style: props.style
     },
-    '(Tap me)',
     props.children
   );
 };

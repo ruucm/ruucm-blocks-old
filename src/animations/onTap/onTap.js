@@ -18,7 +18,6 @@ const onTap = props => {
       }}
       style={props.style}
     >
-      (Tap me)
       {props.children}
     </div>
   )
