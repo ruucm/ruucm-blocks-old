@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Loader = styled.div`
@@ -70,9 +69,5 @@ const Loader = styled.div`
 `
 
 export const SimpleLoadingSpinner = ({ size }) => <Loader />
-
-SimpleLoadingSpinner.propTypes = {
-  size: PropTypes.number,
-}
 
 export default SimpleLoadingSpinner

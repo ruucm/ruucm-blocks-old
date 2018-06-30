@@ -3,7 +3,6 @@ var _templateObject = _taggedTemplateLiteral(['\n  width: 50px;\n  height: 50px;
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { center } from '../../../tools/mixins';
@@ -22,10 +21,6 @@ export var JellyLoadingSpinner = function JellyLoadingSpinner(_ref) {
       React.createElement('div', { id: 'jelly-box' })
     )
   );
-};
-
-JellyLoadingSpinner.propTypes = {
-  size: PropTypes.number
 };
 
 export default JellyLoadingSpinner;

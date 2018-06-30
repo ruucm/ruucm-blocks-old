@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import { compose, lifecycle, withHandlers, withProps } from 'recompose';
 import { log } from 'ruucm-util';
 
 var onTap = function onTap(props) {

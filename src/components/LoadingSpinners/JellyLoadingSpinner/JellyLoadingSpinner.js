@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { center } from '../../../tools/mixins'
@@ -77,9 +76,5 @@ export const JellyLoadingSpinner = ({ size }) => (
     </div>
   </Wrapper>
 )
-
-JellyLoadingSpinner.propTypes = {
-  size: PropTypes.number,
-}
 
 export default JellyLoadingSpinner

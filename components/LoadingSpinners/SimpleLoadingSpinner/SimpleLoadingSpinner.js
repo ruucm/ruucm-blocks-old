@@ -3,7 +3,6 @@ var _templateObject = _taggedTemplateLiteral(['\n  position: absolute;\n  top: 5
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 var Loader = styled.div(_templateObject);
@@ -11,10 +10,6 @@ var Loader = styled.div(_templateObject);
 export var SimpleLoadingSpinner = function SimpleLoadingSpinner(_ref) {
   var size = _ref.size;
   return React.createElement(Loader, null);
-};
-
-SimpleLoadingSpinner.propTypes = {
-  size: PropTypes.number
 };
 
 export default SimpleLoadingSpinner;
