@@ -8,8 +8,6 @@ import React from 'react';
 import { log } from 'ruucm-util';
 
 var onMouseOver = function onMouseOver(props) {
-  log('props(onMouseOver)', props);
-
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 

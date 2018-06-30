@@ -8,8 +8,6 @@ import React from 'react';
 import { log } from 'ruucm-util';
 
 var onTap = function onTap(props) {
-  log('props(onTap)', props);
-
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 

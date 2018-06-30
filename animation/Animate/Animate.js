@@ -16,7 +16,6 @@ var Animate = function Animate(props) {
   return React.createElement(
     'div',
     { style: props.style },
-    props.animStarted ? 'target opened - ' : 'target not opened - ',
     props.children
   );
 };

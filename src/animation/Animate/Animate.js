@@ -15,7 +15,7 @@ const Animate = props => {
   log('props(Animate)', props)
   return (
     <div style={props.style}>
-      {props.animStarted ? 'target opened - ' : 'target not opened - '}
+      {/* {props.animStarted ? 'target opened - ' : 'target not opened - '} */}
       {props.children}
     </div>
   )
