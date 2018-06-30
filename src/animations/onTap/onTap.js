@@ -8,12 +8,11 @@ import React from 'react'
 import { log } from 'ruucm-util'
 
 const onTap = props => {
-  let dom
   log('props(onTap)', props)
   return (
     <div
       onClick={() => {
-        props.openForm(true)
+        props.startAnim(true)
       }}
       style={props.style}
     >

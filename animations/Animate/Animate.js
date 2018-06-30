@@ -16,7 +16,7 @@ var Animate = function Animate(props) {
   return React.createElement(
     'div',
     { style: props.style },
-    props.formOpened ? 'target opened - ' : 'target not opened - ',
+    props.animStarted ? 'target opened - ' : 'target not opened - ',
     props.children
   );
 };
@@ -31,8 +31,9 @@ var enhance = compose(withHandlers({
   }
 }), lifecycle({
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+    log('newProps', newProps);
     // Animate When Trigger State change Detected
-    if (newProps.formOpened != this.props.formOpened) {
+    if (newProps.animStarted != this.props.animStarted) {
       var dom = ReactDOM.findDOMNode(this);
       this.props.animate(dom);
     }

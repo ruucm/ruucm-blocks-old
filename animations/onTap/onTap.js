@@ -8,13 +8,12 @@ import React from 'react';
 import { log } from 'ruucm-util';
 
 var onTap = function onTap(props) {
-  var dom = void 0;
   log('props(onTap)', props);
   return React.createElement(
     'div',
     {
       onClick: function onClick() {
-        props.openForm(true);
+        props.startAnim(true);
       },
       style: props.style
     },
