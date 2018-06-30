@@ -25,7 +25,8 @@ var enhance = compose(withHandlers({
   animate: function animate(props) {
     return function (dom) {
       log('animate!!!!');
-      animation.hide(dom);
+      // animation.show(dom)
+      animation.start(dom, props);
     };
   }
 }), lifecycle({

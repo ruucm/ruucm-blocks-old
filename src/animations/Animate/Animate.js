@@ -25,7 +25,8 @@ const enhance = compose(
   withHandlers({
     animate: props => dom => {
       log('animate!!!!')
-      animation.hide(dom)
+      // animation.show(dom)
+      animation.start(dom, props)
     },
   }),
   lifecycle({
