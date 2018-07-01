@@ -1,7 +1,7 @@
 import Hover from './Hover'
 import Frame from './Frame'
-import onTap from './onTap'
+import OnTap from './OnTap'
 import onMouseOver from './onMouseOver'
 import Animate from './Animate'
 
-export { Hover, Frame, onTap, onMouseOver, Animate }
+export { Hover, Frame, OnTap, onMouseOver, Animate }

@@ -1,3 +1,3 @@
-import onTap from './onTap'
+import OnTap from './OnTap'
 
-export default onTap
+export default OnTap

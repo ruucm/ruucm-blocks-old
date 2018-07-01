@@ -8,8 +8,6 @@ import React from 'react';
 import { log } from 'ruucm-util';
 
 var onTap = function onTap(props) {
-  log('props(onTap)', props);
-
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 
@@ -17,6 +15,8 @@ var onTap = function onTap(props) {
     'div',
     {
       onClick: function onClick() {
+        log('onTap!');
+        log('props', props);
         props.startAnim(true);
       },
       style: props.style
