@@ -14,6 +14,8 @@ const onTap = props => {
   return (
     <div
       onClick={() => {
+        log('onTap!')
+        log('props', props)
         props.startAnim(true)
       }}
       style={props.style}
