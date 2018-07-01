@@ -1,13 +1,13 @@
 /**
  *
- * onMouseOver
+ * OnMouseOver
  *
  */
 
 import React from 'react';
 import { log } from 'ruucm-util';
 
-var onMouseOver = function onMouseOver(props) {
+var OnMouseOver = function OnMouseOver(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 
@@ -15,6 +15,7 @@ var onMouseOver = function onMouseOver(props) {
     'div',
     {
       onMouseOver: function onMouseOver() {
+        log('onMouseOver!');
         props.startAnim(true);
       },
       style: props.style
@@ -25,4 +26,4 @@ var onMouseOver = function onMouseOver(props) {
   );
 };
 
-export default onMouseOver;
+export default OnMouseOver;

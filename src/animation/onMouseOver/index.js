@@ -1,3 +1,3 @@
-import onMouseOver from './onMouseOver'
+import OnMouseOver from './OnMouseOver'
 
-export default onMouseOver
+export default OnMouseOver

@@ -1,22 +1,20 @@
 /**
  *
- * onTap
+ * onMouseOver
  *
  */
 
 import React from 'react';
 import { log } from 'ruucm-util';
 
-var onTap = function onTap(props) {
-  log('props(onTap)', props);
-
+var onMouseOver = function onMouseOver(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 
   return React.createElement(
     'div',
     {
-      onClick: function onClick() {
+      onMouseOver: function onMouseOver() {
         props.startAnim(true);
       },
       style: props.style
@@ -27,4 +25,4 @@ var onTap = function onTap(props) {
   );
 };
 
-export default onTap;
+export default onMouseOver;

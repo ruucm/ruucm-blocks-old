@@ -1,20 +1,19 @@
 /**
  *
- * OnMouseOver
+ * onMouseOver
  *
  */
 
 import React from 'react'
 import { log } from 'ruucm-util'
 
-const OnMouseOver = props => {
+const onMouseOver = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
 
   return (
     <div
       onMouseOver={() => {
-        log('onMouseOver!')
         props.startAnim(true)
       }}
       style={props.style}
@@ -26,4 +25,4 @@ const OnMouseOver = props => {
   )
 }
 
-export default OnMouseOver
+export default onMouseOver
