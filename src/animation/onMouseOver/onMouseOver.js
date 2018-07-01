@@ -19,9 +19,7 @@ const OnMouseOver = props => {
       }}
       style={props.style}
     >
-      {React.Children.map(props.children, child =>
-        React.cloneElement(child, otherProps)
-      )}
+      {props.children}
     </div>
   )
 }
