@@ -8,15 +8,36 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { compose, lifecycle, withHandlers } from 'recompose'
 import { log } from 'ruucm-util'
+import { isString } from 'lodash'
 
 import animation from './animation'
 
 const Animate = props => {
+  const otherProps = Object.assign({}, props)
+  delete otherProps.children
+
   log('props(Animate)', props)
+  // log('otherProps(Animate)', otherProps)
   return (
     <div style={props.style}>
-      {/* {props.animStarted ? 'target opened - ' : 'target not opened - '} */}
-      {props.children}
+      {React.Children.map(props.children, child => {
+        let newChildProps = {
+          // ...otherProps,
+          style: child.props.style,
+          animStarted: props.animStarted,
+          startAnim: props.startAnim,
+          start: props.start,
+          rewind: props.rewind,
+        }
+        log('newChildProps', newChildProps)
+        return isString(child.type)
+          ? child
+          : React.cloneElement(
+              child,
+              newChildProps
+              // Only pass anim props, when child id Animate(Comp)
+            )
+      })}
     </div>
   )
 }

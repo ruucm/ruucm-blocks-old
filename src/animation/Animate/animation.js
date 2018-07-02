@@ -44,6 +44,7 @@ export default {
     if (props.transformOrigin)
       merge(options, { transformOrigin: props.transformOrigin })
     if (props.options.curve) merge(options, { ease: eval(props.options.curve) })
+    if (props.options.delay) merge(options, { delay: props.options.delay })
     log('options', options)
 
     return TweenMax.to(
@@ -61,7 +62,7 @@ export default {
       ease: Power1.easeOut,
     }
     if (props.scale) merge(options, { scale: 1 })
-    if (props.opacity) merge(options, { opacity: 1 })
+    if (props.opacity) merge(options, { opacity: props.style.opacity })
     if (props.x) merge(options, { x: 0 })
     if (props.y) merge(options, { y: 0 })
 
