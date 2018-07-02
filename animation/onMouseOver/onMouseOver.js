@@ -1,3 +1,5 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 /**
  *
  * OnMouseOver
@@ -22,7 +24,11 @@ var OnMouseOver = function OnMouseOver(props) {
       style: props.style
     },
     React.Children.map(props.children, function (child) {
-      return React.cloneElement(child, isString(child.type) ? {} : otherProps // Only pass all props, when child id Animate(Comp)
+      var newChildProps = _extends({}, otherProps, {
+        style: child.props.style
+      });
+      return isString(child.type) ? child : React.cloneElement(child, newChildProps
+      // Only pass anim props, when child id Animate(Comp)
       );
     })
   );

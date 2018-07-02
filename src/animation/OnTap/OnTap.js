@@ -6,7 +6,7 @@
 
 import React from 'react'
 import { log } from 'ruucm-util'
-import { isString } from 'lodash'
+import { isString, isEmpty } from 'lodash'
 
 const onTap = props => {
   const otherProps = Object.assign({}, props)
@@ -22,10 +22,17 @@ const onTap = props => {
       style={props.style}
     >
       {React.Children.map(props.children, child => {
-        return React.cloneElement(
-          child,
-          isString(child.type) ? {} : otherProps // Only pass all props, when child id Animate(Comp)
-        )
+        let newChildProps = {
+          ...otherProps,
+          style: child.props.style,
+        }
+        return isString(child.type)
+          ? child
+          : React.cloneElement(
+              child,
+              newChildProps
+              // Only pass anim props, when child id Animate(Comp)
+            )
       })}
     </div>
   )

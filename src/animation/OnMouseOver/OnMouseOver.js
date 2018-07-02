@@ -21,10 +21,17 @@ const OnMouseOver = props => {
       style={props.style}
     >
       {React.Children.map(props.children, child => {
-        return React.cloneElement(
-          child,
-          isString(child.type) ? {} : otherProps // Only pass all props, when child id Animate(Comp)
-        )
+        let newChildProps = {
+          ...otherProps,
+          style: child.props.style,
+        }
+        return isString(child.type)
+          ? child
+          : React.cloneElement(
+              child,
+              newChildProps
+              // Only pass anim props, when child id Animate(Comp)
+            )
       })}
     </div>
   )
