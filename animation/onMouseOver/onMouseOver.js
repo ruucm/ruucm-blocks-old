@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { log } from 'ruucm-util';
+import { isString } from 'lodash';
 
 var OnMouseOver = function OnMouseOver(props) {
   var otherProps = Object.assign({}, props);
@@ -21,7 +22,7 @@ var OnMouseOver = function OnMouseOver(props) {
       style: props.style
     },
     React.Children.map(props.children, function (child) {
-      return React.cloneElement(child, child.type.displayName == 'withHandlers(lifecycle(Animate))' ? otherProps : {} // Only pass all props, when child id Animate(Comp)
+      return React.cloneElement(child, isString(child.type) ? {} : otherProps // Only pass all props, when child id Animate(Comp)
       );
     })
   );

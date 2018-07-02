@@ -6,6 +6,7 @@
 
 import React from 'react'
 import { log } from 'ruucm-util'
+import { isString } from 'lodash'
 
 const onTap = props => {
   const otherProps = Object.assign({}, props)
@@ -23,9 +24,7 @@ const onTap = props => {
       {React.Children.map(props.children, child => {
         return React.cloneElement(
           child,
-          child.type.displayName == 'withHandlers(lifecycle(Animate))'
-            ? otherProps
-            : {} // Only pass all props, when child id Animate(Comp)
+          isString(child.type) ? {} : otherProps // Only pass all props, when child id Animate(Comp)
         )
       })}
     </div>
