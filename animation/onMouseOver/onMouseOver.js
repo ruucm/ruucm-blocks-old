@@ -20,7 +20,9 @@ var OnMouseOver = function OnMouseOver(props) {
       },
       style: props.style
     },
-    props.children
+    React.Children.map(props.children, function (child) {
+      return React.cloneElement(child, otherProps);
+    })
   );
 };
 
