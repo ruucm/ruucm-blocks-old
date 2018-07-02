@@ -1,4 +1,4 @@
-import { TweenMax, Elastic } from 'gsap';
+import { TweenMax, Elastic, Power1 } from 'gsap';
 import { merge } from 'lodash';
 import { log } from 'ruucm-util';
 
@@ -13,7 +13,7 @@ export default {
         cb();
       },
 
-      ease: Elastic.easeOut.config(0.25, 1)
+      ease: Elastic.easeIn.config(1, 0.75)
     });
   },
   hide: function hide(target, cb) {
@@ -24,7 +24,7 @@ export default {
         cb();
       },
 
-      ease: Elastic.easeIn.config(0.25, 1)
+      ease: Elastic.easeOut.config(1, 0.75)
     });
   },
   start: function start(target, props) {
@@ -34,11 +34,21 @@ export default {
       },
 
       transformOrigin: '0px 0px',
-      ease: Elastic.easeOut.config(0.25, 1)
+      ease: Power1.easeIn,
+      force3D: false
     };
     if (props.scale) merge(options, { scale: props.scale });
     if (props.opacity) merge(options, { opacity: props.opacity });
-    return TweenMax.to(target, duration, options);
+    if (props.x) merge(options, { x: props.x });
+    if (props.y) merge(options, { y: props.y });
+    // if (props.z) merge(options, { z: props.z, force3D: true })
+
+    // props.options
+    if (props.transformOrigin) merge(options, { transformOrigin: props.transformOrigin });
+    if (props.options.curve) merge(options, { ease: eval(props.options.curve) });
+    log('options', options);
+
+    return TweenMax.to(target, props.options.time ? props.options.time : duration, options);
   },
   rewind: function rewind(target, props) {
     var options = {
@@ -47,10 +57,16 @@ export default {
       },
 
       transformOrigin: '0px 0px',
-      ease: Elastic.easeIn.config(0.25, 1)
+      ease: Power1.easeOut
     };
     if (props.scale) merge(options, { scale: 1 });
     if (props.opacity) merge(options, { opacity: 1 });
+    if (props.x) merge(options, { x: 0 });
+    if (props.y) merge(options, { y: 0 });
+
+    // props.options
+    if (props.transformOrigin) merge(options, { transformOrigin: props.transformOrigin });
+    if (props.options.curve) merge(options, { ease: eval(props.options.curve) });
     return TweenMax.to(target, duration, options);
   }
 };
