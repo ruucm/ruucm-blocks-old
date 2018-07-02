@@ -8,6 +8,9 @@ import React from 'react';
 import { log } from 'ruucm-util';
 
 var OnMouseOver = function OnMouseOver(props) {
+  var otherProps = Object.assign({}, props);
+  delete otherProps.children;
+
   return React.createElement(
     'div',
     {
@@ -17,7 +20,10 @@ var OnMouseOver = function OnMouseOver(props) {
       },
       style: props.style
     },
-    props.children
+    React.Children.map(props.children, function (child) {
+      return React.cloneElement(child, child.type.displayName == 'withHandlers(lifecycle(Animate))' ? otherProps : {} // Only pass all props, when child id Animate(Comp)
+      );
+    })
   );
 };
 

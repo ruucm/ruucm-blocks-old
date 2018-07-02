@@ -8,6 +8,9 @@ import React from 'react'
 import { log } from 'ruucm-util'
 
 const onTap = props => {
+  const otherProps = Object.assign({}, props)
+  delete otherProps.children
+
   return (
     <div
       onClick={() => {
@@ -17,7 +20,14 @@ const onTap = props => {
       }}
       style={props.style}
     >
-      {props.children}
+      {React.Children.map(props.children, child => {
+        return React.cloneElement(
+          child,
+          child.type.displayName == 'withHandlers(lifecycle(Animate))'
+            ? otherProps
+            : {} // Only pass all props, when child id Animate(Comp)
+        )
+      })}
     </div>
   )
 }
