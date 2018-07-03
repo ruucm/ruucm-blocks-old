@@ -49,16 +49,32 @@ var enhance = compose(withHandlers({
   }
 }), lifecycle({
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-    // Animate When Trigger State change Detected
-    if (newProps.animStarted && newProps.animStarted != this.props.animStarted) {
+    if (this.props.to && newProps.animStarted && newProps.animStarted != this.props.animStarted) {
       var dom = ReactDOM.findDOMNode(this);
-      animation.start(dom, this.props);
+      animation.to(dom, this.props);
     }
 
-    if (!newProps.animStarted && newProps.animStarted != this.props.animStarted) {
+    if (this.props.from && newProps.animStarted && newProps.animStarted != this.props.animStarted) {
       var dom = ReactDOM.findDOMNode(this);
-      animation.rewind(dom, this.props);
+      animation.from(dom, this.props);
     }
+
+    // Animate When Trigger State change Detected
+    // if (
+    //   newProps.animStarted &&
+    //   newProps.animStarted != this.props.animStarted
+    // ) {
+    //   var dom = ReactDOM.findDOMNode(this)
+    //   animation.start(dom, this.props)
+    // }
+
+    // if (
+    //   !newProps.animStarted &&
+    //   newProps.animStarted != this.props.animStarted
+    // ) {
+    //   var dom = ReactDOM.findDOMNode(this)
+    //   animation.rewind(dom, this.props)
+    // }
   }
 }));
 

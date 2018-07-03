@@ -5,29 +5,7 @@ import { log } from 'ruucm-util';
 var duration = 4;
 
 export default {
-  show: function show(target, cb) {
-    return TweenMax.from(target, duration, {
-      opacity: 0,
-      height: 0,
-      onComplete: function onComplete() {
-        cb();
-      },
-
-      ease: Elastic.easeIn.config(1, 0.75)
-    });
-  },
-  hide: function hide(target, cb) {
-    return TweenMax.to(target, duration, {
-      opacity: 0,
-      height: 0,
-      onComplete: function onComplete() {
-        cb();
-      },
-
-      ease: Elastic.easeOut.config(1, 0.75)
-    });
-  },
-  start: function start(target, props) {
+  to: function to(target, props) {
     var options = {
       onComplete: function onComplete() {
         // cb()
@@ -42,12 +20,15 @@ export default {
      * Animate props
      */
 
-    if (props.scale) merge(options, { scale: props.scale });
-    if (props.opacity) merge(options, { opacity: props.opacity });
-    if (props.x) merge(options, { x: props.x });
-    if (props.y) merge(options, { y: props.y });
-    // if (props.z) merge(options, { z: props.z, force3D: true })
-    if (props.transformOrigin) merge(options, { transformOrigin: props.transformOrigin });
+    if (props.to) {
+      log('props.to', props.to);
+      if (props.to.scale) merge(options, { scale: props.to.scale });
+      if (props.to.opacity || props.to.opacity == 0) merge(options, { opacity: props.to.opacity });
+      if (props.to.x) merge(options, { x: props.to.x });
+      if (props.to.y) merge(options, { y: props.to.y });
+      // if (props.z) merge(options, { z: props.z, force3D: true })
+      if (props.to.transformOrigin) merge(options, { transformOrigin: props.to.transformOrigin });
+    }
 
     /**
      * Animate props options
@@ -62,6 +43,42 @@ export default {
     log('options', options);
 
     return TweenMax.to(target, customDuration, options);
+  },
+  from: function from(target, props) {
+    var options = {
+      onComplete: function onComplete() {
+        // cb()
+      },
+
+      ease: Power1.easeIn,
+      force3D: false,
+      autoAlpha: 0
+    };
+    var customDuration = void 0;
+
+    /**
+     * Animate props
+     */
+
+    if (props.from) {
+      if (props.from.scale) merge(options, { scale: props.from.scale });
+      if (props.from.opacity || props.from.opacity == 0) merge(options, { opacity: props.from.opacity });
+      if (props.from.x) merge(options, { x: props.from.x });
+      if (props.from.y) merge(options, { y: props.from.y });
+      if (props.from.transformOrigin) merge(options, { transformOrigin: props.from.transformOrigin });
+    }
+
+    /**
+     * Animate props options
+     */
+
+    if (props.options) {
+      props.options.curve ? merge(options, { ease: eval(props.options.curve) }) : '';
+      props.options.delay ? merge(options, { delay: props.options.delay }) : '';
+      props.options.time ? customDuration = props.options.time : customDuration = duration;
+    }
+
+    return TweenMax.from(target, customDuration, options);
   },
   rewind: function rewind(target, props) {
     var options = {
