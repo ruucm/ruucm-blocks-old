@@ -33,24 +33,37 @@ export default {
       ease: Power1.easeIn,
       force3D: false,
     }
+    let customDuration
+
+    /**
+     * Animate props
+     */
+
     if (props.scale) merge(options, { scale: props.scale })
     if (props.opacity) merge(options, { opacity: props.opacity })
     if (props.x) merge(options, { x: props.x })
     if (props.y) merge(options, { y: props.y })
     // if (props.z) merge(options, { z: props.z, force3D: true })
-
-    // props.options
     if (props.transformOrigin)
       merge(options, { transformOrigin: props.transformOrigin })
-    if (props.options.curve) merge(options, { ease: eval(props.options.curve) })
-    if (props.options.delay) merge(options, { delay: props.options.delay })
+
+    /**
+     * Animate props options
+     */
+
+    if (props.options) {
+      props.options.curve
+        ? merge(options, { ease: eval(props.options.curve) })
+        : ''
+      props.options.delay ? merge(options, { delay: props.options.delay }) : ''
+      props.options.time
+        ? (customDuration = props.options.time)
+        : (customDuration = duration)
+    }
+
     log('options', options)
 
-    return TweenMax.to(
-      target,
-      props.options.time ? props.options.time : duration,
-      options
-    )
+    return TweenMax.to(target, customDuration, options)
   },
   rewind(target, props) {
     let options = {
