@@ -30,7 +30,6 @@ export default {
       onComplete() {
         // cb()
       },
-      transformOrigin: '0px 0px',
       ease: Power1.easeIn,
       force3D: false,
     }
