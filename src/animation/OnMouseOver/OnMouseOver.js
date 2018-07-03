@@ -15,7 +15,6 @@ const OnMouseOver = props => {
   return (
     <div
       onMouseOver={() => {
-        log('onMouseOver!')
         props.startAnim(true)
       }}
       style={props.style}

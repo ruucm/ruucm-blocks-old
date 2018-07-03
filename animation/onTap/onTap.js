@@ -18,9 +18,7 @@ var onTap = function onTap(props) {
     'div',
     {
       onClick: function onClick() {
-        log('onTap!');
         props.startAnim(true);
-        log('props', props);
       },
       style: props.style
     },

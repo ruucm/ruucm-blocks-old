@@ -16,7 +16,6 @@ const Animate = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
 
-  log('props(Animate)', props)
   // log('otherProps(Animate)', otherProps)
   return (
     <div style={props.style}>
@@ -29,7 +28,6 @@ const Animate = props => {
           start: props.start,
           rewind: props.rewind,
         }
-        log('newChildProps', newChildProps)
         return isString(child.type)
           ? child
           : React.cloneElement(

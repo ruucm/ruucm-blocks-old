@@ -16,7 +16,6 @@ var Animate = function Animate(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 
-  log('props(Animate)', props);
   // log('otherProps(Animate)', otherProps)
   return React.createElement(
     'div',
@@ -30,7 +29,6 @@ var Animate = function Animate(props) {
         start: props.start,
         rewind: props.rewind
       };
-      log('newChildProps', newChildProps);
       return isString(child.type) ? child : React.cloneElement(child, newChildProps
       // Only pass anim props, when child id Animate(Comp)
       );

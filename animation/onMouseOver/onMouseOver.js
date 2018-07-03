@@ -18,7 +18,6 @@ var OnMouseOver = function OnMouseOver(props) {
     'div',
     {
       onMouseOver: function onMouseOver() {
-        log('onMouseOver!');
         props.startAnim(true);
       },
       style: props.style

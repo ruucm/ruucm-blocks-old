@@ -11,8 +11,6 @@ import { log } from 'ruucm-util'
 import animation from './animation'
 
 const Frame = props => {
-  log('props(Frame)', props)
-
   const otherProps = Object.assign({}, props)
   delete otherProps.children
 
