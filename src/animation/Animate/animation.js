@@ -45,7 +45,8 @@ export default {
         : (customDuration = defaultDuration)
     }
 
-    log('options', options)
+    log('options!!', options)
+    log('customDuration!!', customDuration)
 
     return TweenMax.to(target, customDuration, options)
   },
@@ -99,6 +100,21 @@ export default {
       ease: Power1.easeOut,
     }
 
+    /**
+     * Animate props options
+     */
+
+    if (props.options) {
+      let o = props.options
+      o.curve ? merge(options, { ease: eval(o.curve) }) : ''
+      o.delay ? merge(options, { delay: o.delay }) : ''
+      o.time ? (customDuration = o.time) : (customDuration = defaultDuration)
+    }
+
+    /**
+     * Animate props
+     */
+
     if (props.to) {
       let p = props.to
 
@@ -112,7 +128,7 @@ export default {
 
       log('props(to)', props)
       log('options(to)', options)
-      // return TweenMax.to(target, defaultDuration, options)
+      return TweenMax.to(target, defaultDuration, options)
     } else if (props.from) {
       let p = props.from
 
@@ -121,20 +137,9 @@ export default {
       if (p.x) merge(options, { x: 0 })
       if (p.y) merge(options, { y: 0 })
       log('options(from)', options)
-      // return TweenMax.to(target, defaultDuration, options)
+      return TweenMax.from(target, defaultDuration, options)
     }
 
-    /**
-     * Animate props options
-     */
-
-    if (props.options) {
-      let o = props.options
-      o.curve ? merge(options, { ease: eval(o.curve) }) : ''
-      o.delay ? merge(options, { delay: o.delay }) : ''
-      o.time ? (customDuration = o.time) : (customDuration = defaultDuration)
-    }
-
-    return TweenMax.to(target, defaultDuration, options)
+    // return TweenMax.to(target, defaultDuration, options)
   },
 }

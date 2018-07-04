@@ -1,9 +1,11 @@
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n  ', ';\n  ', ';\n'], ['\n  ', ';\n  ', ';\n  ', ';\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n  ', ';\n  ', ';\n  ', ';\n  ', ';\n'], ['\n  ', ';\n  ', ';\n  ', ';\n  ', ';\n  ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n      &:hover {\n        color: ', ' !important;\n      }\n    '], ['\n      &:hover {\n        color: ', ' !important;\n      }\n    ']),
     _templateObject3 = _taggedTemplateLiteral(['\n      display: inline-block;\n      &:hover {\n        box-shadow: ', ' !important;\n      }\n    '], ['\n      display: inline-block;\n      &:hover {\n        box-shadow: ', ' !important;\n      }\n    ']),
-    _templateObject4 = _taggedTemplateLiteral(['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    '], ['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    ']);
+    _templateObject4 = _taggedTemplateLiteral(['\n      &:hover {\n        border: ', ' !important;\n      }\n    '], ['\n      &:hover {\n        border: ', ' !important;\n      }\n    ']),
+    _templateObject5 = _taggedTemplateLiteral(['\n      &:hover {\n        backgroundcolor: ', ' !important;\n      }\n    '], ['\n      &:hover {\n        backgroundcolor: ', ' !important;\n      }\n    ']),
+    _templateObject6 = _taggedTemplateLiteral(['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    '], ['\n      -webkit-transition: ', '\n        ', '; /* Safari */\n      transition: ', ' ', ';\n    ']);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -27,7 +29,11 @@ var HoverWrapper = styled.span(_templateObject, function (props) {
 }, function (props) {
   return props.boxShadow && css(_templateObject3, props.boxShadow);
 }, function (props) {
-  return props.transition && props.transition.target && props.transition.time && css(_templateObject4, props.transition.target, props.transition.time + 'ms', props.transition.target, props.transition.time + 'ms');
+  return props.border && css(_templateObject4, props.border);
+}, function (props) {
+  return props.backgroundColor && css(_templateObject5, props.backgroundColor);
+}, function (props) {
+  return props.transition && props.transition.target && props.transition.time && css(_templateObject6, props.transition.target, props.transition.time + 'ms', props.transition.target, props.transition.time + 'ms');
 });
 
 var Hover = function (_Component) {

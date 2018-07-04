@@ -24,6 +24,20 @@ const HoverWrapper = styled.span`
       }
     `};
   ${props =>
+    props.border &&
+    css`
+      &:hover {
+        border: ${props.border} !important;
+      }
+    `};
+  ${props =>
+    props.backgroundColor &&
+    css`
+      &:hover {
+        backgroundcolor: ${props.backgroundColor} !important;
+      }
+    `};
+  ${props =>
     props.transition &&
     props.transition.target &&
     props.transition.time &&
