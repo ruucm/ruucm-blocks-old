@@ -2,10 +2,11 @@ import { TweenMax, Elastic, Power1 } from 'gsap';
 import { merge } from 'lodash';
 import { log } from 'ruucm-util';
 
-var duration = 4;
+var defaultDuration = 1;
 
 export default {
   to: function to(target, props) {
+    var customDuration = void 0;
     var options = {
       onComplete: function onComplete() {
         // cb()
@@ -13,14 +14,12 @@ export default {
 
       ease: Power1.easeIn,
       force3D: false
-    };
-    var customDuration = void 0;
 
-    /**
-     * Animate props
-     */
+      /**
+       * Animate props
+       */
 
-    if (props.to) {
+    };if (props.to) {
       log('props.to', props.to);
       if (props.to.scale) merge(options, { scale: props.to.scale });
       if (props.to.opacity || props.to.opacity == 0) merge(options, { opacity: props.to.opacity });
@@ -37,7 +36,7 @@ export default {
     if (props.options) {
       props.options.curve ? merge(options, { ease: eval(props.options.curve) }) : '';
       props.options.delay ? merge(options, { delay: props.options.delay }) : '';
-      props.options.time ? customDuration = props.options.time : customDuration = duration;
+      props.options.time ? customDuration = props.options.time : customDuration = defaultDuration;
     }
 
     log('options', options);
@@ -45,6 +44,7 @@ export default {
     return TweenMax.to(target, customDuration, options);
   },
   from: function from(target, props) {
+    var customDuration = void 0;
     var options = {
       onComplete: function onComplete() {
         // cb()
@@ -53,14 +53,12 @@ export default {
       ease: Power1.easeIn,
       force3D: false,
       autoAlpha: 0
-    };
-    var customDuration = void 0;
 
-    /**
-     * Animate props
-     */
+      /**
+       * Animate props
+       */
 
-    if (props.from) {
+    };if (props.from) {
       if (props.from.scale) merge(options, { scale: props.from.scale });
       if (props.from.opacity || props.from.opacity == 0) merge(options, { opacity: props.from.opacity });
       if (props.from.x) merge(options, { x: props.from.x });
@@ -75,28 +73,56 @@ export default {
     if (props.options) {
       props.options.curve ? merge(options, { ease: eval(props.options.curve) }) : '';
       props.options.delay ? merge(options, { delay: props.options.delay }) : '';
-      props.options.time ? customDuration = props.options.time : customDuration = duration;
+      props.options.time ? customDuration = props.options.time : customDuration = defaultDuration;
     }
 
     return TweenMax.from(target, customDuration, options);
   },
   rewind: function rewind(target, props) {
+    var customDuration = void 0;
     var options = {
       onComplete: function onComplete() {
         // cb()
       },
 
-      transformOrigin: '0px 0px',
       ease: Power1.easeOut
     };
-    if (props.scale) merge(options, { scale: 1 });
-    if (props.opacity) merge(options, { opacity: props.style.opacity });
-    if (props.x) merge(options, { x: 0 });
-    if (props.y) merge(options, { y: 0 });
 
-    // props.options
-    if (props.transformOrigin) merge(options, { transformOrigin: props.transformOrigin });
-    if (props.options.curve) merge(options, { ease: eval(props.options.curve) });
-    return TweenMax.to(target, duration, options);
+    if (props.to) {
+      var p = props.to;
+
+      if (p.scale) merge(options, { scale: 1 });
+      if (p.opacity || p.opacity == 0) merge(options, { opacity: 1 });
+      if (p.x) merge(options, { x: 0 });
+      if (p.y) merge(options, { y: 0 });
+
+      if (p.transformOrigin) merge(options, { transformOrigin: p.transformOrigin });
+
+      log('props(to)', props);
+      log('options(to)', options);
+      // return TweenMax.to(target, defaultDuration, options)
+    } else if (props.from) {
+      var _p = props.from;
+
+      if (_p.scale) merge(options, { scale: 1 });
+      if (_p.opacity || _p.opacity == 0) merge(options, { opacity: 1 });
+      if (_p.x) merge(options, { x: 0 });
+      if (_p.y) merge(options, { y: 0 });
+      log('options(from)', options);
+      // return TweenMax.to(target, defaultDuration, options)
+    }
+
+    /**
+     * Animate props options
+     */
+
+    if (props.options) {
+      var o = props.options;
+      o.curve ? merge(options, { ease: eval(o.curve) }) : '';
+      o.delay ? merge(options, { delay: o.delay }) : '';
+      o.time ? customDuration = o.time : customDuration = defaultDuration;
+    }
+
+    return TweenMax.to(target, defaultDuration, options);
   }
 };

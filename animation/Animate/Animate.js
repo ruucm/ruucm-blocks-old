@@ -68,13 +68,10 @@ var enhance = compose(withHandlers({
     //   animation.start(dom, this.props)
     // }
 
-    // if (
-    //   !newProps.animStarted &&
-    //   newProps.animStarted != this.props.animStarted
-    // ) {
-    //   var dom = ReactDOM.findDOMNode(this)
-    //   animation.rewind(dom, this.props)
-    // }
+    if (!newProps.animStarted && newProps.animStarted != this.props.animStarted) {
+      var dom = ReactDOM.findDOMNode(this);
+      animation.rewind(dom, this.props);
+    }
   }
 }));
 

@@ -2,10 +2,11 @@ import { TweenMax, Elastic, Power1 } from 'gsap'
 import { merge } from 'lodash'
 import { log } from 'ruucm-util'
 
-const duration = 4
+const defaultDuration = 1
 
 export default {
   to(target, props) {
+    let customDuration
     let options = {
       onComplete() {
         // cb()
@@ -13,7 +14,6 @@ export default {
       ease: Power1.easeIn,
       force3D: false,
     }
-    let customDuration
 
     /**
      * Animate props
@@ -42,7 +42,7 @@ export default {
       props.options.delay ? merge(options, { delay: props.options.delay }) : ''
       props.options.time
         ? (customDuration = props.options.time)
-        : (customDuration = duration)
+        : (customDuration = defaultDuration)
     }
 
     log('options', options)
@@ -50,6 +50,7 @@ export default {
     return TweenMax.to(target, customDuration, options)
   },
   from(target, props) {
+    let customDuration
     let options = {
       onComplete() {
         // cb()
@@ -58,7 +59,6 @@ export default {
       force3D: false,
       autoAlpha: 0,
     }
-    let customDuration
 
     /**
      * Animate props
@@ -85,28 +85,56 @@ export default {
       props.options.delay ? merge(options, { delay: props.options.delay }) : ''
       props.options.time
         ? (customDuration = props.options.time)
-        : (customDuration = duration)
+        : (customDuration = defaultDuration)
     }
 
     return TweenMax.from(target, customDuration, options)
   },
   rewind(target, props) {
+    let customDuration
     let options = {
       onComplete() {
         // cb()
       },
-      transformOrigin: '0px 0px',
       ease: Power1.easeOut,
     }
-    if (props.scale) merge(options, { scale: 1 })
-    if (props.opacity) merge(options, { opacity: props.style.opacity })
-    if (props.x) merge(options, { x: 0 })
-    if (props.y) merge(options, { y: 0 })
 
-    // props.options
-    if (props.transformOrigin)
-      merge(options, { transformOrigin: props.transformOrigin })
-    if (props.options.curve) merge(options, { ease: eval(props.options.curve) })
-    return TweenMax.to(target, duration, options)
+    if (props.to) {
+      let p = props.to
+
+      if (p.scale) merge(options, { scale: 1 })
+      if (p.opacity || p.opacity == 0) merge(options, { opacity: 1 })
+      if (p.x) merge(options, { x: 0 })
+      if (p.y) merge(options, { y: 0 })
+
+      if (p.transformOrigin)
+        merge(options, { transformOrigin: p.transformOrigin })
+
+      log('props(to)', props)
+      log('options(to)', options)
+      // return TweenMax.to(target, defaultDuration, options)
+    } else if (props.from) {
+      let p = props.from
+
+      if (p.scale) merge(options, { scale: 1 })
+      if (p.opacity || p.opacity == 0) merge(options, { opacity: 1 })
+      if (p.x) merge(options, { x: 0 })
+      if (p.y) merge(options, { y: 0 })
+      log('options(from)', options)
+      // return TweenMax.to(target, defaultDuration, options)
+    }
+
+    /**
+     * Animate props options
+     */
+
+    if (props.options) {
+      let o = props.options
+      o.curve ? merge(options, { ease: eval(o.curve) }) : ''
+      o.delay ? merge(options, { delay: o.delay }) : ''
+      o.time ? (customDuration = o.time) : (customDuration = defaultDuration)
+    }
+
+    return TweenMax.to(target, defaultDuration, options)
   },
 }
