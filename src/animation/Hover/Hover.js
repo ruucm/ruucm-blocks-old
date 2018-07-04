@@ -34,7 +34,7 @@ const HoverWrapper = styled.span`
     props.backgroundColor &&
     css`
       &:hover {
-        backgroundcolor: ${props.backgroundColor} !important;
+        background-color: ${props.backgroundColor} !important;
       }
     `};
   ${props =>
