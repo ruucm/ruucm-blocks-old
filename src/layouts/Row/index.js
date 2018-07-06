@@ -6,10 +6,12 @@ const RowWrapper = styled.div`
   ${bootstrapGrid};
 `
 
-const Row = ({ children }) => {
+const Row = ({ style, children }) => {
   return (
     <RowWrapper>
-      <div className="row">{children}</div>
+      <div className="row" style={style}>
+        {children}
+      </div>
     </RowWrapper>
   )
 }

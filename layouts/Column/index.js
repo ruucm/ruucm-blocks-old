@@ -1,13 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
 
-var Column = function Column(props) {
-  var col = props.col ? 'col-sm-' + props.col : '';
-  var mCol = props.mCol ? ' col-' + props.mCol : '';
+var Column = function Column(_ref) {
+  var col = _ref.col,
+      mCol = _ref.mCol,
+      style = _ref.style,
+      children = _ref.children;
+
+  var colClass = col ? 'col-sm-' + col : '';
+  var mColClass = mCol ? ' col-' + mCol : '';
   return React.createElement(
     'div',
-    { className: col + mCol },
-    props.children
+    { className: colClass + mColClass, style: style },
+    children
   );
 };
 

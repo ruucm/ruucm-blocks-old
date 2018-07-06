@@ -9,14 +9,15 @@ import bootstrapGrid from '../../libs/bootstrap-grid';
 var RowWrapper = styled.div(_templateObject, bootstrapGrid);
 
 var Row = function Row(_ref) {
-  var children = _ref.children;
+  var style = _ref.style,
+      children = _ref.children;
 
   return React.createElement(
     RowWrapper,
     null,
     React.createElement(
       'div',
-      { className: 'row' },
+      { className: 'row', style: style },
       children
     )
   );

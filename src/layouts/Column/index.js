@@ -1,10 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
 
-const Column = (props) => {
-  let col = props.col ? ('col-sm-' + props.col) : ('');
-  let mCol = props.mCol ? (' col-' + props.mCol) : ('');
-  return <div className={col + mCol}>{props.children}</div>
+const Column = ({ col, mCol, style, children }) => {
+  let colClass = col ? 'col-sm-' + col : ''
+  let mColClass = mCol ? ' col-' + mCol : ''
+  return (
+    <div className={colClass + mColClass} style={style}>
+      {children}
+    </div>
+  )
 }
 
-export default Column;
+export default Column
