@@ -58,10 +58,11 @@ const slickThemeStyle = css`
   }
 
   .slick-prev {
-    left: -25px;
+    left: 0;
+    z-index: 1;
   }
   [dir='rtl'] .slick-prev {
-    right: -25px;
+    right: 0;
     left: auto;
   }
   .slick-prev:before {
@@ -72,11 +73,11 @@ const slickThemeStyle = css`
   }
 
   .slick-next {
-    right: -25px;
+    right: 0;
   }
   [dir='rtl'] .slick-next {
     right: auto;
-    left: -25px;
+    left: 0;
   }
   .slick-next:before {
     content: '→';
