@@ -25,7 +25,7 @@ const Helvetica = css`
   *  Helvetica Regular
   */
   @font-face {
-    font-family: 'HelveticaWeb';
+    font-family: 'HelveticaCnWeb';
     font-style: normal;
     font-weight: 400;
     src: local('HelveticaRegular'), url(${fontRegularWOFF2}) format('woff2'),
@@ -38,7 +38,7 @@ const Helvetica = css`
   *  Helvetica Regular Oblique
   */
   @font-face {
-    font-family: 'HelveticaWeb';
+    font-family: 'HelveticaCnWeb';
     font-style: italic;
     font-weight: 400;
     src: local('HelveticaRegularO'), url(${fontRegularOWOFF2}) format('woff2'),
@@ -51,7 +51,7 @@ const Helvetica = css`
   *  Helvetica Medium
   */
   @font-face {
-    font-family: 'HelveticaWeb';
+    font-family: 'HelveticaCnWeb';
     font-style: normal;
     font-weight: 500;
     src: local('HelveticaMedium'), url(${fontMediumWOFF2}) format('woff2'),
@@ -64,7 +64,7 @@ const Helvetica = css`
   *  Helvetica Medium Oblique
   */
   @font-face {
-    font-family: 'HelveticaWeb';
+    font-family: 'HelveticaCnWeb';
     font-style: italic;
     font-weight: 500;
     src: local('HelveticaMediumO'), url(${fontMediumOWOFF2}) format('woff2'),

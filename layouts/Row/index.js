@@ -5,19 +5,23 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 import React from 'react';
 import styled from 'styled-components';
 import bootstrapGrid from '../../libs/bootstrap-grid';
+import { log } from 'ruucm-util';
 
 var RowWrapper = styled.div(_templateObject, bootstrapGrid);
 
 var Row = function Row(_ref) {
   var style = _ref.style,
-      children = _ref.children;
+      children = _ref.children,
+      className = _ref.className;
 
+  log('className', className);
+  var parentClassName = className ? ' ' + className : '';
   return React.createElement(
     RowWrapper,
     null,
     React.createElement(
       'div',
-      { className: 'row', style: style },
+      { className: 'row no-gutters' + parentClassName, style: style },
       children
     )
   );
