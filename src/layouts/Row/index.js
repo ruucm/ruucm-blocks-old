@@ -8,7 +8,6 @@ const RowWrapper = styled.div`
 `
 
 const Row = ({ style, children, className }) => {
-  log('className', className)
   let parentClassName = className ? ' ' + className : ''
   return (
     <RowWrapper>

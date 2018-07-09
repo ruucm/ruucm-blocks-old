@@ -14,7 +14,6 @@ var Row = function Row(_ref) {
       children = _ref.children,
       className = _ref.className;
 
-  log('className', className);
   var parentClassName = className ? ' ' + className : '';
   return React.createElement(
     RowWrapper,
