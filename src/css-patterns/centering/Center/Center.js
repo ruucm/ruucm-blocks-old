@@ -8,6 +8,7 @@ import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 
 const CenterWrapper = styled.div`
+  position: absolute;
   ${props =>
     props.axis == 'x' &&
     css`
