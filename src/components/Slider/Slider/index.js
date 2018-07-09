@@ -7,6 +7,7 @@
 import React from 'react'
 import Slider from 'react-slick'
 import styled, { css } from 'styled-components'
+import { log } from 'ruucm-util'
 
 import slickStyle from './slick-style'
 import slickThemeStyle from './slick-theme-style'
@@ -40,7 +41,11 @@ const SliderComp = props => {
   }
   return (
     <Wrapper style={props.style}>
-      <Slider {...settings}>{props.children}</Slider>
+      {props.children ? (
+        <Slider {...settings}>{props.children}</Slider>
+      ) : (
+        'add slider items first'
+      )}
     </Wrapper>
   )
 }

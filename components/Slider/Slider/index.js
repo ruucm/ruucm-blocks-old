@@ -11,6 +11,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 import React from 'react';
 import Slider from 'react-slick';
 import styled, { css } from 'styled-components';
+import { log } from 'ruucm-util';
 
 import slickStyle from './slick-style';
 import slickThemeStyle from './slick-theme-style';
@@ -48,11 +49,11 @@ var SliderComp = function SliderComp(props) {
   return React.createElement(
     Wrapper,
     { style: props.style },
-    React.createElement(
+    props.children ? React.createElement(
       Slider,
       settings,
       props.children
-    )
+    ) : 'add slider items first'
   );
 };
 
