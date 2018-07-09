@@ -1,15 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const SectionWrapper = styled.div`
   ${props =>
     props.maxWidth &&
     css`
       max-width: ${props.maxWidth}px;
+      margin: 0 auto;
     `};
 `
 const Section = props => {
-  return <SectionWrapper style={props.style}>{props.children}</SectionWrapper>
+  return <SectionWrapper {...props}>{props.children}</SectionWrapper>
 }
 
 export default Section
