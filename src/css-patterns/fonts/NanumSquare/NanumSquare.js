@@ -52,7 +52,7 @@ const NanumSquare = css`
   @font-face {
     font-family: 'NanumSquareWeb';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     src: local('NanumSquareBold'), url(${fontBoldWOFF2}) format('woff2'),
       url(${fontBoldWOFF}) format('woff'),
       url(${fontBoldTTF}) format('truetype'),
@@ -65,7 +65,7 @@ const NanumSquare = css`
   @font-face {
     font-family: 'NanumSquareWeb';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 900;
     src: local('NanumSquareExtraBold'),
       url(${fontExtraBoldWOFF2}) format('woff2'),
       url(${fontExtraBoldWOFF}) format('woff'),

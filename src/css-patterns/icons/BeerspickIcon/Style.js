@@ -19,6 +19,9 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .beerspick-beerspick_logo_about:before {
+    content: '\\e907';
+  }
   .beerspick-beerspick_logo_header:before {
     content: '\\e900';
   }

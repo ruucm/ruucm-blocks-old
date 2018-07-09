@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-export const center = (type) => {
+export const center = type => {
   if (type == 'y')
     return css`
       top: 50%;
@@ -27,5 +27,19 @@ export const transition = (type, duration) => {
   return css`
     -webkit-transition: ${type} ${duration + 'ms'}; /* Safari */
     transition: ${type} ${duration + 'ms'};
+  `
+}
+
+export const centerIconA = (iconSize, textSize) => {
+  return css`
+    > span {
+      font-size: ${iconSize};
+      vertical-align: middle;
+    }
+    > a {
+      font-size: ${textSize};
+      display: inline-block;
+      vertical-align: middle;
+    }
   `
 }
