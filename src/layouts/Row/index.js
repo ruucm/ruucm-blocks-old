@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import bootstrapGrid from '../../libs/bootstrap-grid'
-// import bootstrapDisplay from '../../libs/bootstrap-display'
+import bootstrapDisplay from '../../libs/bootstrap-display'
 import { log } from 'ruucm-util'
 
 const RowWrapper = styled.div`
   ${bootstrapGrid};
+  ${bootstrapDisplay};
 `
 
 const Row = ({ style, children, className }) => {

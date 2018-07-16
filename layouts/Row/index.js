@@ -1,14 +1,14 @@
-var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n'], ['\n  ', ';\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n  ', ';\n'], ['\n  ', ';\n  ', ';\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 import React from 'react';
 import styled from 'styled-components';
 import bootstrapGrid from '../../libs/bootstrap-grid';
-// import bootstrapDisplay from '../../libs/bootstrap-display'
+import bootstrapDisplay from '../../libs/bootstrap-display';
 import { log } from 'ruucm-util';
 
-var RowWrapper = styled.div(_templateObject, bootstrapGrid);
+var RowWrapper = styled.div(_templateObject, bootstrapGrid, bootstrapDisplay);
 
 var Row = function Row(_ref) {
   var style = _ref.style,
