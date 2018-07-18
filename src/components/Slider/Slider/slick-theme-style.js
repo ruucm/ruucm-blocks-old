@@ -93,7 +93,7 @@ const slickThemeStyle = css`
 
   .slick-dots {
     position: absolute;
-    bottom: -25px;
+    bottom: 0;
 
     display: block;
 
@@ -132,7 +132,7 @@ const slickThemeStyle = css`
     color: transparent;
     border: 0;
     outline: none;
-    background: transparent;
+    background: blue;
   }
   .slick-dots li button:hover,
   .slick-dots li button:focus {
@@ -165,7 +165,7 @@ const slickThemeStyle = css`
   }
   .slick-dots li.slick-active button:before {
     opacity: 0.75;
-    color: black;
+    color: red;
   }
 `
 

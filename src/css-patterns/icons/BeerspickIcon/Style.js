@@ -19,6 +19,20 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .beerspick-beer-speak-banner:before {
+    content: '\\e908';
+  }
+  .beerspick-beerspick_circle_logo_black:before {
+    content: '\\e909';
+  }
+  .beerspick-beerspick_circle_logo_white:before {
+    content: '\\e90a';
+    color: #fff;
+  }
+  .beerspick-beerspick_square_logo_white:before {
+    content: '\\e90b';
+    color: #fff;
+  }
   .beerspick-beerspick_logo_about:before {
     content: '\\e907';
   }
