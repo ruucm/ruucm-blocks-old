@@ -20,7 +20,6 @@ export default {
        */
 
     };if (props.to) {
-      log('props.to', props.to);
       if (props.to.scale) merge(options, { scale: props.to.scale });
       if (props.to.opacity || props.to.opacity == 0) merge(options, { opacity: props.to.opacity });
       if (props.to.x) merge(options, { x: props.to.x });
@@ -35,12 +34,8 @@ export default {
 
     if (props.options) {
       props.options.curve ? merge(options, { ease: eval(props.options.curve) }) : '';
-      props.options.delay ? merge(options, { delay: props.options.delay }) : '';
-      props.options.time ? customDuration = props.options.time : customDuration = defaultDuration;
-    }
-
-    log('options!!', options);
-    log('customDuration!!', customDuration);
+      props.options.delay ? merge(options, { delay: props.options.delay }) : ''(props.options.time) ? customDuration = props.options.time : customDuration = defaultDuration;
+    } else customDuration = defaultDuration;
 
     return TweenMax.to(target, customDuration, options);
   },
