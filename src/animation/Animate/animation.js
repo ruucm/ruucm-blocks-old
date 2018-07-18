@@ -4,6 +4,10 @@ import { log } from 'ruucm-util'
 
 const defaultDuration = 1
 
+const doNothing = () => {
+  void 0
+}
+
 export default {
   to(target, props) {
     let customDuration
@@ -37,12 +41,13 @@ export default {
     if (props.options) {
       props.options.curve
         ? merge(options, { ease: eval(props.options.curve) })
-        : ''
+        : doNothing()
       props.options.delay
         ? merge(options, { delay: props.options.delay })
-        : ''(props.options.time)
-          ? (customDuration = props.options.time)
-          : (customDuration = defaultDuration)
+        : doNothing()
+      props.options.time
+        ? (customDuration = props.options.time)
+        : (customDuration = defaultDuration)
     } else customDuration = defaultDuration
 
     return TweenMax.to(target, customDuration, options)
