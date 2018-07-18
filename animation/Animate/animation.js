@@ -94,8 +94,8 @@ export default {
 
     };if (props.options) {
       var o = props.options;
-      o.curve ? merge(options, { ease: eval(o.curve) }) : '';
-      o.delay ? merge(options, { delay: o.delay }) : '';
+      o.curve ? merge(options, { ease: eval(o.curve) }) : doNothing();
+      o.delay ? merge(options, { delay: o.delay }) : doNothing();
       o.time ? customDuration = o.time : customDuration = defaultDuration;
     }
 
@@ -113,8 +113,6 @@ export default {
 
       if (p.transformOrigin) merge(options, { transformOrigin: p.transformOrigin });
 
-      log('props(to)', props);
-      log('options(to)', options);
       return TweenMax.to(target, defaultDuration, options);
     } else if (props.from) {
       var _p = props.from;
@@ -123,7 +121,6 @@ export default {
       if (_p.opacity || _p.opacity == 0) merge(options, { opacity: 1 });
       if (_p.x) merge(options, { x: 0 });
       if (_p.y) merge(options, { y: 0 });
-      log('options(from)', options);
       return TweenMax.from(target, defaultDuration, options);
     }
 
