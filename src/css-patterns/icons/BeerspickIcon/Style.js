@@ -22,6 +22,9 @@ const Style = css`
   .beerspick-beer-speak-banner:before {
     content: '\\e908';
   }
+  .beerspick-beer-speak-banner-2:before {
+    content: '\\e90c';
+  }
   .beerspick-beerspick_circle_logo_black:before {
     content: '\\e909';
   }
