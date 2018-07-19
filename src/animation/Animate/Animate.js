@@ -6,13 +6,11 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { compose, lifecycle, withHandlers } from 'recompose'
+import { compose, lifecycle, withHandlers, withState } from 'recompose'
 import { log } from 'ruucm-util'
 import { isString } from 'lodash'
 
 import animation from './animation'
-
-var tween
 
 const Animate = props => {
   const otherProps = Object.assign({}, props)
@@ -43,15 +41,18 @@ const Animate = props => {
 }
 
 const enhance = compose(
+  withState('tween', 'setTween', -1), // Prventing Duplicated tween animation
   lifecycle({
     componentWillReceiveProps(newProps) {
+      const { tween, setTween } = this.props
       if (
         this.props.to &&
         newProps.animStarted &&
         newProps.animStarted != this.props.animStarted
       ) {
         var dom = ReactDOM.findDOMNode(this)
-        tween = animation.to(dom, this.props)
+        if (tween == -1) setTween(animation.to(dom, this.props))
+        else if (tween.reversed()) tween.play()
       }
 
       if (
@@ -67,7 +68,7 @@ const enhance = compose(
         !newProps.animStarted &&
         newProps.animStarted != this.props.animStarted
       ) {
-        tween.reverse(2, false)
+        if (!tween.reversed()) tween.reverse()
       }
     },
   })
