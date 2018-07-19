@@ -17,12 +17,10 @@ const Animate = props => {
   delete otherProps.children
 
   log('props(Animate)', props)
-  // log('otherProps(Animate)', otherProps)
   return (
     <div style={props.style}>
       {React.Children.map(props.children, child => {
         let newChildProps = {
-          ...otherProps,
           animStarted: props.animStarted,
           startAnim: props.startAnim,
           start: props.start,
