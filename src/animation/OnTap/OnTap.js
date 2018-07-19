@@ -12,6 +12,7 @@ const onTap = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
 
+  log('props(onTap)', props)
   return (
     <div
       onClick={() => {

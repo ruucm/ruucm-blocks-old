@@ -14,6 +14,7 @@ var onTap = function onTap(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 
+  log('props(onTap)', props);
   return React.createElement(
     'div',
     {
