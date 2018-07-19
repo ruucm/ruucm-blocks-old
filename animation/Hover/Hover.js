@@ -19,10 +19,12 @@ var Hover = function Hover(props) {
     {
       onMouseOver: function onMouseOver(e) {
         e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
         props.startAnim(true);
       },
       onMouseOut: function onMouseOut(e) {
         e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
         props.startAnim(false);
       },
       style: props.style,

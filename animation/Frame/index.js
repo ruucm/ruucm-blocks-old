@@ -30,7 +30,13 @@ var Frame = function Frame(props) {
     React.createElement(
       'h1',
       {
-        style: { textAlign: 'center', position: 'absolute', fontSize: '10px' }
+        style: {
+          textAlign: 'center',
+          position: 'absolute',
+          fontSize: '10px',
+          zIndex: '-1',
+          color: 'blue'
+        }
       },
       props.frame_id
     ),
