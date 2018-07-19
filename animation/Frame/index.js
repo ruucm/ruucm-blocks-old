@@ -61,20 +61,19 @@ function mapDispatchToProps(dispatch) {
 // Component enhancer
 var enhance = compose(withState('idLock', 'setIdLock', false), mapProps(function (_ref) {
   var children = _ref.children,
-      rest = _objectWithoutProperties(_ref, ['children']);
+      idLock = _ref.idLock,
+      rest = _objectWithoutProperties(_ref, ['children', 'idLock']);
 
-  if (!rest.idLock) {
-    var id = uniqueId('frame_');
-    rest.setIdLock(id);
-    return _extends({
-      frame_id: id,
-      children: children
-    }, rest);
-  } else {
-    return _extends({
-      frame_id: rest.idLock,
-      children: children
-    }, rest);
+  if (!idLock) return _extends({
+    frame_id: uniqueId('frame_'),
+    children: children
+  }, rest);else return _extends({
+    frame_id: idLock,
+    children: children
+  }, rest);
+}), lifecycle({
+  componentWillMount: function componentWillMount() {
+    if (!this.props.idLock) this.props.setIdLock(this.props.frame_id);
   }
 }));
 export default enhance(connect(mapStateToProps, mapDispatchToProps)(withHandlers({
