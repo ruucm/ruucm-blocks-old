@@ -29,7 +29,11 @@ const Frame = props => {
   let uuid = getUuid(props)
   return (
     <div style={props.style} className={props.className}>
-      <h1 style={{ textAlign: 'center' }}>{props.frame_id}</h1>
+      <h1
+        style={{ textAlign: 'center', position: 'absolute', fontSize: '10px' }}
+      >
+        {props.frame_id}
+      </h1>
 
       {/* {React.Children.map(props.children, child =>
         React.cloneElement(child, {

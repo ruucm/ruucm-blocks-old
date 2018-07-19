@@ -51,7 +51,13 @@ export default {
         : (customDuration = defaultDuration)
     } else customDuration = defaultDuration
 
-    return TweenMax.to(target, customDuration, options)
+    let tween = TweenMax.to(target, customDuration, options)
+
+    return tween
+    // setTimeout(() => {
+    //   alert('hey')
+    //   tween.reverse()
+    // }, 2000)
   },
   from(target, props) {
     let customDuration
@@ -93,53 +99,5 @@ export default {
     }
 
     return TweenMax.from(target, customDuration, options)
-  },
-  rewind(target, props) {
-    let customDuration
-    let options = {
-      onComplete() {
-        // cb()
-      },
-      ease: Power1.easeOut,
-    }
-
-    /**
-     * Animate props options
-     */
-
-    if (props.options) {
-      let o = props.options
-      o.curve ? merge(options, { ease: eval(o.curve) }) : doNothing()
-      o.delay ? merge(options, { delay: o.delay }) : doNothing()
-      o.time ? (customDuration = o.time) : (customDuration = defaultDuration)
-    }
-
-    /**
-     * Animate props
-     */
-
-    if (props.to) {
-      let p = props.to
-
-      if (p.scale) merge(options, { scale: 1 })
-      if (p.opacity || p.opacity == 0) merge(options, { opacity: 1 })
-      if (p.x) merge(options, { x: 0 })
-      if (p.y) merge(options, { y: 0 })
-
-      if (p.transformOrigin)
-        merge(options, { transformOrigin: p.transformOrigin })
-
-      return TweenMax.to(target, defaultDuration, options)
-    } else if (props.from) {
-      let p = props.from
-
-      if (p.scale) merge(options, { scale: 1 })
-      if (p.opacity || p.opacity == 0) merge(options, { opacity: 1 })
-      if (p.x) merge(options, { x: 0 })
-      if (p.y) merge(options, { y: 0 })
-      return TweenMax.from(target, defaultDuration, options)
-    }
-
-    // return TweenMax.to(target, defaultDuration, options)
   },
 }

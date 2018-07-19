@@ -44,7 +44,13 @@ export default {
       props.options.time ? customDuration = props.options.time : customDuration = defaultDuration;
     } else customDuration = defaultDuration;
 
-    return TweenMax.to(target, customDuration, options);
+    var tween = TweenMax.to(target, customDuration, options);
+
+    return tween;
+    // setTimeout(() => {
+    //   alert('hey')
+    //   tween.reverse()
+    // }, 2000)
   },
   from: function from(target, props) {
     var customDuration = void 0;
@@ -80,52 +86,5 @@ export default {
     }
 
     return TweenMax.from(target, customDuration, options);
-  },
-  rewind: function rewind(target, props) {
-    var customDuration = void 0;
-    var options = {
-      onComplete: function onComplete() {
-        // cb()
-      },
-
-      ease: Power1.easeOut
-
-      /**
-       * Animate props options
-       */
-
-    };if (props.options) {
-      var o = props.options;
-      o.curve ? merge(options, { ease: eval(o.curve) }) : doNothing();
-      o.delay ? merge(options, { delay: o.delay }) : doNothing();
-      o.time ? customDuration = o.time : customDuration = defaultDuration;
-    }
-
-    /**
-     * Animate props
-     */
-
-    if (props.to) {
-      var p = props.to;
-
-      if (p.scale) merge(options, { scale: 1 });
-      if (p.opacity || p.opacity == 0) merge(options, { opacity: 1 });
-      if (p.x) merge(options, { x: 0 });
-      if (p.y) merge(options, { y: 0 });
-
-      if (p.transformOrigin) merge(options, { transformOrigin: p.transformOrigin });
-
-      return TweenMax.to(target, defaultDuration, options);
-    } else if (props.from) {
-      var _p = props.from;
-
-      if (_p.scale) merge(options, { scale: 1 });
-      if (_p.opacity || _p.opacity == 0) merge(options, { opacity: 1 });
-      if (_p.x) merge(options, { x: 0 });
-      if (_p.y) merge(options, { y: 0 });
-      return TweenMax.from(target, defaultDuration, options);
-    }
-
-    // return TweenMax.to(target, defaultDuration, options)
   }
 };

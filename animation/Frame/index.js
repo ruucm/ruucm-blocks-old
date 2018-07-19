@@ -25,7 +25,9 @@ var Frame = function Frame(props) {
     { style: props.style, className: props.className },
     React.createElement(
       'h1',
-      { style: { textAlign: 'center' } },
+      {
+        style: { textAlign: 'center', position: 'absolute', fontSize: '10px' }
+      },
       props.frame_id
     ),
     React.Children.map(props.children, function (child) {

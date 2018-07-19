@@ -12,6 +12,8 @@ import { isString } from 'lodash'
 
 import animation from './animation'
 
+var tween
+
 const Animate = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
@@ -41,23 +43,16 @@ const Animate = props => {
 }
 
 const enhance = compose(
-  withHandlers({
-    start: props => dom => {
-      animation.start(dom, props)
-    },
-    rewind: props => dom => {
-      animation.rewind(dom, props)
-    },
-  }),
   lifecycle({
     componentWillReceiveProps(newProps) {
+      log('newProps', newProps)
       if (
         this.props.to &&
         newProps.animStarted &&
         newProps.animStarted != this.props.animStarted
       ) {
         var dom = ReactDOM.findDOMNode(this)
-        animation.to(dom, this.props)
+        tween = animation.to(dom, this.props)
       }
 
       if (
@@ -69,21 +64,11 @@ const enhance = compose(
         animation.from(dom, this.props)
       }
 
-      // Animate When Trigger State change Detected
-      // if (
-      //   newProps.animStarted &&
-      //   newProps.animStarted != this.props.animStarted
-      // ) {
-      //   var dom = ReactDOM.findDOMNode(this)
-      //   animation.start(dom, this.props)
-      // }
-
       if (
         !newProps.animStarted &&
         newProps.animStarted != this.props.animStarted
       ) {
-        var dom = ReactDOM.findDOMNode(this)
-        animation.rewind(dom, this.props)
+        tween.reverse()
       }
     },
   })

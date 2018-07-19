@@ -12,6 +12,8 @@ import { isString } from 'lodash';
 
 import animation from './animation';
 
+var tween;
+
 var Animate = function Animate(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
@@ -34,22 +36,12 @@ var Animate = function Animate(props) {
   );
 };
 
-var enhance = compose(withHandlers({
-  start: function start(props) {
-    return function (dom) {
-      animation.start(dom, props);
-    };
-  },
-  rewind: function rewind(props) {
-    return function (dom) {
-      animation.rewind(dom, props);
-    };
-  }
-}), lifecycle({
+var enhance = compose(lifecycle({
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+    log('newProps', newProps);
     if (this.props.to && newProps.animStarted && newProps.animStarted != this.props.animStarted) {
       var dom = ReactDOM.findDOMNode(this);
-      animation.to(dom, this.props);
+      tween = animation.to(dom, this.props);
     }
 
     if (this.props.from && newProps.animStarted && newProps.animStarted != this.props.animStarted) {
@@ -57,18 +49,8 @@ var enhance = compose(withHandlers({
       animation.from(dom, this.props);
     }
 
-    // Animate When Trigger State change Detected
-    // if (
-    //   newProps.animStarted &&
-    //   newProps.animStarted != this.props.animStarted
-    // ) {
-    //   var dom = ReactDOM.findDOMNode(this)
-    //   animation.start(dom, this.props)
-    // }
-
     if (!newProps.animStarted && newProps.animStarted != this.props.animStarted) {
-      var dom = ReactDOM.findDOMNode(this);
-      animation.rewind(dom, this.props);
+      tween.reverse();
     }
   }
 }));

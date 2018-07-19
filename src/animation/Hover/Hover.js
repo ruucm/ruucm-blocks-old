@@ -1,56 +1,45 @@
 /**
  *
- * Hover
+ * OnMouseOver
  *
  */
 
-import React, { Component } from 'react'
-import styled, { css } from 'styled-components'
+import React from 'react'
+import { log } from 'ruucm-util'
+import { isString } from 'lodash'
 
-const HoverWrapper = styled.span`
-  ${props =>
-    props.color &&
-    css`
-      &:hover {
-        color: ${props.color} !important;
-      }
-    `};
-  ${props =>
-    props.boxShadow &&
-    css`
-      display: inline-block;
-      &:hover {
-        box-shadow: ${props.boxShadow} !important;
-      }
-    `};
-  ${props =>
-    props.border &&
-    css`
-      &:hover {
-        border: ${props.border} !important;
-      }
-    `};
-  ${props =>
-    props.backgroundColor &&
-    css`
-      &:hover {
-        background-color: ${props.backgroundColor} !important;
-      }
-    `};
-  ${props =>
-    props.transition &&
-    props.transition.target &&
-    props.transition.time &&
-    css`
-      -webkit-transition: ${props.transition.target}
-        ${props.transition.time + 'ms'}; /* Safari */
-      transition: ${props.transition.target} ${props.transition.time + 'ms'};
-    `};
-`
-class Hover extends Component {
-  render() {
-    return <HoverWrapper {...this.props}>{this.props.children}</HoverWrapper>
-  }
+const Hover = props => {
+  const otherProps = Object.assign({}, props)
+  delete otherProps.children
+
+  return (
+    <div
+      onMouseOver={() => {
+        props.startAnim(true)
+      }}
+      onMouseOut={() => {
+        props.startAnim(false)
+      }}
+      style={props.style}
+      className={props.className}
+    >
+      {React.Children.map(props.children, child => {
+        let newChildProps = {
+          ...otherProps,
+          style: child.props ? child.props.style : '',
+        }
+        if (isString(child)) return child
+        else
+          return isString(child.type)
+            ? child
+            : React.cloneElement(
+                child,
+                newChildProps
+                // Only pass anim props, when child id Animate(Comp)
+              )
+      })}
+    </div>
+  )
 }
 
 export default Hover
