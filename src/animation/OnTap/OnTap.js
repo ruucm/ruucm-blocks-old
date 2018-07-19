@@ -22,15 +22,17 @@ const onTap = props => {
       {React.Children.map(props.children, child => {
         let newChildProps = {
           ...otherProps,
-          style: child.props.style,
+          style: child.props ? child.props.style : '',
         }
-        return isString(child.type)
-          ? child
-          : React.cloneElement(
-              child,
-              newChildProps
-              // Only pass anim props, when child id Animate(Comp)
-            )
+        if (isString(child)) return child
+        else
+          return isString(child.type)
+            ? child
+            : React.cloneElement(
+                child,
+                newChildProps
+                // Only pass anim props, when child id Animate(Comp)
+              )
       })}
     </div>
   )

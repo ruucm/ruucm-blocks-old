@@ -23,13 +23,13 @@ var Animate = function Animate(props) {
     React.Children.map(props.children, function (child) {
       var newChildProps = {
         // ...otherProps,
-        style: child.props.style,
         animStarted: props.animStarted,
         startAnim: props.startAnim,
         start: props.start,
-        rewind: props.rewind
+        rewind: props.rewind,
+        style: child.props ? child.props.style : ''
       };
-      return isString(child.type) ? child : React.cloneElement(child, newChildProps
+      if (isString(child)) return child;else return isString(child.type) ? child : React.cloneElement(child, newChildProps
       // Only pass anim props, when child id Animate(Comp)
       );
     })
