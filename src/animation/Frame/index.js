@@ -53,6 +53,7 @@ const Frame = props => {
           startAnim: props.startAnim, // Override Animate props
 
           ...child.props,
+          className: child.props.className,
           style: child.props.style, // Override parents style prop
         }
         return isString(child.type)

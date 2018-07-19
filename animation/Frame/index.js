@@ -34,6 +34,7 @@ var Frame = function Frame(props) {
       var newChildProps = _extends({}, props, {
         animStarted: props[uuid + '_animStarted'] ? props[uuid + '_animStarted'] : false,
         startAnim: props.startAnim }, child.props, {
+        className: child.props.className,
         style: child.props.style // Override parents style prop
       });
       return isString(child.type) ? child : React.cloneElement(child, newChildProps);
