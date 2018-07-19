@@ -16,7 +16,6 @@ var Animate = function Animate(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 
-  log('props(Animate)', props);
   return React.createElement(
     'div',
     { style: props.style },
@@ -48,7 +47,6 @@ var enhance = compose(withHandlers({
   }
 }), lifecycle({
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-    log('newProps', newProps);
     if (this.props.to && newProps.animStarted && newProps.animStarted != this.props.animStarted) {
       var dom = ReactDOM.findDOMNode(this);
       animation.to(dom, this.props);

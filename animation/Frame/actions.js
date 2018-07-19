@@ -16,7 +16,7 @@
  */
 import { log } from 'ruucm-util';
 
-import { SAMPLE_ACTION, START_ANIM } from './constants';
+import { SAMPLE_ACTION, START_ANIM, REFRESH_PROPS } from './constants';
 
 /**
  * Sample action description
@@ -44,6 +44,14 @@ export function updateOpenForm(id, data) {
   log(data);
   return {
     type: START_ANIM + '/' + id,
+    id: id,
+    data: data
+  };
+}
+
+export function refreshProps(id, data) {
+  return {
+    type: REFRESH_PROPS + '/' + id,
     id: id,
     data: data
   };

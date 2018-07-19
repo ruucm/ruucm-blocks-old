@@ -10,7 +10,7 @@
  *   return state.set('yourStateVariable', true);
  */
 
-import { SAMPLE_ACTION, ST, START_ANIM } from './constants'
+import { SAMPLE_ACTION, ST, START_ANIM, REFRESH_PROPS } from './constants'
 
 // The initial state of the App
 const initialState = {
@@ -25,6 +25,11 @@ function frameReducer(state = initialState, action) {
     // case START_ANIM:
     //   return Object.assign({}, state, { animStarted: action.data })
     case `${START_ANIM}/${action.id}`:
+      var key = action.id + '_animStarted'
+      var obj = {}
+      obj[key] = action.data
+      return Object.assign({}, state, obj)
+    case `${REFRESH_PROPS}/${action.id}`:
       var key = action.id + '_animStarted'
       var obj = {}
       obj[key] = action.data

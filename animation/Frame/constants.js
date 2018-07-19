@@ -11,3 +11,4 @@
 
 export var SAMPLE_ACTION = 'Frame/Frame/SAMPLE_ACTION';
 export var START_ANIM = 'Frame/Frame/START_ANIM';
+export var REFRESH_PROPS = 'Frame/Frame/REFRESH_PROPS';

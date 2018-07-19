@@ -16,7 +16,6 @@ const Animate = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
 
-  log('props(Animate)', props)
   return (
     <div style={props.style}>
       {React.Children.map(props.children, child => {
@@ -52,7 +51,6 @@ const enhance = compose(
   }),
   lifecycle({
     componentWillReceiveProps(newProps) {
-      log('newProps', newProps)
       if (
         this.props.to &&
         newProps.animStarted &&

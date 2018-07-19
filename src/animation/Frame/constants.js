@@ -11,3 +11,4 @@
 
 export const SAMPLE_ACTION = 'Frame/Frame/SAMPLE_ACTION'
 export const START_ANIM = 'Frame/Frame/START_ANIM'
+export const REFRESH_PROPS = 'Frame/Frame/REFRESH_PROPS'

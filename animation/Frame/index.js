@@ -12,15 +12,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectName, selectFormOpened } from './selectors';
-import { sampleAction, updateData, updateOpenForm } from './actions';
-import { compose, lifecycle, withHandlers, mapProps } from 'recompose';
+import { sampleAction, updateData, updateOpenForm, refreshProps } from './actions';
+import { compose, lifecycle, withHandlers, mapProps, withState } from 'recompose';
 
 import { log } from 'ruucm-util';
 import { isNil, isArray, uniqueId, isString } from 'lodash';
 
 var Frame = function Frame(props) {
   var uuid = getUuid(props);
-  log('props(Frame)', props);
   return React.createElement(
     'div',
     { style: props.style },
@@ -49,7 +48,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var uuid = getUuid(ownProps);
   // Make Unique State Name
   var key = uuid + '_animStarted';
-  log('key(mapStateToProps)', key);
   var obj = { name: selectName() };
   obj[key] = selectFormOpened(uuid);
   return createStructuredSelector(obj);
@@ -61,14 +59,23 @@ function mapDispatchToProps(dispatch) {
 }
 
 // Component enhancer
-var enhance = compose(mapProps(function (_ref) {
+var enhance = compose(withState('idLock', 'setIdLock', false), mapProps(function (_ref) {
   var children = _ref.children,
       rest = _objectWithoutProperties(_ref, ['children']);
 
-  return _extends({
-    frame_id: uniqueId('frame_'),
-    children: children
-  }, rest);
+  if (!rest.idLock) {
+    var id = uniqueId('frame_');
+    rest.setIdLock(id);
+    return _extends({
+      frame_id: id,
+      children: children
+    }, rest);
+  } else {
+    return _extends({
+      frame_id: rest.idLock,
+      children: children
+    }, rest);
+  }
 }));
 export default enhance(connect(mapStateToProps, mapDispatchToProps)(withHandlers({
   startAnim: function startAnim(props) {
