@@ -28,7 +28,7 @@ import { isNil, isArray, uniqueId, isString } from 'lodash'
 const Frame = props => {
   let uuid = getUuid(props)
   return (
-    <div style={props.style}>
+    <div style={props.style} className={props.className}>
       <h1 style={{ textAlign: 'center' }}>{props.frame_id}</h1>
 
       {/* {React.Children.map(props.children, child =>

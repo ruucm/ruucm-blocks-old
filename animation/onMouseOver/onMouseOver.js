@@ -20,7 +20,8 @@ var OnMouseOver = function OnMouseOver(props) {
       onMouseOver: function onMouseOver() {
         props.startAnim(true);
       },
-      style: props.style
+      style: props.style,
+      className: props.className
     },
     React.Children.map(props.children, function (child) {
       var newChildProps = _extends({}, otherProps, {

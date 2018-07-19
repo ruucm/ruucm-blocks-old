@@ -20,7 +20,8 @@ var onTap = function onTap(props) {
       onClick: function onClick() {
         props.startAnim(true);
       },
-      style: props.style
+      style: props.style,
+      className: props.className
     },
     React.Children.map(props.children, function (child) {
       var newChildProps = _extends({}, otherProps, {

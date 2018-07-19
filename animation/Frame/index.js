@@ -22,7 +22,7 @@ var Frame = function Frame(props) {
   var uuid = getUuid(props);
   return React.createElement(
     'div',
-    { style: props.style },
+    { style: props.style, className: props.className },
     React.createElement(
       'h1',
       { style: { textAlign: 'center' } },

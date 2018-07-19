@@ -17,7 +17,7 @@ const Animate = props => {
   delete otherProps.children
 
   return (
-    <div style={props.style}>
+    <div style={props.style} className={props.className}>
       {React.Children.map(props.children, child => {
         let newChildProps = {
           animStarted: props.animStarted,

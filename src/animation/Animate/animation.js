@@ -17,6 +17,7 @@ export default {
       },
       ease: Power1.easeIn,
       force3D: false,
+      transformOrigin: 'center center', // default transformOrigin
     }
 
     /**

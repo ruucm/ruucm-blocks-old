@@ -18,6 +18,7 @@ const onTap = props => {
         props.startAnim(true)
       }}
       style={props.style}
+      className={props.className}
     >
       {React.Children.map(props.children, child => {
         let newChildProps = {
