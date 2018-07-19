@@ -22,7 +22,7 @@ const NanumMyeongjo = css`
   @font-face {
     font-family: 'NanumMyeongjoWeb';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 900;
     src: local('NanumMyeongjoExtraBold'),
       url(${fontExtraBoldWOFF2}) format('woff2'),
       url(${fontExtraBoldWOFF}) format('woff'),
