@@ -38,7 +38,6 @@ var Animate = function Animate(props) {
 
 var enhance = compose(lifecycle({
   componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-    log('newProps', newProps);
     if (this.props.to && newProps.animStarted && newProps.animStarted != this.props.animStarted) {
       var dom = ReactDOM.findDOMNode(this);
       tween = animation.to(dom, this.props);
@@ -50,7 +49,7 @@ var enhance = compose(lifecycle({
     }
 
     if (!newProps.animStarted && newProps.animStarted != this.props.animStarted) {
-      tween.reverse();
+      tween.reverse(2, false);
     }
   }
 }));

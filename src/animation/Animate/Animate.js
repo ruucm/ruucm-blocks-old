@@ -45,7 +45,6 @@ const Animate = props => {
 const enhance = compose(
   lifecycle({
     componentWillReceiveProps(newProps) {
-      log('newProps', newProps)
       if (
         this.props.to &&
         newProps.animStarted &&
@@ -68,7 +67,7 @@ const enhance = compose(
         !newProps.animStarted &&
         newProps.animStarted != this.props.animStarted
       ) {
-        tween.reverse()
+        tween.reverse(2, false)
       }
     },
   })

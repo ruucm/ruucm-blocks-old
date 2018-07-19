@@ -17,7 +17,8 @@ var OnMouseOver = function OnMouseOver(props) {
   return React.createElement(
     'div',
     {
-      onMouseOver: function onMouseOver() {
+      onMouseOver: function onMouseOver(e) {
+        e.stopPropagation();
         props.startAnim(true);
       },
       style: props.style,

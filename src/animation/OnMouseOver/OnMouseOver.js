@@ -14,7 +14,8 @@ const OnMouseOver = props => {
 
   return (
     <div
-      onMouseOver={() => {
+      onMouseOver={e => {
+        e.stopPropagation()
         props.startAnim(true)
       }}
       style={props.style}

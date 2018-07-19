@@ -17,10 +17,12 @@ var Hover = function Hover(props) {
   return React.createElement(
     'div',
     {
-      onMouseOver: function onMouseOver() {
+      onMouseOver: function onMouseOver(e) {
+        e.stopPropagation();
         props.startAnim(true);
       },
-      onMouseOut: function onMouseOut() {
+      onMouseOut: function onMouseOut(e) {
+        e.stopPropagation();
         props.startAnim(false);
       },
       style: props.style,

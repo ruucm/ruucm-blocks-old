@@ -17,7 +17,8 @@ var onTap = function onTap(props) {
   return React.createElement(
     'div',
     {
-      onClick: function onClick() {
+      onClick: function onClick(e) {
+        e.stopPropagation();
         props.startAnim(true);
       },
       style: props.style,

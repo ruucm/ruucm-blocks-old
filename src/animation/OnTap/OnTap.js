@@ -14,7 +14,8 @@ const onTap = props => {
 
   return (
     <div
-      onClick={() => {
+      onClick={e => {
+        e.stopPropagation()
         props.startAnim(true)
       }}
       style={props.style}

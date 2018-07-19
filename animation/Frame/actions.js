@@ -38,10 +38,6 @@ export function updateData(name) {
   };
 }
 export function updateOpenForm(id, data) {
-  log('updateOpenForm');
-  log('id', id);
-  log('data');
-  log(data);
   return {
     type: START_ANIM + '/' + id,
     id: id,

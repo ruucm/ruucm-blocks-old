@@ -14,10 +14,12 @@ const Hover = props => {
 
   return (
     <div
-      onMouseOver={() => {
+      onMouseOver={e => {
+        e.stopPropagation()
         props.startAnim(true)
       }}
-      onMouseOut={() => {
+      onMouseOut={e => {
+        e.stopPropagation()
         props.startAnim(false)
       }}
       style={props.style}
