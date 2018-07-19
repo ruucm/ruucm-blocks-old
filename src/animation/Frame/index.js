@@ -28,7 +28,11 @@ import { isNil, isArray, uniqueId, isString } from 'lodash'
 const Frame = props => {
   let uuid = getUuid(props)
   return (
-    <div style={props.style} className={props.className}>
+    <div
+      style={props.style}
+      className={props.className}
+      onClick={props.onClick}
+    >
       <h1
         style={{ textAlign: 'center', position: 'absolute', fontSize: '10px' }}
       >

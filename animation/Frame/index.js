@@ -22,7 +22,11 @@ var Frame = function Frame(props) {
   var uuid = getUuid(props);
   return React.createElement(
     'div',
-    { style: props.style, className: props.className },
+    {
+      style: props.style,
+      className: props.className,
+      onClick: props.onClick
+    },
     React.createElement(
       'h1',
       {
