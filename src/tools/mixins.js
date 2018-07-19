@@ -6,12 +6,14 @@ export const center = type => {
       top: 50%;
       bottom: auto;
       transform: translateY(-50%);
+      position: absolute;
     `
   else if (type == 'x')
     return css`
       left: 50%;
       right: auto;
       transform: translateX(-50%);
+      position: absolute;
     `
   else if (type == 'xy')
     return css`
@@ -20,6 +22,7 @@ export const center = type => {
       bottom: auto;
       right: auto;
       transform: translateX(-50%) translateY(-50%);
+      position: absolute;
     `
 }
 
