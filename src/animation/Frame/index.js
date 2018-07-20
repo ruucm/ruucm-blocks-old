@@ -25,8 +25,8 @@ import {
 import { log } from 'ruucm-util'
 import { isNil, isArray, uniqueId, isString } from 'lodash'
 
-const checkChildAlone = target => {
-  if (target.length > 1) return true
+const checkSelfAnimate = target => {
+  if (!isArray(target.length) && target.props.to) return true
   else return false
 }
 
@@ -68,7 +68,7 @@ const Frame = props => {
           startAnim: props.startAnim, // Override Animate props
 
           ...child.props,
-          isAlone: checkChildAlone(props.children),
+          selfAnimate: checkSelfAnimate(props.children),
           className: child.props.className,
           style: child.props.style, // Override parents style prop
         }

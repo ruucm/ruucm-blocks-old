@@ -48,9 +48,9 @@ const enhance = compose(
   withState('tween', 'setTween', -1), // Prventing Duplicated tween animation
   lifecycle({
     componentDidMount() {
-      // auto start animation (when it doesn't have trigger, Alone 😢)
-      const { tween, setTween, isAlone } = this.props
-      if (!isNil(isAlone) && !isAlone) {
+      // auto start animation (when it doesn't have trigger, selfAnimate 😁)
+      const { tween, setTween, selfAnimate } = this.props
+      if (!isNil(selfAnimate) && selfAnimate) {
         // check it has a trigger
         var dom = ReactDOM.findDOMNode(this)
         if (tween == -1) setTween(animation.to(dom, this.props))
