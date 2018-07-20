@@ -55,7 +55,6 @@ const Wrapper = styled.div`
 `
 
 const SliderComp = props => {
-  log('props', props)
   const otherProps = Object.assign({}, props)
   delete otherProps.children
   var settings = {

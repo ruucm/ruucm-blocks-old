@@ -43,7 +43,6 @@ var SampleAppendDots = function SampleAppendDots(dots) {
 var Wrapper = styled.div(_templateObject5, slickStyle);
 
 var SliderComp = function SliderComp(props) {
-  log('props', props);
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
   var settings = {
