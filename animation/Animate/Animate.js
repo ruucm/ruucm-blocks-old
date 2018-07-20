@@ -18,7 +18,11 @@ var Animate = function Animate(props) {
 
   return React.createElement(
     'div',
-    { style: props.style, className: props.className },
+    {
+      style: props.style,
+      className: props.className,
+      onClick: props.onClick
+    },
     React.Children.map(props.children, function (child) {
       var newChildProps = {
         animStarted: props.animStarted,
