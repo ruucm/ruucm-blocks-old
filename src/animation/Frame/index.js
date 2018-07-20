@@ -25,6 +25,11 @@ import {
 import { log } from 'ruucm-util'
 import { isNil, isArray, uniqueId, isString } from 'lodash'
 
+const checkChildAlone = target => {
+  if (target.length > 1) return true
+  else return false
+}
+
 const Frame = props => {
   let uuid = getUuid(props)
   return (
@@ -63,6 +68,7 @@ const Frame = props => {
           startAnim: props.startAnim, // Override Animate props
 
           ...child.props,
+          isAlone: checkChildAlone(props.children),
           className: child.props.className,
           style: child.props.style, // Override parents style prop
         }

@@ -6,9 +6,9 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { compose, lifecycle, withHandlers, withState } from 'recompose'
+import { compose, lifecycle, withState } from 'recompose'
 import { log } from 'ruucm-util'
-import { isString } from 'lodash'
+import { isString, isNil } from 'lodash'
 
 import animation from './animation'
 
@@ -48,9 +48,9 @@ const enhance = compose(
   withState('tween', 'setTween', -1), // Prventing Duplicated tween animation
   lifecycle({
     componentDidMount() {
-      // auto start animation (when it doesn't have trigger)
-      const { tween, setTween } = this.props
-      if (!this.props.trigger) {
+      // auto start animation (when it doesn't have trigger, Alone 😢)
+      const { tween, setTween, isAlone } = this.props
+      if (!isNil(isAlone) && !isAlone) {
         // check it has a trigger
         var dom = ReactDOM.findDOMNode(this)
         if (tween == -1) setTween(animation.to(dom, this.props))

@@ -18,6 +18,10 @@ import { compose, lifecycle, withHandlers, mapProps, withState } from 'recompose
 import { log } from 'ruucm-util';
 import { isNil, isArray, uniqueId, isString } from 'lodash';
 
+var checkChildAlone = function checkChildAlone(target) {
+  if (target.length > 1) return true;else return false;
+};
+
 var Frame = function Frame(props) {
   var uuid = getUuid(props);
   return React.createElement(
@@ -44,6 +48,7 @@ var Frame = function Frame(props) {
       var newChildProps = _extends({}, props, {
         animStarted: props[uuid + '_animStarted'] ? props[uuid + '_animStarted'] : false,
         startAnim: props.startAnim }, child.props, {
+        isAlone: checkChildAlone(props.children),
         className: child.props.className,
         style: child.props.style // Override parents style prop
       });

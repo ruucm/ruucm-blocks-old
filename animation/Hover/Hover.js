@@ -32,7 +32,6 @@ var Hover = function Hover(props) {
     },
     React.Children.map(props.children, function (child) {
       var newChildProps = _extends({}, otherProps, {
-        trigger: true, // validate it is a trigger
         style: child.props ? child.props.style : ''
       });
       if (isString(child)) return child;else return isString(child.type) ? child : React.cloneElement(child, newChildProps

@@ -6,9 +6,9 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { compose, lifecycle, withHandlers, withState } from 'recompose';
+import { compose, lifecycle, withState } from 'recompose';
 import { log } from 'ruucm-util';
-import { isString } from 'lodash';
+import { isString, isNil } from 'lodash';
 
 import animation from './animation';
 
@@ -41,12 +41,13 @@ var Animate = function Animate(props) {
 var enhance = compose(withState('tween', 'setTween', -1), // Prventing Duplicated tween animation
 lifecycle({
   componentDidMount: function componentDidMount() {
-    // auto start animation (when it doesn't have trigger)
+    // auto start animation (when it doesn't have trigger, Alone 😢)
     var _props = this.props,
         tween = _props.tween,
-        setTween = _props.setTween;
+        setTween = _props.setTween,
+        isAlone = _props.isAlone;
 
-    if (!this.props.trigger) {
+    if (!isNil(isAlone) && !isAlone) {
       // check it has a trigger
       var dom = ReactDOM.findDOMNode(this);
       if (tween == -1) setTween(animation.to(dom, this.props));else if (tween.reversed()) tween.play();
