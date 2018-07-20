@@ -10,35 +10,63 @@ import styled, { css } from 'styled-components'
 import { log } from 'ruucm-util'
 
 import slickStyle from './slick-style'
-import slickThemeStyle from './slick-theme-style'
+import { center } from 'ruucm-blocks/tools/mixins'
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props
-  return <div className={className + ' next-arrow'} onClick={onClick} />
+const StyledArrow = styled.div`
+  width: 10px;
+  height: 10px;
+  background: red;
+  ${center('y')};
+  ${props =>
+    props.next &&
+    css`
+      right: 0;
+    `} ${props =>
+    props.prev &&
+    css`
+      left: 0;
+    `};
+`
+const DotsWrapper = styled.div`
+  background: beige;
+  text-align: center;
+  > li {
+    list-style: none;
+    display: inline-block;
+    &.slick-active {
+      button {
+        background: blue;
+      }
+    }
+  }
+`
+const SampleNextArrow = props => {
+  return <StyledArrow next onClick={props.onClick} />
 }
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props
-  return <div className={className + ' prev-arrow'} onClick={onClick} />
+const SamplePrevArrow = props => {
+  return <StyledArrow prev onClick={props.onClick} />
+}
+const SampleAppendDots = dots => {
+  return <DotsWrapper>{dots}</DotsWrapper>
 }
 
 const Wrapper = styled.div`
   ${slickStyle};
-  ${slickThemeStyle};
 `
 
 const SliderComp = props => {
+  log('props', props)
   const otherProps = Object.assign({}, props)
   delete otherProps.children
   var settings = {
-    // dots: true,
-    dots: false,
+    dots: true,
+    appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: props.nextArrow ? props.nextArrow : <SampleNextArrow />,
+    prevArrow: props.prevArrow ? props.prevArrow : <SamplePrevArrow />,
   }
   return (
     <Wrapper style={props.style}>
