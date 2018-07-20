@@ -43,6 +43,16 @@ const Animate = props => {
 const enhance = compose(
   withState('tween', 'setTween', -1), // Prventing Duplicated tween animation
   lifecycle({
+    componentDidMount() {
+      // auto start animation (when it doesn't have trigger)
+      const { tween, setTween } = this.props
+      if (!this.props.trigger) {
+        // check it has a trigger
+        var dom = ReactDOM.findDOMNode(this)
+        if (tween == -1) setTween(animation.to(dom, this.props))
+        else if (tween.reversed()) tween.play()
+      }
+    },
     componentWillReceiveProps(newProps) {
       const { tween, setTween } = this.props
       if (
@@ -51,6 +61,7 @@ const enhance = compose(
         newProps.animStarted != this.props.animStarted
       ) {
         var dom = ReactDOM.findDOMNode(this)
+        // start animation (Prevent Duplicated anim)
         if (tween == -1) setTween(animation.to(dom, this.props))
         else if (tween.reversed()) tween.play()
       }
@@ -68,7 +79,7 @@ const enhance = compose(
         !newProps.animStarted &&
         newProps.animStarted != this.props.animStarted
       ) {
-        if (!tween.reversed()) tween.reverse()
+        if (!tween.reversed()) tween.reverse() // reverse animation
       }
     },
   })

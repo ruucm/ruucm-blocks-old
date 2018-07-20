@@ -36,13 +36,26 @@ var Animate = function Animate(props) {
 
 var enhance = compose(withState('tween', 'setTween', -1), // Prventing Duplicated tween animation
 lifecycle({
-  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+  componentDidMount: function componentDidMount() {
+    // auto start animation (when it doesn't have trigger)
     var _props = this.props,
         tween = _props.tween,
         setTween = _props.setTween;
 
+    if (!this.props.trigger) {
+      // check it has a trigger
+      var dom = ReactDOM.findDOMNode(this);
+      if (tween == -1) setTween(animation.to(dom, this.props));else if (tween.reversed()) tween.play();
+    }
+  },
+  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+    var _props2 = this.props,
+        tween = _props2.tween,
+        setTween = _props2.setTween;
+
     if (this.props.to && newProps.animStarted && newProps.animStarted != this.props.animStarted) {
       var dom = ReactDOM.findDOMNode(this);
+      // start animation (Prevent Duplicated anim)
       if (tween == -1) setTween(animation.to(dom, this.props));else if (tween.reversed()) tween.play();
     }
 
@@ -52,7 +65,7 @@ lifecycle({
     }
 
     if (!newProps.animStarted && newProps.animStarted != this.props.animStarted) {
-      if (!tween.reversed()) tween.reverse();
+      if (!tween.reversed()) tween.reverse(); // reverse animation
     }
   }
 }));

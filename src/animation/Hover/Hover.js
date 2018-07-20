@@ -30,6 +30,7 @@ const Hover = props => {
       {React.Children.map(props.children, child => {
         let newChildProps = {
           ...otherProps,
+          trigger: true, // validate it is a trigger
           style: child.props ? child.props.style : '',
         }
         if (isString(child)) return child
