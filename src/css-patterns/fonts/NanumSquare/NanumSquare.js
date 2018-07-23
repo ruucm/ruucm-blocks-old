@@ -26,7 +26,7 @@ const NanumSquare = css`
   @font-face {
     font-family: 'NanumSquareWeb';
     font-style: normal;
-    font-weight: 100;
+    font-weight: 300;
     src: local('NanumSquareLight'), url(${fontLightWOFF2}) format('woff2'),
       url(${fontLightWOFF}) format('woff'),
       url(${fontLightTTF}) format('truetype'),

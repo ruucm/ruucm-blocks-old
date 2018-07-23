@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+import { sizes } from './media'
 
 export const center = type => {
   if (type == 'y')
@@ -45,4 +46,11 @@ export const centerIconA = (iconSize, textSize) => {
       vertical-align: middle;
     }
   `
+}
+
+export const wem = pxSize => {
+  let baseScreenSize = 1920
+
+  if (screen.width > sizes.phone) return (pxSize / baseScreenSize) * 100 + 'vw'
+  else return (pxSize / baseScreenSize) * 2.5 * 100 + 'vw'
 }

@@ -59,6 +59,7 @@ lifecycle({
         setTween = _props2.setTween;
 
     if (this.props.to && newProps.animStarted && newProps.animStarted != this.props.animStarted) {
+      log('this', this);
       var dom = ReactDOM.findDOMNode(this);
       // start animation (Prevent Duplicated anim)
       if (tween == -1) setTween(animation.to(dom, this.props));else if (tween.reversed()) tween.play();

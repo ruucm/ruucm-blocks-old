@@ -64,6 +64,7 @@ const enhance = compose(
         newProps.animStarted &&
         newProps.animStarted != this.props.animStarted
       ) {
+        log('this', this)
         var dom = ReactDOM.findDOMNode(this)
         // start animation (Prevent Duplicated anim)
         if (tween == -1) setTween(animation.to(dom, this.props))
