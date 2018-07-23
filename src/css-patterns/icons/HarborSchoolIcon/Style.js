@@ -19,6 +19,10 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .harbor-school-fire:before {
+    content: '\\e912';
+    color: #e94444;
+  }
   .harbor-school-wave:before {
     content: '\\e900';
   }

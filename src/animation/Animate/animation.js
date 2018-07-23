@@ -1,4 +1,4 @@
-import { TweenMax, Elastic, Power1 } from 'gsap'
+import { TweenMax, Elastic, Power1, Power3, Power4 } from 'gsap'
 import { merge } from 'lodash'
 import { log } from 'ruucm-util'
 
