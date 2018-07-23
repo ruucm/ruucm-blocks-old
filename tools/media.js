@@ -10,9 +10,14 @@ var sizes = {
   desktop: 992,
   tablet: 768,
   phone: 426
+};
 
-  // iterate through the sizes and create a media template
-};var media = Object.keys(sizes).reduce(function (accumulator, label) {
+var isMobile = function isMobile() {
+  return screen.size < sizes.phone;
+};
+
+// iterate through the sizes and create a media template
+var media = Object.keys(sizes).reduce(function (accumulator, label) {
   // use em in breakpoints to work properly cross-browser and support users
   // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
   var emSize = sizes[label] / 16;
@@ -24,4 +29,4 @@ var sizes = {
 
 export default media;
 
-export { sizes };
+export { sizes, isMobile };

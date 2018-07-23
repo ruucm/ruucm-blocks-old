@@ -5,13 +5,17 @@ const EmptySpaceWrapper = styled.div`
   ${props =>
     props.height &&
     css`
-      height: ${props.height}px;
+      height: ${props.height.includes('px')
+        ? props.height
+        : props.height + 'px'};
     `};
   ${props =>
     props.mHeight &&
     css`
       ${media.phone`
-        height: ${props.mHeight}px;
+        height: ${
+          props.mHeight.includes('px') ? props.mHeight : props.mHeight + 'px'
+        }px;
       `};
     `};
 `
