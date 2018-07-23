@@ -38,7 +38,7 @@ const Style = css`
   .harbor-school-fish .path3:before {
     content: '\\e903';
     margin-left: -2.380859375em;
-    color: rgb(77, 80, 153);
+    color: rgb(255, 255, 255);
   }
   .harbor-school-fish .path4:before {
     content: '\\e904';
@@ -53,12 +53,12 @@ const Style = css`
   .harbor-school-fish .path6:before {
     content: '\\e906';
     margin-left: -2.380859375em;
-    color: rgb(255, 255, 255);
+    color: rgb(65, 41, 44);
   }
   .harbor-school-fish .path7:before {
     content: '\\e907';
     margin-left: -2.380859375em;
-    color: rgb(65, 41, 44);
+    color: rgb(77, 80, 153);
   }
   .harbor-school-fish .path8:before {
     content: '\\e908';
