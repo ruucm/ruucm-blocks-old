@@ -38,7 +38,7 @@ const Frame = props => {
       className={props.className}
       onClick={props.onClick}
     >
-      <h1
+      {/* <h1
         style={{
           textAlign: 'center',
           position: 'absolute',
@@ -48,16 +48,7 @@ const Frame = props => {
         }}
       >
         {props.frame_id}
-      </h1>
-
-      {/* {React.Children.map(props.children, child =>
-        React.cloneElement(child, {
-          animStarted: props[uuid + '_animStarted']
-            ? props[uuid + '_animStarted']
-            : false,
-          startAnim: props.startAnim,
-        })
-      )} */}
+      </h1> */}
 
       {React.Children.map(props.children, child => {
         let newChildProps = {

@@ -31,19 +31,6 @@ var Frame = function Frame(props) {
       className: props.className,
       onClick: props.onClick
     },
-    React.createElement(
-      'h1',
-      {
-        style: {
-          textAlign: 'center',
-          position: 'absolute',
-          fontSize: '10px',
-          zIndex: '-1',
-          color: 'blue'
-        }
-      },
-      props.frame_id
-    ),
     React.Children.map(props.children, function (child) {
       var newChildProps = _extends({}, props, {
         animStarted: props[uuid + '_animStarted'] ? props[uuid + '_animStarted'] : false,
