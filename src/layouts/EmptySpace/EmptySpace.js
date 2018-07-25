@@ -1,15 +1,19 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import media from '../../tools/media'
+
 const EmptySpaceWrapper = styled.div`
-  ${props =>
-    props.height &&
-    css`
-      height: ${props.height.includes('px') || props.height.includes('vw')
-        ? props.height
-        : props.height + 'px'};
-    `};
-  ${props =>
+  ${props => {
+    let height = props.height.toString()
+    return (
+      props.height &&
+      css`
+        height: ${height.includes('px') || height.includes('vw')
+          ? height
+          : height + 'px'};
+      `
+    )
+  }} ${props =>
     props.mHeight &&
     css`
       ${media.phone`
