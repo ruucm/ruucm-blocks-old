@@ -4,7 +4,8 @@ import { center } from '../../../tools/mixins'
 
 const FerryWrapper = styled.span`
   position: absolute;
-  ${center('y')} left: 50%;
+  ${center('y')};
+  left: calc(50% - 43px);
   display: inline-block;
   width: 86px;
   height: 89px;
