@@ -64,6 +64,8 @@ const SliderComp = props => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    vertical: vertical ? vertical : false,
+    verticalSwiping: verticalSwiping ? verticalSwiping : false,
     nextArrow: props.nextArrow ? props.nextArrow : <SampleNextArrow />,
     prevArrow: props.prevArrow ? props.prevArrow : <SamplePrevArrow />,
   }
