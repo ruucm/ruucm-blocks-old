@@ -1,5 +1,6 @@
 // these sizes are arbitrary and you can set them to whatever you wish
 import { css } from 'styled-components'
+import { log } from 'ruucm-util'
 
 const sizes = {
   giant: 1170,
@@ -9,7 +10,10 @@ const sizes = {
 }
 
 const isMobile = () => {
-  return screen.size < sizes.phone
+  log('screen.size')
+  log(window.screen.availWidth)
+  log('sizes.phone', sizes.phone)
+  return window.screen.availWidth < sizes.phone
 }
 
 // iterate through the sizes and create a media template

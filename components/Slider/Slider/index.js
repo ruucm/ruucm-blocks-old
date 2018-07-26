@@ -55,6 +55,10 @@ var SliderComp = function SliderComp(props) {
     vertical: props.vertical ? props.vertical : false,
     verticalSwiping: props.verticalSwiping ? props.verticalSwiping : false,
     afterChange: props.afterChange ? props.afterChange : void 0,
+
+    beforeChange: props.beforeChange ? props.beforeChange : void 0,
+    touchThreshold: props.touchThreshold ? props.touchThreshold : 5,
+
     nextArrow: props.nextArrow ? props.nextArrow : React.createElement(SampleNextArrow, null),
     prevArrow: props.prevArrow ? props.prevArrow : React.createElement(SamplePrevArrow, null)
   };

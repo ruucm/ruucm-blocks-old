@@ -67,6 +67,10 @@ const SliderComp = props => {
     vertical: props.vertical ? props.vertical : false,
     verticalSwiping: props.verticalSwiping ? props.verticalSwiping : false,
     afterChange: props.afterChange ? props.afterChange : void 0,
+
+    beforeChange: props.beforeChange ? props.beforeChange : void 0,
+    touchThreshold: props.touchThreshold ? props.touchThreshold : 5,
+
     nextArrow: props.nextArrow ? props.nextArrow : <SampleNextArrow />,
     prevArrow: props.prevArrow ? props.prevArrow : <SamplePrevArrow />,
   }
