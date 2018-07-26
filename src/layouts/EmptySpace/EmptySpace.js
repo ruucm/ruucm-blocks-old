@@ -13,7 +13,8 @@ const EmptySpaceWrapper = styled.div`
           : height + 'px'};
       `
     )
-  }} ${props =>
+  }};
+  ${props =>
     props.mHeight &&
     css`
       ${media.phone`
@@ -21,7 +22,7 @@ const EmptySpaceWrapper = styled.div`
           props.mHeight.includes('px') || props.mHeight.includes('vw')
             ? props.mHeight
             : props.mHeight + 'px'
-        }px;
+        };
       `};
     `};
 `

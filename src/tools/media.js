@@ -10,9 +10,6 @@ const sizes = {
 }
 
 const isMobile = () => {
-  log('screen.size')
-  log(window.screen.availWidth)
-  log('sizes.phone', sizes.phone)
   return window.screen.availWidth < sizes.phone
 }
 

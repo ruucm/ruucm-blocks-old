@@ -13,6 +13,9 @@ var Column = function Column(_ref) {
   var parentClassName = className ? ' ' + className : '';
   var hideClass = void 0;
   switch (hide) {
+    case 'all':
+      hideClass = ' d-none';
+      break;
     case 'phone':
       hideClass = ' d-none d-sm-block';
       break;

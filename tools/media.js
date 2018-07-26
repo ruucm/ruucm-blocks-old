@@ -14,9 +14,6 @@ var sizes = {
 };
 
 var isMobile = function isMobile() {
-  log('screen.size');
-  log(window.screen.availWidth);
-  log('sizes.phone', sizes.phone);
   return window.screen.availWidth < sizes.phone;
 };
 

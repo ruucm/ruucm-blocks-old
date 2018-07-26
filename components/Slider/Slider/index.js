@@ -49,15 +49,16 @@ var SliderComp = function SliderComp(props) {
     dots: true,
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     vertical: props.vertical ? props.vertical : false,
     verticalSwiping: props.verticalSwiping ? props.verticalSwiping : false,
-    afterChange: props.afterChange ? props.afterChange : void 0,
 
+    afterChange: props.afterChange ? props.afterChange : void 0,
     beforeChange: props.beforeChange ? props.beforeChange : void 0,
+
     touchThreshold: props.touchThreshold ? props.touchThreshold : 5,
+    speed: props.vertical ? 1000 : 500,
 
     nextArrow: props.nextArrow ? props.nextArrow : React.createElement(SampleNextArrow, null),
     prevArrow: props.prevArrow ? props.prevArrow : React.createElement(SamplePrevArrow, null)
