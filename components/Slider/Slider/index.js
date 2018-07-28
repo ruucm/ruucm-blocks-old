@@ -45,11 +45,12 @@ var Wrapper = styled.div(_templateObject5, slickStyle);
 var SliderComp = function SliderComp(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
+  log('props(SliderComp)', props);
   var settings = {
     dots: true,
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: props.slidesToShow ? props.slidesToShow : 1,
     slidesToScroll: 1,
     vertical: props.vertical ? props.vertical : false,
     verticalSwiping: props.verticalSwiping ? props.verticalSwiping : false,
@@ -63,6 +64,7 @@ var SliderComp = function SliderComp(props) {
     nextArrow: props.nextArrow ? props.nextArrow : React.createElement(SampleNextArrow, null),
     prevArrow: props.prevArrow ? props.prevArrow : React.createElement(SamplePrevArrow, null)
   };
+  log(';settings', settings);
   return React.createElement(
     Wrapper,
     { style: props.style },

@@ -57,11 +57,12 @@ const Wrapper = styled.div`
 const SliderComp = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
+  log('props(SliderComp)', props)
   var settings = {
     dots: true,
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: props.slidesToShow ? props.slidesToShow : 1,
     slidesToScroll: 1,
     vertical: props.vertical ? props.vertical : false,
     verticalSwiping: props.verticalSwiping ? props.verticalSwiping : false,
@@ -75,6 +76,7 @@ const SliderComp = props => {
     nextArrow: props.nextArrow ? props.nextArrow : <SampleNextArrow />,
     prevArrow: props.prevArrow ? props.prevArrow : <SamplePrevArrow />,
   }
+  log(';settings', settings)
   return (
     <Wrapper style={props.style}>
       {props.children ? (
