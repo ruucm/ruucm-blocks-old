@@ -16,6 +16,7 @@ const StyledArrow = styled.div`
   width: 10px;
   height: 10px;
   background: red;
+  z-index: 1;
   ${center('y')};
   ${props =>
     props.next &&
