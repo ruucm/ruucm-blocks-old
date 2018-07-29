@@ -1,16 +1,14 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { center } from '../../../tools/mixins'
-import { wem } from 'ruucm-blocks/tools/mixins'
 
 const FerryWrapper = styled.span`
   position: absolute;
-  ${center('y')};
-  left: calc(50% - ${wem(43)});
+  ${center('y')} left: 50%;
   display: inline-block;
-  width: ${wem(86)};
-  height: ${wem(89)};
-  border-radius: ${wem(3)} 0 0 0;
+  width: 86px;
+  height: 89px;
+  border-radius: 3px 0 0 0;
   z-index: 1;
   animation: bop 0.48s ease-in-out alternate infinite;
 
@@ -23,8 +21,8 @@ const FerryWrapper = styled.span`
 const Ferry = () => {
   return (
     <svg
-      width={wem(86)}
-      height={wem(100)}
+      width="86"
+      height="100"
       viewBox="0 0 86 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -125,11 +123,11 @@ const Ferry = () => {
 
 const Waves = styled.span`
   position: absolute;
-  bottom: -${wem(37)};
+  bottom: -37px;
   display: block;
   left: 0;
-  width: ${wem(100)};
-  height: ${wem(50)};
+  width: 100px;
+  height: 50px;
   background-size: 133% 144%;
   animation: sail 4s linear infinite;
 
@@ -141,7 +139,7 @@ const Waves = styled.span`
 
   @keyframes sail {
     to {
-      background-position: ${wem(400)} 0;
+      background-position: 400px 0;
     }
   }
 `
@@ -169,15 +167,7 @@ function b64EncodeUnicode(str) {
 
 function getWaveImage(color) {
   const waveString =
-    '<svg width=' +
-    wem(115) +
-    ' height=' +
-    wem(85) +
-    ' xmlns="http://www.w3.org/2000/svg"><g><title>background</title><rect fill="none" id="canvas_background" height=' +
-    wem(87) +
-    ' width=' +
-    wem(157) +
-    ' y="-1" x="-1"/><g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid"><rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/></g></g><g><title>Layer 1</title><g id="svg_9"><ellipse ry="26" rx="26" id="svg_1" cy="33.5" cx="34.5" stroke-width="1.5" fill="' +
+    '<svg width="155" height="85" xmlns="http://www.w3.org/2000/svg"><g><title>background</title><rect fill="none" id="canvas_background" height="87" width="157" y="-1" x="-1"/><g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid"><rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/></g></g><g><title>Layer 1</title><g id="svg_9"><ellipse ry="26" rx="26" id="svg_1" cy="33.5" cx="34.5" stroke-width="1.5" fill="' +
     color +
     '"/><ellipse ry="26" rx="26" id="svg_3" cy="33.5" cx="63.868493" stroke-width="1.5" fill="' +
     color +

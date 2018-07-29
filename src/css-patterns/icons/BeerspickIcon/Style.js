@@ -19,24 +19,6 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .beerspick-circle-with-cross:before {
-    content: '\\e912';
-  }
-  .beerspick-keyboard_arrow_right:before {
-    content: '\\e90d';
-  }
-  .beerspick-keyboard_arrow_left:before {
-    content: '\\e90e';
-  }
-  .beerspick-check-square-regular:before {
-    content: '\\e90f';
-  }
-  .beerspick-check-square-solid:before {
-    content: '\\e910';
-  }
-  .beerspick-shopping-cart-solid:before {
-    content: '\\e911';
-  }
   .beerspick-beer-speak-banner:before {
     content: '\\e908';
   }

@@ -1,4 +1,4 @@
-var _templateObject = _taggedTemplateLiteral(['\n  width: 10px;\n  height: 10px;\n  background: red;\n  z-index: 1;\n  ', ';\n  ', ' ', ';\n'], ['\n  width: 10px;\n  height: 10px;\n  background: red;\n  z-index: 1;\n  ', ';\n  ', ' ', ';\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  width: 10px;\n  height: 10px;\n  background: red;\n  ', ';\n  ', ' ', ';\n'], ['\n  width: 10px;\n  height: 10px;\n  background: red;\n  ', ';\n  ', ' ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n      right: 0;\n    '], ['\n      right: 0;\n    ']),
     _templateObject3 = _taggedTemplateLiteral(['\n      left: 0;\n    '], ['\n      left: 0;\n    ']),
     _templateObject4 = _taggedTemplateLiteral(['\n  background: beige;\n  text-align: center;\n  > li {\n    list-style: none;\n    display: inline-block;\n    &.slick-active {\n      button {\n        background: blue;\n      }\n    }\n  }\n'], ['\n  background: beige;\n  text-align: center;\n  > li {\n    list-style: none;\n    display: inline-block;\n    &.slick-active {\n      button {\n        background: blue;\n      }\n    }\n  }\n']),
@@ -45,26 +45,16 @@ var Wrapper = styled.div(_templateObject5, slickStyle);
 var SliderComp = function SliderComp(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
-  log('props(SliderComp)', props);
   var settings = {
     dots: true,
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
-    slidesToShow: props.slidesToShow ? props.slidesToShow : 1,
+    speed: 500,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    vertical: props.vertical ? props.vertical : false,
-    verticalSwiping: props.verticalSwiping ? props.verticalSwiping : false,
-
-    afterChange: props.afterChange ? props.afterChange : void 0,
-    beforeChange: props.beforeChange ? props.beforeChange : void 0,
-
-    touchThreshold: props.touchThreshold ? props.touchThreshold : 5,
-    speed: props.vertical ? 1000 : 500,
-
     nextArrow: props.nextArrow ? props.nextArrow : React.createElement(SampleNextArrow, null),
     prevArrow: props.prevArrow ? props.prevArrow : React.createElement(SamplePrevArrow, null)
   };
-  log(';settings', settings);
   return React.createElement(
     Wrapper,
     { style: props.style },

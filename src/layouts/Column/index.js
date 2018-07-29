@@ -6,9 +6,6 @@ const Column = ({ col, mCol, hide, style, children, className }) => {
   let parentClassName = className ? ' ' + className : ''
   let hideClass
   switch (hide) {
-    case 'all':
-      hideClass = ' d-none'
-      break
     case 'phone':
       hideClass = ' d-none d-sm-block'
       break

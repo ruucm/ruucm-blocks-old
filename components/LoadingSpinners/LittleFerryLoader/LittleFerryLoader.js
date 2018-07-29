@@ -1,5 +1,5 @@
-var _templateObject = _taggedTemplateLiteral(['\n  position: absolute;\n  ', ';\n  left: calc(50% - ', ');\n  display: inline-block;\n  width: ', ';\n  height: ', ';\n  border-radius: ', ' 0 0 0;\n  z-index: 1;\n  animation: bop 0.48s ease-in-out alternate infinite;\n\n  @keyframes bop {\n    to {\n      transform: translateY(-40%);\n    }\n  }\n'], ['\n  position: absolute;\n  ', ';\n  left: calc(50% - ', ');\n  display: inline-block;\n  width: ', ';\n  height: ', ';\n  border-radius: ', ' 0 0 0;\n  z-index: 1;\n  animation: bop 0.48s ease-in-out alternate infinite;\n\n  @keyframes bop {\n    to {\n      transform: translateY(-40%);\n    }\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  position: absolute;\n  bottom: -', ';\n  display: block;\n  left: 0;\n  width: ', ';\n  height: ', ';\n  background-size: 133% 144%;\n  animation: sail 4s linear infinite;\n\n  ', ';\n\n  @keyframes sail {\n    to {\n      background-position: ', ' 0;\n    }\n  }\n'], ['\n  position: absolute;\n  bottom: -', ';\n  display: block;\n  left: 0;\n  width: ', ';\n  height: ', ';\n  background-size: 133% 144%;\n  animation: sail 4s linear infinite;\n\n  ', ';\n\n  @keyframes sail {\n    to {\n      background-position: ', ' 0;\n    }\n  }\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  position: absolute;\n  ', ' left: 50%;\n  display: inline-block;\n  width: 86px;\n  height: 89px;\n  border-radius: 3px 0 0 0;\n  z-index: 1;\n  animation: bop 0.48s ease-in-out alternate infinite;\n\n  @keyframes bop {\n    to {\n      transform: translateY(-40%);\n    }\n  }\n'], ['\n  position: absolute;\n  ', ' left: 50%;\n  display: inline-block;\n  width: 86px;\n  height: 89px;\n  border-radius: 3px 0 0 0;\n  z-index: 1;\n  animation: bop 0.48s ease-in-out alternate infinite;\n\n  @keyframes bop {\n    to {\n      transform: translateY(-40%);\n    }\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  position: absolute;\n  bottom: -37px;\n  display: block;\n  left: 0;\n  width: 100px;\n  height: 50px;\n  background-size: 133% 144%;\n  animation: sail 4s linear infinite;\n\n  ', ';\n\n  @keyframes sail {\n    to {\n      background-position: 400px 0;\n    }\n  }\n'], ['\n  position: absolute;\n  bottom: -37px;\n  display: block;\n  left: 0;\n  width: 100px;\n  height: 50px;\n  background-size: 133% 144%;\n  animation: sail 4s linear infinite;\n\n  ', ';\n\n  @keyframes sail {\n    to {\n      background-position: 400px 0;\n    }\n  }\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n      background-image: url(', ');\n    '], ['\n      background-image: url(', ');\n    ']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -7,15 +7,14 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { center } from '../../../tools/mixins';
-import { wem } from 'ruucm-blocks/tools/mixins';
 
-var FerryWrapper = styled.span(_templateObject, center('y'), wem(43), wem(86), wem(89), wem(3));
+var FerryWrapper = styled.span(_templateObject, center('y'));
 var Ferry = function Ferry() {
   return React.createElement(
     'svg',
     {
-      width: wem(86),
-      height: wem(100),
+      width: '86',
+      height: '100',
       viewBox: '0 0 86 100',
       fill: 'none',
       xmlns: 'http://www.w3.org/2000/svg'
@@ -113,9 +112,9 @@ var Ferry = function Ferry() {
   );
 };
 
-var Waves = styled.span(_templateObject2, wem(37), wem(100), wem(50), function (props) {
+var Waves = styled.span(_templateObject2, function (props) {
   return props.waveColor && css(_templateObject3, getWaveImage(props.waveColor));
-}, wem(400));
+});
 
 export var LittleFerryLoader = function LittleFerryLoader(props) {
   return React.createElement(
@@ -136,7 +135,7 @@ function b64EncodeUnicode(str) {
 }
 
 function getWaveImage(color) {
-  var waveString = '<svg width=' + wem(115) + ' height=' + wem(85) + ' xmlns="http://www.w3.org/2000/svg"><g><title>background</title><rect fill="none" id="canvas_background" height=' + wem(87) + ' width=' + wem(157) + ' y="-1" x="-1"/><g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid"><rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/></g></g><g><title>Layer 1</title><g id="svg_9"><ellipse ry="26" rx="26" id="svg_1" cy="33.5" cx="34.5" stroke-width="1.5" fill="' + color + '"/><ellipse ry="26" rx="26" id="svg_3" cy="33.5" cx="63.868493" stroke-width="1.5" fill="' + color + '"/><ellipse ry="26" rx="26" id="svg_6" cy="33.5" cx="91.71888" stroke-width="1.5" fill="' + color + '"/><ellipse ry="26" rx="26" id="svg_7" cy="33.5" cx="121.087373" stroke-width="1.5" fill="' + color + '"/><rect id="svg_8" height="46" width="140.000006" y="32.5" x="7.5" stroke-width="1.5" fill="' + color + '"/></g></g></svg>';
+  var waveString = '<svg width="155" height="85" xmlns="http://www.w3.org/2000/svg"><g><title>background</title><rect fill="none" id="canvas_background" height="87" width="157" y="-1" x="-1"/><g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid"><rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/></g></g><g><title>Layer 1</title><g id="svg_9"><ellipse ry="26" rx="26" id="svg_1" cy="33.5" cx="34.5" stroke-width="1.5" fill="' + color + '"/><ellipse ry="26" rx="26" id="svg_3" cy="33.5" cx="63.868493" stroke-width="1.5" fill="' + color + '"/><ellipse ry="26" rx="26" id="svg_6" cy="33.5" cx="91.71888" stroke-width="1.5" fill="' + color + '"/><ellipse ry="26" rx="26" id="svg_7" cy="33.5" cx="121.087373" stroke-width="1.5" fill="' + color + '"/><rect id="svg_8" height="46" width="140.000006" y="32.5" x="7.5" stroke-width="1.5" fill="' + color + '"/></g></g></svg>';
   var waveImage = 'data:image/svg+xml;base64,' + b64EncodeUnicode(waveString);
 
   return waveImage;

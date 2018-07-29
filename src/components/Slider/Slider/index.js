@@ -16,7 +16,6 @@ const StyledArrow = styled.div`
   width: 10px;
   height: 10px;
   background: red;
-  z-index: 1;
   ${center('y')};
   ${props =>
     props.next &&
@@ -58,26 +57,16 @@ const Wrapper = styled.div`
 const SliderComp = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
-  log('props(SliderComp)', props)
   var settings = {
     dots: true,
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
-    slidesToShow: props.slidesToShow ? props.slidesToShow : 1,
+    speed: 500,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    vertical: props.vertical ? props.vertical : false,
-    verticalSwiping: props.verticalSwiping ? props.verticalSwiping : false,
-
-    afterChange: props.afterChange ? props.afterChange : void 0,
-    beforeChange: props.beforeChange ? props.beforeChange : void 0,
-
-    touchThreshold: props.touchThreshold ? props.touchThreshold : 5,
-    speed: props.vertical ? 1000 : 500,
-
     nextArrow: props.nextArrow ? props.nextArrow : <SampleNextArrow />,
     prevArrow: props.prevArrow ? props.prevArrow : <SamplePrevArrow />,
   }
-  log(';settings', settings)
   return (
     <Wrapper style={props.style}>
       {props.children ? (

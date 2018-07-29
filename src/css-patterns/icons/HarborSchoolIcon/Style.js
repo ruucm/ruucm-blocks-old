@@ -19,6 +19,22 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .harbor-school-watermark:before {
+    content: '\\e916';
+    color: #284ea2;
+  }
+  .harbor-school-arrow:before {
+    content: '\\e913';
+    color: #fff;
+  }
+  .harbor-school-arrow_2:before {
+    content: '\\e914';
+    color: #fff;
+  }
+  .harbor-school-Google_logo_white_2015:before {
+    content: '\\e915';
+    color: #e9e9e9;
+  }
   .harbor-school-fire:before {
     content: '\\e912';
     color: #e94444;

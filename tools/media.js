@@ -4,7 +4,6 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 // these sizes are arbitrary and you can set them to whatever you wish
 import { css } from 'styled-components';
-import { log } from 'ruucm-util';
 
 var sizes = {
   giant: 1170,
@@ -14,7 +13,7 @@ var sizes = {
 };
 
 var isMobile = function isMobile() {
-  return window.screen.availWidth < sizes.phone;
+  return screen.size < sizes.phone;
 };
 
 // iterate through the sizes and create a media template
