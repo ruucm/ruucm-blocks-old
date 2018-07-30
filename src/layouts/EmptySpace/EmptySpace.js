@@ -1,25 +1,31 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import media from '../../tools/media'
+
 const EmptySpaceWrapper = styled.div`
-  ${props =>
-    props.height &&
-    css`
-      height: ${props.height.includes('px') || props.height.includes('vw')
-        ? props.height
-        : props.height + 'px'};
-    `};
-  ${props =>
-    props.mHeight &&
-    css`
-      ${media.phone`
-        height: ${
-          props.mHeight.includes('px') || props.mHeight.includes('vw')
-            ? props.mHeight
-            : props.mHeight + 'px'
-        }px;
-      `};
-    `};
+  ${props => {
+    let height = props.height + ''
+    return (
+      props.height &&
+      css`
+        height: ${height.includes('px') || height.includes('vw')
+          ? height
+          : height + 'px'};
+      `
+    )
+  }};
+
+  ${props => {
+    let mHeight = props.mHeight + ''
+    return (
+      props.mHeight &&
+      css`
+        height: ${mHeight.includes('px') || mHeight.includes('vw')
+          ? mHeight
+          : mHeight + 'px'};
+      `
+    )
+  }};
 `
 
 const EmptySpace = props => {
