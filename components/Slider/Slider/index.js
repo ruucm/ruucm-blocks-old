@@ -1,4 +1,4 @@
-var _templateObject = _taggedTemplateLiteral(['\n  width: 10px;\n  height: 10px;\n  background: red;\n  ', ';\n  ', ' ', ';\n'], ['\n  width: 10px;\n  height: 10px;\n  background: red;\n  ', ';\n  ', ' ', ';\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  width: 10px;\n  height: 10px;\n  background: red;\n  z-index: 1;\n  ', ';\n  ', ' ', ';\n'], ['\n  width: 10px;\n  height: 10px;\n  background: red;\n  z-index: 1;\n  ', ';\n  ', ' ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n      right: 0;\n    '], ['\n      right: 0;\n    ']),
     _templateObject3 = _taggedTemplateLiteral(['\n      left: 0;\n    '], ['\n      left: 0;\n    ']),
     _templateObject4 = _taggedTemplateLiteral(['\n  background: beige;\n  text-align: center;\n  > li {\n    list-style: none;\n    display: inline-block;\n    &.slick-active {\n      button {\n        background: blue;\n      }\n    }\n  }\n'], ['\n  background: beige;\n  text-align: center;\n  > li {\n    list-style: none;\n    display: inline-block;\n    &.slick-active {\n      button {\n        background: blue;\n      }\n    }\n  }\n']),
