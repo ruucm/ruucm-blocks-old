@@ -8,7 +8,7 @@ var Column = function Column(_ref) {
       children = _ref.children,
       className = _ref.className;
 
-  var colClass = col ? 'col-sm-' + col : '';
+  var colClass = col ? 'col-lg-' + col : '';
   var mColClass = mCol ? ' col-' + mCol : '';
   var parentClassName = className ? ' ' + className : '';
   var hideClass = void 0;

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Column = ({ col, mCol, hide, style, children, className }) => {
-  let colClass = col ? 'col-sm-' + col : ''
+  let colClass = col ? 'col-lg-' + col : ''
   let mColClass = mCol ? ' col-' + mCol : ''
   let parentClassName = className ? ' ' + className : ''
   let hideClass

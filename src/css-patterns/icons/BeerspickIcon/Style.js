@@ -19,6 +19,9 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .beerspick-favorite:before {
+    content: '\\e913';
+  }
   .beerspick-circle-with-cross:before {
     content: '\\e912';
   }
