@@ -1,7 +1,7 @@
 var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n\n  ', ';\n'], ['\n  ', ';\n\n  ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n        height: ', ';\n      '], ['\n        height: ', ';\n      ']),
     _templateObject3 = _taggedTemplateLiteral(['\n    ', ';\n  '], ['\n    ', ';\n  ']),
-    _templateObject4 = _taggedTemplateLiteral(['\n          background: rebeccapurple;\n          height: ', ';\n        '], ['\n          background: rebeccapurple;\n          height: ', ';\n        ']);
+    _templateObject4 = _taggedTemplateLiteral(['\n          height: ', ';\n        '], ['\n          height: ', ';\n        ']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 

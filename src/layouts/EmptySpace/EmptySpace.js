@@ -21,7 +21,6 @@ const EmptySpaceWrapper = styled.div`
       return (
         (props.mHeight || props.mHeight == 0) &&
         css`
-          background: rebeccapurple;
           height: ${mHeight.includes('px') || mHeight.includes('vw')
             ? mHeight
             : mHeight + 'px'};
