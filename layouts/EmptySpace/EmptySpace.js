@@ -1,7 +1,7 @@
 var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n\n  ', ';\n'], ['\n  ', ';\n\n  ', ';\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n        height: ', ';\n      '], ['\n        height: ', ';\n      ']),
     _templateObject3 = _taggedTemplateLiteral(['\n    ', ';\n  '], ['\n    ', ';\n  ']),
-    _templateObject4 = _taggedTemplateLiteral(['\n          height: ', ';\n        '], ['\n          height: ', ';\n        ']);
+    _templateObject4 = _taggedTemplateLiteral(['\n          background: rebeccapurple;\n          height: ', ';\n        '], ['\n          background: rebeccapurple;\n          height: ', ';\n        ']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -14,7 +14,7 @@ var EmptySpaceWrapper = styled.div(_templateObject, function (props) {
   return props.height && css(_templateObject2, height.includes('px') || height.includes('vw') ? height : height + 'px');
 }, media.phone(_templateObject3, function (props) {
   var mHeight = props.mHeight + '';
-  return props.mHeight && css(_templateObject4, mHeight.includes('px') || mHeight.includes('vw') ? mHeight : mHeight + 'px');
+  return (props.mHeight || props.mHeight == 0) && css(_templateObject4, mHeight.includes('px') || mHeight.includes('vw') ? mHeight : mHeight + 'px');
 }));
 
 var EmptySpace = function EmptySpace(props) {
