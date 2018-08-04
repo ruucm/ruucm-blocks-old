@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import media from '../../tools/media'
+import media from 'ruucm-blocks/tools/media'
 
 const EmptySpaceWrapper = styled.div`
   ${props => {
@@ -15,17 +15,19 @@ const EmptySpaceWrapper = styled.div`
     )
   }};
 
-  ${props => {
-    let mHeight = props.mHeight + ''
-    return (
-      props.mHeight &&
-      css`
-        height: ${mHeight.includes('px') || mHeight.includes('vw')
-          ? mHeight
-          : mHeight + 'px'};
-      `
-    )
-  }};
+  ${media.phone`
+    ${props => {
+      let mHeight = props.mHeight + ''
+      return (
+        props.mHeight &&
+        css`
+          height: ${mHeight.includes('px') || mHeight.includes('vw')
+            ? mHeight
+            : mHeight + 'px'};
+        `
+      )
+    }};
+  `};
 `
 
 const EmptySpace = props => {
