@@ -26,7 +26,7 @@ import { log } from 'ruucm-util'
 import { isNil, isArray, uniqueId, isString } from 'lodash'
 
 const checkSelfAnimate = target => {
-  if (!isArray(target.length) && target.props.to) return true
+  if (!isArray(target.length) && target.props && target.props.to) return true
   else return false
 }
 
