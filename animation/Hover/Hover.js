@@ -13,6 +13,9 @@ import { isString } from 'lodash';
 var Hover = function Hover(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
+  var startAnim = props.startAnim ? props.startAnim : function () {
+    return false;
+  };
 
   return React.createElement(
     'div',
@@ -20,12 +23,12 @@ var Hover = function Hover(props) {
       onMouseOver: function onMouseOver(e) {
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
-        props.startAnim(true);
+        startAnim(true);
       },
       onMouseOut: function onMouseOut(e) {
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
-        props.startAnim(false);
+        startAnim(false);
       },
       style: props.style,
       className: props.className

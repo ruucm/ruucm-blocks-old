@@ -11,12 +11,13 @@ import { isString } from 'lodash'
 const OnMouseOver = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
+  let startAnim = props.startAnim ? props.startAnim : () => false
 
   return (
     <div
       onMouseOver={e => {
         e.stopPropagation()
-        props.startAnim(true)
+        startAnim(true)
       }}
       style={props.style}
       className={props.className}

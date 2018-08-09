@@ -13,13 +13,16 @@ import { isString, isEmpty } from 'lodash';
 var onTap = function onTap(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
+  var startAnim = props.startAnim ? props.startAnim : function () {
+    return false;
+  };
 
   return React.createElement(
     'div',
     {
       onClick: function onClick(e) {
         e.stopPropagation();
-        props.startAnim(true);
+        startAnim(true);
       },
       style: props.style,
       className: props.className

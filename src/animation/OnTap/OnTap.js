@@ -11,12 +11,13 @@ import { isString, isEmpty } from 'lodash'
 const onTap = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
+  let startAnim = props.startAnim ? props.startAnim : () => false
 
   return (
     <div
       onClick={e => {
         e.stopPropagation()
-        props.startAnim(true)
+        startAnim(true)
       }}
       style={props.style}
       className={props.className}

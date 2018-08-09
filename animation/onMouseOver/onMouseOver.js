@@ -13,13 +13,16 @@ import { isString } from 'lodash';
 var OnMouseOver = function OnMouseOver(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
+  var startAnim = props.startAnim ? props.startAnim : function () {
+    return false;
+  };
 
   return React.createElement(
     'div',
     {
       onMouseOver: function onMouseOver(e) {
         e.stopPropagation();
-        props.startAnim(true);
+        startAnim(true);
       },
       style: props.style,
       className: props.className

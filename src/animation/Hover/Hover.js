@@ -11,18 +11,19 @@ import { isString } from 'lodash'
 const Hover = props => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
+  let startAnim = props.startAnim ? props.startAnim : () => false
 
   return (
     <div
       onMouseOver={e => {
         e.stopPropagation()
         e.nativeEvent.stopImmediatePropagation()
-        props.startAnim(true)
+        startAnim(true)
       }}
       onMouseOut={e => {
         e.stopPropagation()
         e.nativeEvent.stopImmediatePropagation()
-        props.startAnim(false)
+        startAnim(false)
       }}
       style={props.style}
       className={props.className}
