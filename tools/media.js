@@ -13,7 +13,7 @@ var sizes = {
 };
 
 var isMobile = function isMobile() {
-  return screen.size < sizes.phone;
+  return screen.width < sizes.phone;
 };
 
 // iterate through the sizes and create a media template
