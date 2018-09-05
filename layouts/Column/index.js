@@ -8,11 +8,14 @@ var Column = function Column(_ref) {
       children = _ref.children,
       className = _ref.className;
 
-  var colClass = col ? 'col-lg-' + col : '';
+  var colClass = col ? 'col-sm-' + col : '';
   var mColClass = mCol ? ' col-' + mCol : '';
   var parentClassName = className ? ' ' + className : '';
   var hideClass = void 0;
   switch (hide) {
+    case 'all':
+      hideClass = ' d-none';
+      break;
     case 'phone':
       hideClass = ' d-none d-sm-block';
       break;
