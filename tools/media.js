@@ -1,9 +1,20 @@
-var _templateObject = _taggedTemplateLiteral(['\n    @media (max-width: ', 'em) {\n      ', ';\n    }\n  '], ['\n    @media (max-width: ', 'em) {\n      ', ';\n    }\n  ']);
+'use strict';
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isMobile = exports.sizes = undefined;
 
-// these sizes are arbitrary and you can set them to whatever you wish
-import { css } from 'styled-components';
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
+
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
+
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n    @media (max-width: ', 'em) {\n      ', ';\n    }\n  '], ['\n    @media (max-width: ', 'em) {\n      ', ';\n    }\n  ']); // these sizes are arbitrary and you can set them to whatever you wish
+
+
+var _styledComponents = require('styled-components');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var sizes = {
   giant: 1170,
@@ -22,11 +33,11 @@ var media = Object.keys(sizes).reduce(function (accumulator, label) {
   // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
   var emSize = sizes[label] / 16;
   accumulator[label] = function () {
-    return css(_templateObject, emSize, css.apply(undefined, arguments));
+    return (0, _styledComponents.css)(_templateObject, emSize, _styledComponents.css.apply(undefined, arguments));
   };
   return accumulator;
 }, {});
 
-export default media;
-
-export { sizes, isMobile };
+exports.default = media;
+exports.sizes = sizes;
+exports.isMobile = isMobile;

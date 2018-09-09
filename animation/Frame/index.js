@@ -1,6 +1,36 @@
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+'use strict';
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require('react-redux');
+
+var _reselect = require('reselect');
+
+var _selectors = require('./selectors');
+
+var _actions = require('./actions');
+
+var _recompose = require('recompose');
+
+var _ruucmUtil = require('ruucm-util');
+
+var _lodash = require('lodash');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  *
@@ -8,38 +38,28 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
  *
  */
 
-import React from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { selectName, selectFormOpened } from './selectors';
-import { sampleAction, updateData, updateOpenForm, refreshProps } from './actions';
-import { compose, lifecycle, withHandlers, mapProps, withState } from 'recompose';
-
-import { log } from 'ruucm-util';
-import { isNil, isArray, uniqueId, isString } from 'lodash';
-
 var checkSelfAnimate = function checkSelfAnimate(target) {
-  if (!isArray(target.length) && target.props && target.props.to) return true;else return false;
+  if (!(0, _lodash.isArray)(target.length) && target.props && target.props.to) return true;else return false;
 };
 
 var Frame = function Frame(props) {
   var uuid = getUuid(props);
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     {
       style: props.style,
       className: props.className,
       onClick: props.onClick
     },
-    React.Children.map(props.children, function (child) {
-      var newChildProps = _extends({}, props, {
+    _react2.default.Children.map(props.children, function (child) {
+      var newChildProps = (0, _extends3.default)({}, props, {
         animStarted: props[uuid + '_animStarted'] ? props[uuid + '_animStarted'] : false,
         startAnim: props.startAnim }, child.props, {
         selfAnimate: checkSelfAnimate(props.children),
         className: child.props.className,
         style: child.props.style // Override parents style prop
       });
-      return isString(child.type) ? child : React.cloneElement(child, newChildProps);
+      return (0, _lodash.isString)(child.type) ? child : _react2.default.cloneElement(child, newChildProps);
     })
   ); // eslint-disable-line
 };
@@ -53,9 +73,9 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var uuid = getUuid(ownProps);
   // Make Unique State Name
   var key = uuid + '_animStarted';
-  var obj = { name: selectName() };
-  obj[key] = selectFormOpened(uuid);
-  return createStructuredSelector(obj);
+  var obj = { name: (0, _selectors.selectName)() };
+  obj[key] = (0, _selectors.selectFormOpened)(uuid);
+  return (0, _reselect.createStructuredSelector)(obj);
 };
 function mapDispatchToProps(dispatch) {
   return {
@@ -64,31 +84,31 @@ function mapDispatchToProps(dispatch) {
 }
 
 // Component enhancer
-var enhance = compose(withState('idLock', 'setIdLock', false), mapProps(function (_ref) {
+var enhance = (0, _recompose.compose)((0, _recompose.withState)('idLock', 'setIdLock', false), (0, _recompose.mapProps)(function (_ref) {
   var children = _ref.children,
       idLock = _ref.idLock,
-      rest = _objectWithoutProperties(_ref, ['children', 'idLock']);
+      rest = (0, _objectWithoutProperties3.default)(_ref, ['children', 'idLock']);
 
-  if (!idLock) return _extends({
-    frame_id: uniqueId('frame_'),
+  if (!idLock) return (0, _extends3.default)({
+    frame_id: (0, _lodash.uniqueId)('frame_'),
     children: children
-  }, rest);else return _extends({
+  }, rest);else return (0, _extends3.default)({
     frame_id: idLock,
     children: children
   }, rest);
-}), lifecycle({
+}), (0, _recompose.lifecycle)({
   componentWillMount: function componentWillMount() {
     if (!this.props.idLock) this.props.setIdLock(this.props.frame_id);
   }
 }));
-export default enhance(connect(mapStateToProps, mapDispatchToProps)(withHandlers({
+exports.default = enhance((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _recompose.withHandlers)({
   startAnim: function startAnim(props) {
     return function (data) {
       var dispatch = props.dispatch,
           name = props.name; // eslint-disable-line
 
       var uuid = getUuid(props);
-      dispatch(updateOpenForm(uuid, data));
+      dispatch((0, _actions.updateOpenForm)(uuid, data));
     };
   }
 })(Frame)));

@@ -1,3 +1,24 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sampleAction = sampleAction;
+exports.updateData = updateData;
+exports.updateOpenForm = updateOpenForm;
+exports.refreshProps = refreshProps;
+
+var _ruucmUtil = require('ruucm-util');
+
+var _constants = require('./constants');
+
+/**
+ * Sample action description
+ *
+ * @param  {name} name param description
+ *
+ * @return {object} An action object with a type of SAMPLE_ACTION
+ */
 /**
  * Frame Actions
  *
@@ -14,40 +35,29 @@
  *        return { type: YOUR_ACTION_CONSTANT, var: var }
  *    }
  */
-import { log } from 'ruucm-util';
-
-import { SAMPLE_ACTION, START_ANIM, REFRESH_PROPS } from './constants';
-
-/**
- * Sample action description
- *
- * @param  {name} name param description
- *
- * @return {object} An action object with a type of SAMPLE_ACTION
- */
-export function sampleAction(name) {
+function sampleAction(name) {
   return {
-    type: SAMPLE_ACTION,
+    type: _constants.SAMPLE_ACTION,
     name: name
   };
 }
-export function updateData(name) {
+function updateData(name) {
   return {
-    type: SAMPLE_ACTION,
+    type: _constants.SAMPLE_ACTION,
     name: name
   };
 }
-export function updateOpenForm(id, data) {
+function updateOpenForm(id, data) {
   return {
-    type: START_ANIM + '/' + id,
+    type: _constants.START_ANIM + '/' + id,
     id: id,
     data: data
   };
 }
 
-export function refreshProps(id, data) {
+function refreshProps(id, data) {
   return {
-    type: REFRESH_PROPS + '/' + id,
+    type: _constants.REFRESH_PROPS + '/' + id,
     id: id,
     data: data
   };

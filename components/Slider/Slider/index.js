@@ -1,46 +1,66 @@
-var _templateObject = _taggedTemplateLiteral(['\n  width: 10px;\n  height: 10px;\n  background: red;\n  z-index: 1;\n  ', ';\n  ', ' ', ';\n'], ['\n  width: 10px;\n  height: 10px;\n  background: red;\n  z-index: 1;\n  ', ';\n  ', ' ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n      right: 0;\n    '], ['\n      right: 0;\n    ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n      left: 0;\n    '], ['\n      left: 0;\n    ']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  background: beige;\n  text-align: center;\n  > li {\n    list-style: none;\n    display: inline-block;\n    &.slick-active {\n      button {\n        background: blue;\n      }\n    }\n  }\n'], ['\n  background: beige;\n  text-align: center;\n  > li {\n    list-style: none;\n    display: inline-block;\n    &.slick-active {\n      button {\n        background: blue;\n      }\n    }\n  }\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  ', ';\n'], ['\n  ', ';\n']);
+'use strict';
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-/**
- *
- * Slider
- *
- */
-
-import React from 'react';
-import Slider from 'react-slick';
-import styled, { css } from 'styled-components';
-import { log } from 'ruucm-util';
-
-import slickStyle from './slick-style';
-import { center } from 'ruucm-blocks/tools/mixins';
-
-var StyledArrow = styled.div(_templateObject, center('y'), function (props) {
-  return props.next && css(_templateObject2);
-}, function (props) {
-  return props.prev && css(_templateObject3);
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-var DotsWrapper = styled.div(_templateObject4);
+
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
+
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
+
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  width: 10px;\n  height: 10px;\n  background: red;\n  z-index: 1;\n  ', ';\n  ', ' ', ';\n'], ['\n  width: 10px;\n  height: 10px;\n  background: red;\n  z-index: 1;\n  ', ';\n  ', ' ', ';\n']),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n      right: 0;\n    '], ['\n      right: 0;\n    ']),
+    _templateObject3 = (0, _taggedTemplateLiteral3.default)(['\n      left: 0;\n    '], ['\n      left: 0;\n    ']),
+    _templateObject4 = (0, _taggedTemplateLiteral3.default)(['\n  background: beige;\n  text-align: center;\n  > li {\n    list-style: none;\n    display: inline-block;\n    &.slick-active {\n      button {\n        background: blue;\n      }\n    }\n  }\n'], ['\n  background: beige;\n  text-align: center;\n  > li {\n    list-style: none;\n    display: inline-block;\n    &.slick-active {\n      button {\n        background: blue;\n      }\n    }\n  }\n']),
+    _templateObject5 = (0, _taggedTemplateLiteral3.default)(['\n  ', ';\n'], ['\n  ', ';\n']); /**
+                                                                                                *
+                                                                                                * Slider
+                                                                                                *
+                                                                                                */
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSlick = require('react-slick');
+
+var _reactSlick2 = _interopRequireDefault(_reactSlick);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _ruucmUtil = require('ruucm-util');
+
+var _slickStyle = require('./slick-style');
+
+var _slickStyle2 = _interopRequireDefault(_slickStyle);
+
+var _mixins = require('ruucm-blocks/tools/mixins');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StyledArrow = _styledComponents2.default.div(_templateObject, (0, _mixins.center)('y'), function (props) {
+  return props.next && (0, _styledComponents.css)(_templateObject2);
+}, function (props) {
+  return props.prev && (0, _styledComponents.css)(_templateObject3);
+});
+var DotsWrapper = _styledComponents2.default.div(_templateObject4);
 var SampleNextArrow = function SampleNextArrow(props) {
-  return React.createElement(StyledArrow, { next: true, onClick: props.onClick });
+  return _react2.default.createElement(StyledArrow, { next: true, onClick: props.onClick });
 };
 var SamplePrevArrow = function SamplePrevArrow(props) {
-  return React.createElement(StyledArrow, { prev: true, onClick: props.onClick });
+  return _react2.default.createElement(StyledArrow, { prev: true, onClick: props.onClick });
 };
 var SampleAppendDots = function SampleAppendDots(dots) {
-  return React.createElement(
+  return _react2.default.createElement(
     DotsWrapper,
     null,
     dots
   );
 };
 
-var Wrapper = styled.div(_templateObject5, slickStyle);
+var Wrapper = _styledComponents2.default.div(_templateObject5, _slickStyle2.default);
 
 var SliderComp = function SliderComp(props) {
   var otherProps = Object.assign({}, props);
@@ -52,18 +72,18 @@ var SliderComp = function SliderComp(props) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: props.nextArrow ? props.nextArrow : React.createElement(SampleNextArrow, null),
-    prevArrow: props.prevArrow ? props.prevArrow : React.createElement(SamplePrevArrow, null)
+    nextArrow: props.nextArrow ? props.nextArrow : _react2.default.createElement(SampleNextArrow, null),
+    prevArrow: props.prevArrow ? props.prevArrow : _react2.default.createElement(SamplePrevArrow, null)
   };
-  return React.createElement(
+  return _react2.default.createElement(
     Wrapper,
     { style: props.style },
-    props.children ? React.createElement(
-      Slider,
+    props.children ? _react2.default.createElement(
+      _reactSlick2.default,
       settings,
       props.children
     ) : 'add slider items first'
   );
 };
 
-export default SliderComp;
+exports.default = SliderComp;

@@ -1,56 +1,75 @@
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: absolute;\n  ', ';\n  ', ';\n  ', ';\n'], ['\n  position: absolute;\n  ', ';\n  ', ';\n  ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n      left: 50%;\n      right: auto;\n      transform: translateX(-50%);\n    '], ['\n      left: 50%;\n      right: auto;\n      transform: translateX(-50%);\n    ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n      top: 50%;\n      bottom: auto;\n      transform: translateY(-50%);\n    '], ['\n      top: 50%;\n      bottom: auto;\n      transform: translateY(-50%);\n    ']),
-    _templateObject4 = _taggedTemplateLiteral(['\n      left: 50%;\n      top: 50%;\n      bottom: auto;\n      right: auto;\n      transform: translateX(-50%) translateY(-50%);\n    '], ['\n      left: 50%;\n      top: 50%;\n      bottom: auto;\n      right: auto;\n      transform: translateX(-50%) translateY(-50%);\n    ']);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+var _createClass2 = require('babel-runtime/helpers/createClass');
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+var _createClass3 = _interopRequireDefault(_createClass2);
 
-/**
- *
- * Center
- *
- */
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
 
-import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var CenterWrapper = styled.div(_templateObject, function (props) {
-  return props.axis == 'x' && css(_templateObject2);
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
+
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
+
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  position: absolute;\n  ', ';\n  ', ';\n  ', ';\n'], ['\n  position: absolute;\n  ', ';\n  ', ';\n  ', ';\n']),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n      left: 50%;\n      right: auto;\n      transform: translateX(-50%);\n    '], ['\n      left: 50%;\n      right: auto;\n      transform: translateX(-50%);\n    ']),
+    _templateObject3 = (0, _taggedTemplateLiteral3.default)(['\n      top: 50%;\n      bottom: auto;\n      transform: translateY(-50%);\n    '], ['\n      top: 50%;\n      bottom: auto;\n      transform: translateY(-50%);\n    ']),
+    _templateObject4 = (0, _taggedTemplateLiteral3.default)(['\n      left: 50%;\n      top: 50%;\n      bottom: auto;\n      right: auto;\n      transform: translateX(-50%) translateY(-50%);\n    '], ['\n      left: 50%;\n      top: 50%;\n      bottom: auto;\n      right: auto;\n      transform: translateX(-50%) translateY(-50%);\n    ']); /**
+                                                                                                                                                                                                                                                                                                                                                        *
+                                                                                                                                                                                                                                                                                                                                                        * Center
+                                                                                                                                                                                                                                                                                                                                                        *
+                                                                                                                                                                                                                                                                                                                                                        */
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CenterWrapper = _styledComponents2.default.div(_templateObject, function (props) {
+  return props.axis == 'x' && (0, _styledComponents.css)(_templateObject2);
 }, function (props) {
-  return props.axis == 'y' && css(_templateObject3);
+  return props.axis == 'y' && (0, _styledComponents.css)(_templateObject3);
 }, function (props) {
-  return props.axis == 'xy' && css(_templateObject4);
+  return props.axis == 'xy' && (0, _styledComponents.css)(_templateObject4);
 });
 
 var Center = function (_Component) {
-  _inherits(Center, _Component);
+  (0, _inherits3.default)(Center, _Component);
 
   function Center() {
-    _classCallCheck(this, Center);
-
-    return _possibleConstructorReturn(this, (Center.__proto__ || Object.getPrototypeOf(Center)).apply(this, arguments));
+    (0, _classCallCheck3.default)(this, Center);
+    return (0, _possibleConstructorReturn3.default)(this, (Center.__proto__ || Object.getPrototypeOf(Center)).apply(this, arguments));
   }
 
-  _createClass(Center, [{
+  (0, _createClass3.default)(Center, [{
     key: 'render',
     value: function render() {
-      return React.createElement(
+      return _react2.default.createElement(
         CenterWrapper,
         this.props,
         this.props.children
       );
     }
   }]);
-
   return Center;
-}(Component);
+}(_react.Component);
 
-export default Center;
+exports.default = Center;

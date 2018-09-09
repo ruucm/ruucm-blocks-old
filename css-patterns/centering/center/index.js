@@ -1,3 +1,13 @@
-import Center from './Center';
+'use strict';
 
-export default Center;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Center = require('./Center');
+
+var _Center2 = _interopRequireDefault(_Center);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Center2.default;

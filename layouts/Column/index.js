@@ -1,4 +1,14 @@
-import React from 'react';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Column = function Column(_ref) {
   var col = _ref.col,
@@ -26,7 +36,7 @@ var Column = function Column(_ref) {
       hideClass = '';
       break;
   }
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     {
       className: colClass + mColClass + hideClass + parentClassName,
@@ -36,4 +46,4 @@ var Column = function Column(_ref) {
   );
 };
 
-export default Column;
+exports.default = Column;

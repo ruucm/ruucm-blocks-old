@@ -1,9 +1,19 @@
-var _templateObject = _taggedTemplateLiteral(['\n  @import url(\'https://fonts.googleapis.com/css?family=Montserrat:200i,700,800,900,900i\');\n'], ['\n  @import url(\'https://fonts.googleapis.com/css?family=Montserrat:200i,700,800,900,900i\');\n']);
+'use strict';
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-import { css } from 'styled-components';
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
 
-var Montserrat = css(_templateObject);
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
-export default Montserrat;
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  @import url(\'https://fonts.googleapis.com/css?family=Montserrat:200i,700,800,900,900i\');\n'], ['\n  @import url(\'https://fonts.googleapis.com/css?family=Montserrat:200i,700,800,900,900i\');\n']);
+
+var _styledComponents = require('styled-components');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Montserrat = (0, _styledComponents.css)(_templateObject);
+
+exports.default = Montserrat;

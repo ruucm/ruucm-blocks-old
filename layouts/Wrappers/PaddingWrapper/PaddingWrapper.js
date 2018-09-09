@@ -1,14 +1,29 @@
-var _templateObject = _taggedTemplateLiteral(['\n  padding: ', ';\n  ', '\n'], ['\n  padding: ', ';\n  ', '\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    padding: ', '\n  '], ['\n    padding: ', '\n  ']);
+'use strict';
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-import styled from 'styled-components';
-import media from '../../../tools/media';
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
 
-var PaddingWrapper = styled.div(_templateObject, function (props) {
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
+
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  padding: ', ';\n  ', '\n'], ['\n  padding: ', ';\n  ', '\n']),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n    padding: ', '\n  '], ['\n    padding: ', '\n  ']);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _media = require('../../../tools/media');
+
+var _media2 = _interopRequireDefault(_media);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PaddingWrapper = _styledComponents2.default.div(_templateObject, function (props) {
   return props.padding;
-}, media.phone(_templateObject2, function (props) {
+}, _media2.default.phone(_templateObject2, function (props) {
   return props.mPadding;
 }));
-export default PaddingWrapper;
+exports.default = PaddingWrapper;

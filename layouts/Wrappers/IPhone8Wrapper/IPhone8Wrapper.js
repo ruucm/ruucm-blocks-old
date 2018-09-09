@@ -1,9 +1,21 @@
-var _templateObject = _taggedTemplateLiteral(['\n  max-width: 375px;\n  margin: 0 auto;\n  background-color: #F1635A;\n'], ['\n  max-width: 375px;\n  margin: 0 auto;\n  background-color: #F1635A;\n']);
+'use strict';
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-import styled from 'styled-components';
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
 
-var IPhone8Wrapper = styled.section(_templateObject);
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
-export default IPhone8Wrapper;
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  max-width: 375px;\n  margin: 0 auto;\n  background-color: #F1635A;\n'], ['\n  max-width: 375px;\n  margin: 0 auto;\n  background-color: #F1635A;\n']);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var IPhone8Wrapper = _styledComponents2.default.section(_templateObject);
+
+exports.default = IPhone8Wrapper;

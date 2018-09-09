@@ -1,14 +1,22 @@
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+'use strict';
 
-/**
- *
- * onTap
- *
- */
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-import React from 'react';
-import { log } from 'ruucm-util';
-import { isString, isEmpty } from 'lodash';
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ruucmUtil = require('ruucm-util');
+
+var _lodash = require('lodash');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var onTap = function onTap(props) {
   var otherProps = Object.assign({}, props);
@@ -17,7 +25,7 @@ var onTap = function onTap(props) {
     return false;
   };
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     {
       onClick: function onClick(e) {
@@ -27,15 +35,19 @@ var onTap = function onTap(props) {
       style: props.style,
       className: props.className
     },
-    React.Children.map(props.children, function (child) {
-      var newChildProps = _extends({}, otherProps, {
+    _react2.default.Children.map(props.children, function (child) {
+      var newChildProps = (0, _extends3.default)({}, otherProps, {
         style: child.props ? child.props.style : ''
       });
-      if (isString(child)) return child;else return isString(child.type) ? child : React.cloneElement(child, newChildProps
+      if ((0, _lodash.isString)(child)) return child;else return (0, _lodash.isString)(child.type) ? child : _react2.default.cloneElement(child, newChildProps
       // Only pass anim props, when child id Animate(Comp)
       );
     })
   );
-};
+}; /**
+    *
+    * onTap
+    *
+    */
 
-export default onTap;
+exports.default = onTap;

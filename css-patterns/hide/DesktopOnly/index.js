@@ -1,26 +1,42 @@
-var _templateObject = _taggedTemplateLiteral(['\n  ', ';\n'], ['\n  ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    display: none;\n  '], ['\n    display: none;\n  ']);
+'use strict';
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/**
- *
- * DesktopOnly
- *
- */
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
 
-import React from 'react';
-import styled from 'styled-components';
-import media from 'ruucm-blocks/tools/media';
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
-var Wrapper = styled.div(_templateObject, media.phone(_templateObject2));
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  ', ';\n'], ['\n  ', ';\n']),
+    _templateObject2 = (0, _taggedTemplateLiteral3.default)(['\n    display: none;\n  '], ['\n    display: none;\n  ']); /**
+                                                                                                                          *
+                                                                                                                          * DesktopOnly
+                                                                                                                          *
+                                                                                                                          */
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _media = require('ruucm-blocks/tools/media');
+
+var _media2 = _interopRequireDefault(_media);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Wrapper = _styledComponents2.default.div(_templateObject, _media2.default.phone(_templateObject2));
 
 var DesktopOnly = function DesktopOnly(props) {
-  return React.createElement(
+  return _react2.default.createElement(
     Wrapper,
     props,
     props.children
   );
 };
 
-export default DesktopOnly;
+exports.default = DesktopOnly;

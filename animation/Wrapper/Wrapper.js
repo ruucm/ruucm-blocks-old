@@ -1,23 +1,28 @@
-/**
- *
- * Wrapper
- *
- */
+'use strict';
 
-import React from 'react';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-import { log } from 'ruucm-util';
-import { isString } from 'lodash';
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ruucmUtil = require('ruucm-util');
+
+var _lodash = require('lodash');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Wrapper = function Wrapper(props) {
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
 
   // log('otherProps(Wrapper)', otherProps)
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { style: props.style },
-    React.Children.map(props.children, function (child) {
+    _react2.default.Children.map(props.children, function (child) {
       var newChildProps = {
         // ...otherProps,
         style: child.props.style,
@@ -26,11 +31,15 @@ var Wrapper = function Wrapper(props) {
         start: props.start,
         rewind: props.rewind
       };
-      return isString(child.type) ? child : React.cloneElement(child, newChildProps
+      return (0, _lodash.isString)(child.type) ? child : _react2.default.cloneElement(child, newChildProps
       // Only pass anim props, when child id Wrapper(Comp)
       );
     })
   );
-};
+}; /**
+    *
+    * Wrapper
+    *
+    */
 
-export default Wrapper;
+exports.default = Wrapper;

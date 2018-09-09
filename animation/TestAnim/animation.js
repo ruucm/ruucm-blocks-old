@@ -1,28 +1,34 @@
-import { TweenMax, Elastic } from 'gsap';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _gsap = require('gsap');
 
 var duration = 10;
 
-export default {
+exports.default = {
   show: function show(target, cb) {
-    return TweenMax.from(target, duration, {
+    return _gsap.TweenMax.from(target, duration, {
       opacity: 0,
       height: 0,
       onComplete: function onComplete() {
         cb();
       },
 
-      ease: Elastic.easeOut.config(0.25, 1)
+      ease: _gsap.Elastic.easeOut.config(0.25, 1)
     });
   },
   hide: function hide(target, cb) {
-    return TweenMax.to(target, duration, {
+    return _gsap.TweenMax.to(target, duration, {
       opacity: 0,
       height: 0,
       onComplete: function onComplete() {
         cb();
       },
 
-      ease: Elastic.easeIn.config(0.25, 1)
+      ease: _gsap.Elastic.easeIn.config(0.25, 1)
     });
   }
 };

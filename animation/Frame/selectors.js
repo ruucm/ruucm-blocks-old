@@ -1,8 +1,11 @@
-/**
- * Frame/Frame selectors
- */
+'use strict';
 
-import { createSelector } from 'reselect';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.selectFormOpened = exports.selectName = undefined;
+
+var _reselect = require('reselect');
 
 /**
  * Direct selector to the Frame.frame state domain
@@ -16,17 +19,21 @@ var selectFrame = function selectFrame() {
 /**
  * Other specific selectors
  */
+/**
+ * Frame/Frame selectors
+ */
+
 var selectName = function selectName() {
-  return createSelector(selectFrame(), function (frameState) {
+  return (0, _reselect.createSelector)(selectFrame(), function (frameState) {
     return frameState.name;
   });
 };
 var selectFormOpened = function selectFormOpened(id) {
-  return createSelector(selectFrame(), function (frameState) {
+  return (0, _reselect.createSelector)(selectFrame(), function (frameState) {
     return frameState[id + '_animStarted'];
   });
 };
 
-export default selectFrame;
-
-export { selectName, selectFormOpened };
+exports.default = selectFrame;
+exports.selectName = selectName;
+exports.selectFormOpened = selectFormOpened;

@@ -1,3 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 /**
  * Frame/Frame Constants
  * Each action has a corresponding type, which the reducer knows and picks up on.
@@ -9,6 +14,6 @@
  * export const YOUR_ACTION_CONSTANT = 'namespace/ComponentName/YOUR_ACTION_CONSTANT';
  */
 
-export var SAMPLE_ACTION = 'Frame/Frame/SAMPLE_ACTION';
-export var START_ANIM = 'Frame/Frame/START_ANIM';
-export var REFRESH_PROPS = 'Frame/Frame/REFRESH_PROPS';
+var SAMPLE_ACTION = exports.SAMPLE_ACTION = 'Frame/Frame/SAMPLE_ACTION';
+var START_ANIM = exports.START_ANIM = 'Frame/Frame/START_ANIM';
+var REFRESH_PROPS = exports.REFRESH_PROPS = 'Frame/Frame/REFRESH_PROPS';

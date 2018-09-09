@@ -1,6 +1,14 @@
-import { TweenMax, Elastic, Power1, Power3, Power4 } from 'gsap';
-import { merge } from 'lodash';
-import { log } from 'ruucm-util';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _gsap = require('gsap');
+
+var _lodash = require('lodash');
+
+var _ruucmUtil = require('ruucm-util');
 
 var defaultDuration = 1;
 
@@ -8,7 +16,7 @@ var doNothing = function doNothing() {
   void 0;
 };
 
-export default {
+exports.default = {
   to: function to(target, props) {
     var customDuration = void 0;
     var options = {
@@ -16,7 +24,7 @@ export default {
         // cb()
       },
 
-      ease: Power1.easeIn,
+      ease: _gsap.Power1.easeIn,
       force3D: false,
       transformOrigin: 'center center' // default transformOrigin
 
@@ -26,12 +34,12 @@ export default {
        */
 
     };if (props.to) {
-      if (props.to.scale) merge(options, { scale: props.to.scale });
-      if (props.to.opacity || props.to.opacity == 0) merge(options, { opacity: props.to.opacity });
-      if (props.to.x) merge(options, { x: props.to.x });
-      if (props.to.y) merge(options, { y: props.to.y });
+      if (props.to.scale) (0, _lodash.merge)(options, { scale: props.to.scale });
+      if (props.to.opacity || props.to.opacity == 0) (0, _lodash.merge)(options, { opacity: props.to.opacity });
+      if (props.to.x) (0, _lodash.merge)(options, { x: props.to.x });
+      if (props.to.y) (0, _lodash.merge)(options, { y: props.to.y });
       // if (props.z) merge(options, { z: props.z, force3D: true })
-      if (props.to.transformOrigin) merge(options, { transformOrigin: props.to.transformOrigin });
+      if (props.to.transformOrigin) (0, _lodash.merge)(options, { transformOrigin: props.to.transformOrigin });
     }
 
     /**
@@ -39,12 +47,12 @@ export default {
      */
 
     if (props.options) {
-      props.options.curve ? merge(options, { ease: eval(props.options.curve) }) : doNothing();
-      props.options.delay ? merge(options, { delay: props.options.delay }) : doNothing();
+      props.options.curve ? (0, _lodash.merge)(options, { ease: eval(props.options.curve) }) : doNothing();
+      props.options.delay ? (0, _lodash.merge)(options, { delay: props.options.delay }) : doNothing();
       props.options.time ? customDuration = props.options.time : customDuration = defaultDuration;
     } else customDuration = defaultDuration;
 
-    var tween = TweenMax.to(target, customDuration, options);
+    var tween = _gsap.TweenMax.to(target, customDuration, options);
 
     return tween;
     // setTimeout(() => {
@@ -59,7 +67,7 @@ export default {
         // cb()
       },
 
-      ease: Power1.easeIn,
+      ease: _gsap.Power1.easeIn,
       force3D: false,
       autoAlpha: 0
 
@@ -68,11 +76,11 @@ export default {
        */
 
     };if (props.from) {
-      if (props.from.scale) merge(options, { scale: props.from.scale });
-      if (props.from.opacity || props.from.opacity == 0) merge(options, { opacity: props.from.opacity });
-      if (props.from.x) merge(options, { x: props.from.x });
-      if (props.from.y) merge(options, { y: props.from.y });
-      if (props.from.transformOrigin) merge(options, { transformOrigin: props.from.transformOrigin });
+      if (props.from.scale) (0, _lodash.merge)(options, { scale: props.from.scale });
+      if (props.from.opacity || props.from.opacity == 0) (0, _lodash.merge)(options, { opacity: props.from.opacity });
+      if (props.from.x) (0, _lodash.merge)(options, { x: props.from.x });
+      if (props.from.y) (0, _lodash.merge)(options, { y: props.from.y });
+      if (props.from.transformOrigin) (0, _lodash.merge)(options, { transformOrigin: props.from.transformOrigin });
     }
 
     /**
@@ -80,11 +88,11 @@ export default {
      */
 
     if (props.options) {
-      props.options.curve ? merge(options, { ease: eval(props.options.curve) }) : '';
-      props.options.delay ? merge(options, { delay: props.options.delay }) : '';
+      props.options.curve ? (0, _lodash.merge)(options, { ease: eval(props.options.curve) }) : '';
+      props.options.delay ? (0, _lodash.merge)(options, { delay: props.options.delay }) : '';
       props.options.time ? customDuration = props.options.time : customDuration = defaultDuration;
     }
 
-    return TweenMax.from(target, customDuration, options);
+    return _gsap.TweenMax.from(target, customDuration, options);
   }
 };

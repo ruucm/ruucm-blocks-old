@@ -1,9 +1,21 @@
-var _templateObject = _taggedTemplateLiteral(['\n'], ['\n']);
+'use strict';
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-import styled from 'styled-components';
+var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
 
-var Text = styled.p(_templateObject);
+var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
-export default Text;
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n'], ['\n']);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Text = _styledComponents2.default.p(_templateObject);
+
+exports.default = Text;
