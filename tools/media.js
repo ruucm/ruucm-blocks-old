@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.isMobile = exports.sizes = undefined;
+exports.isTablet = exports.isMobile = exports.sizes = undefined;
 
 var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
 
@@ -26,6 +26,9 @@ var sizes = {
 var isMobile = function isMobile() {
   return screen.width < sizes.phone;
 };
+var isTablet = function isTablet() {
+  return screen.width < sizes.tablet;
+};
 
 // iterate through the sizes and create a media template
 var media = Object.keys(sizes).reduce(function (accumulator, label) {
@@ -41,3 +44,4 @@ var media = Object.keys(sizes).reduce(function (accumulator, label) {
 exports.default = media;
 exports.sizes = sizes;
 exports.isMobile = isMobile;
+exports.isTablet = isTablet;

@@ -11,6 +11,9 @@ const sizes = {
 const isMobile = () => {
   return screen.width < sizes.phone
 }
+const isTablet = () => {
+  return screen.width < sizes.tablet
+}
 
 // iterate through the sizes and create a media template
 const media = Object.keys(sizes).reduce((accumulator, label) => {
@@ -27,4 +30,4 @@ const media = Object.keys(sizes).reduce((accumulator, label) => {
 
 export default media
 
-export { sizes, isMobile }
+export { sizes, isMobile, isTablet }
