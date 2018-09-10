@@ -19,6 +19,14 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .portfolio-class-Arrow:before {
+    content: '\\e90c';
+    color: #fff;
+  }
+  .portfolio-class-logo_main:before {
+    content: '\\e90d';
+    color: #fdd388;
+  }
   .portfolio-class-list:before {
     content: '\\e900';
     color: #595959;
