@@ -54,3 +54,10 @@ export const wem = pxSize => {
   if (screen.width > sizes.phone) return (pxSize / baseScreenSize) * 100 + 'vw'
   else return (pxSize / baseScreenSize) * 2.5 * 100 + 'vw'
 }
+
+export const wem2 = pxSize => {
+  let baseScreenSize = 1440
+
+  if (screen.width > sizes.phone) return (pxSize / baseScreenSize) * 100 + 'vw'
+  else return (pxSize / baseScreenSize) * 2.5 * 100 + 'vw'
+}
