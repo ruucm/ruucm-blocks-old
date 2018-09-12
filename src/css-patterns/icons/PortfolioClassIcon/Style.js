@@ -19,6 +19,9 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .portfolio-class-back-icon:before {
+    content: '\\e90e';
+  }
   .portfolio-class-Arrow:before {
     content: '\\e90c';
     color: #fff;
