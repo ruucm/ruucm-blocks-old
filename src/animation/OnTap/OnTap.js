@@ -8,7 +8,7 @@ import React from 'react'
 import { log } from 'ruucm-util'
 import { isString, isEmpty } from 'lodash'
 
-const onTap = props => {
+const onTap = ({ animStarted, ...props }) => {
   const otherProps = Object.assign({}, props)
   delete otherProps.children
   let startAnim = props.startAnim ? props.startAnim : () => false
@@ -17,7 +17,8 @@ const onTap = props => {
     <div
       onClick={e => {
         e.stopPropagation()
-        startAnim(true)
+        if (!animStarted) startAnim(true)
+        else startAnim(false)
       }}
       style={props.style}
       className={props.className}

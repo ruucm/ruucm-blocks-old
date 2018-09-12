@@ -8,6 +8,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -18,7 +22,10 @@ var _lodash = require('lodash');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var onTap = function onTap(props) {
+var onTap = function onTap(_ref) {
+  var animStarted = _ref.animStarted,
+      props = (0, _objectWithoutProperties3.default)(_ref, ['animStarted']);
+
   var otherProps = Object.assign({}, props);
   delete otherProps.children;
   var startAnim = props.startAnim ? props.startAnim : function () {
@@ -30,7 +37,7 @@ var onTap = function onTap(props) {
     {
       onClick: function onClick(e) {
         e.stopPropagation();
-        startAnim(true);
+        if (!animStarted) startAnim(true);else startAnim(false);
       },
       style: props.style,
       className: props.className
