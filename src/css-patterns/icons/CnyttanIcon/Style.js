@@ -19,6 +19,40 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .cnyttan-logo-p:before {
+    content: '\\e911';
+  }
+  .cnyttan-Instagram-Logo:before {
+    content: '\\e912';
+  }
+  .cnyttan-kakaotalk-logo:before {
+    content: '\\e913';
+  }
+  .cnyttan-Payco:before {
+    content: '\\e914';
+    color: #e7231e;
+  }
+  .cnyttan-uniE915:before {
+    content: '\\e915';
+  }
+  .cnyttan-call-center:before {
+    content: '\\e916';
+  }
+  .cnyttan-facebook-logo:before {
+    content: '\\e917';
+  }
+  .cnyttan-like:before {
+    content: '\\e918';
+  }
+  .cnyttan-log-in:before {
+    content: '\\e919';
+  }
+  .cnyttan-log-out:before {
+    content: '\\e91a';
+  }
+  .cnyttan-manager:before {
+    content: '\\e91b';
+  }
   .cnyttan-CNYTTAN_logo:before {
     content: '\\e907';
   }

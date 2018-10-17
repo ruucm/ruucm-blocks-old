@@ -19,6 +19,30 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .hellogorilla-icon-search-24:before {
+    content: '\\e911';
+    color: #fff;
+  }
+  .hellogorilla-a-s-p-image:before {
+    content: '\\e912';
+    color: #fff;
+  }
+  .hellogorilla-about-image:before {
+    content: '\\e913';
+    color: #fefefe;
+  }
+  .hellogorilla-cart:before {
+    content: '\\e914';
+    color: #fff;
+  }
+  .hellogorilla-slider-not-selected:before {
+    content: '\\e915';
+    color: #fff;
+  }
+  .hellogorilla-slider-selected:before {
+    content: '\\e916';
+    color: #533c97;
+  }
   .hellogorilla-arrow-left-selected:before {
     content: '\\e900';
     color: #805de9;
