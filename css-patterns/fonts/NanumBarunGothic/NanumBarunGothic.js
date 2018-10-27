@@ -8,7 +8,7 @@ var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiter
 
 var _taggedTemplateLiteral3 = _interopRequireDefault(_taggedTemplateLiteral2);
 
-var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  /**\n  *  NanumBarunGothic Ultra Light\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 100;\n    src: local(\'NanumBarunGothicUltraLight\'),\n      url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Light\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 300;\n    src: local(\'NanumBarunGothicLight\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Regular\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 400;\n    src: local(\'NanumBarunGothic\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Bold\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 700;\n    src: local(\'NanumBarunGothicBold\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n'], ['\n  /**\n  *  NanumBarunGothic Ultra Light\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 100;\n    src: local(\'NanumBarunGothicUltraLight\'),\n      url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Light\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 300;\n    src: local(\'NanumBarunGothicLight\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Regular\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 400;\n    src: local(\'NanumBarunGothic\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Bold\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 700;\n    src: local(\'NanumBarunGothicBold\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n']);
+var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  /**\n  *  NanumBarunGothic Ultra Light\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 100;\n    src: local(\'NanumBarunGothicWebUltraLight\'),\n      url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Light\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 300;\n    src: local(\'NanumBarunGothicWebLight\'),\n      url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Regular\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 400;\n    src: local(\'NanumBarunGothicWeb\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Bold\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 700;\n    src: local(\'NanumBarunGothicWebBold\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n'], ['\n  /**\n  *  NanumBarunGothic Ultra Light\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 100;\n    src: local(\'NanumBarunGothicWebUltraLight\'),\n      url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Light\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 300;\n    src: local(\'NanumBarunGothicWebLight\'),\n      url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Regular\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 400;\n    src: local(\'NanumBarunGothicWeb\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n\n  /**\n  *  NanumBarunGothic Bold\n  */\n  @font-face {\n    font-family: \'NanumBarunGothicWeb\';\n    font-style: normal;\n    font-weight: 700;\n    src: local(\'NanumBarunGothicWebBold\'), url(', ') format(\'woff2\'),\n      url(', ') format(\'woff\'),\n      url(', ') format(\'truetype\'),\n      url(', ') format(\'embedded-opentype\');\n  }\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -24,6 +24,10 @@ var _NanumBarunGothicUltraLight5 = require('./fontFiles/NanumBarunGothicUltraLig
 
 var _NanumBarunGothicUltraLight6 = _interopRequireDefault(_NanumBarunGothicUltraLight5);
 
+var _NanumBarunGothicUltraLight7 = require('./fontFiles/NanumBarunGothicUltraLight/NanumBarunGothicUltraLight.woff2');
+
+var _NanumBarunGothicUltraLight8 = _interopRequireDefault(_NanumBarunGothicUltraLight7);
+
 var _NanumBarunGothicLight = require('./fontFiles/NanumBarunGothicLight/NanumBarunGothicLight.eot');
 
 var _NanumBarunGothicLight2 = _interopRequireDefault(_NanumBarunGothicLight);
@@ -35,6 +39,10 @@ var _NanumBarunGothicLight4 = _interopRequireDefault(_NanumBarunGothicLight3);
 var _NanumBarunGothicLight5 = require('./fontFiles/NanumBarunGothicLight/NanumBarunGothicLight.woff');
 
 var _NanumBarunGothicLight6 = _interopRequireDefault(_NanumBarunGothicLight5);
+
+var _NanumBarunGothicLight7 = require('./fontFiles/NanumBarunGothicLight/NanumBarunGothicLight.woff2');
+
+var _NanumBarunGothicLight8 = _interopRequireDefault(_NanumBarunGothicLight7);
 
 var _NanumBarunGothic = require('./fontFiles/NanumBarunGothic/NanumBarunGothic.eot');
 
@@ -48,6 +56,10 @@ var _NanumBarunGothic5 = require('./fontFiles/NanumBarunGothic/NanumBarunGothic.
 
 var _NanumBarunGothic6 = _interopRequireDefault(_NanumBarunGothic5);
 
+var _NanumBarunGothic7 = require('./fontFiles/NanumBarunGothic/NanumBarunGothic.woff2');
+
+var _NanumBarunGothic8 = _interopRequireDefault(_NanumBarunGothic7);
+
 var _NanumBarunGothicBold = require('./fontFiles/NanumBarunGothicBold/NanumBarunGothicBold.eot');
 
 var _NanumBarunGothicBold2 = _interopRequireDefault(_NanumBarunGothicBold);
@@ -60,8 +72,12 @@ var _NanumBarunGothicBold5 = require('./fontFiles/NanumBarunGothicBold/NanumBaru
 
 var _NanumBarunGothicBold6 = _interopRequireDefault(_NanumBarunGothicBold5);
 
+var _NanumBarunGothicBold7 = require('./fontFiles/NanumBarunGothicBold/NanumBarunGothicBold.woff2');
+
+var _NanumBarunGothicBold8 = _interopRequireDefault(_NanumBarunGothicBold7);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NanumBarunGothic = (0, _styledComponents.css)(_templateObject, _NanumBarunGothicUltraLight6.default, _NanumBarunGothicUltraLight6.default, _NanumBarunGothicUltraLight4.default, _NanumBarunGothicUltraLight2.default, _NanumBarunGothicLight6.default, _NanumBarunGothicLight6.default, _NanumBarunGothicLight4.default, _NanumBarunGothicLight2.default, _NanumBarunGothic6.default, _NanumBarunGothic6.default, _NanumBarunGothic4.default, _NanumBarunGothic2.default, _NanumBarunGothicBold6.default, _NanumBarunGothicBold6.default, _NanumBarunGothicBold4.default, _NanumBarunGothicBold2.default);
+var NanumBarunGothic = (0, _styledComponents.css)(_templateObject, _NanumBarunGothicUltraLight8.default, _NanumBarunGothicUltraLight6.default, _NanumBarunGothicUltraLight4.default, _NanumBarunGothicUltraLight2.default, _NanumBarunGothicLight8.default, _NanumBarunGothicLight6.default, _NanumBarunGothicLight4.default, _NanumBarunGothicLight2.default, _NanumBarunGothic8.default, _NanumBarunGothic6.default, _NanumBarunGothic4.default, _NanumBarunGothic2.default, _NanumBarunGothicBold8.default, _NanumBarunGothicBold6.default, _NanumBarunGothicBold4.default, _NanumBarunGothicBold2.default);
 
 exports.default = NanumBarunGothic;
