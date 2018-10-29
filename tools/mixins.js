@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.wem2 = exports.wem = exports.centerIconA = exports.transition = exports.center = undefined;
+exports.fem2 = exports.wem2 = exports.wem = exports.centerIconA = exports.transition = exports.center = undefined;
 
 var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
 
@@ -43,4 +43,12 @@ var wem2 = exports.wem2 = function wem2(pxSize) {
   var baseScreenSize = 1440;
 
   if (screen.width > _media.sizes.phone) return pxSize / baseScreenSize * 100 + 'vw';else return pxSize / baseScreenSize * 2.5 * 100 + 'vw';
+};
+
+var fem2 = exports.fem2 = function fem2(pxSize) {
+  var baseScreenSize = 1400;
+
+  if (screen.width > baseScreenSize) return pxSize + 'px';
+  // srceen is bigger than 1400, return original pixel sizes
+  else if (screen.width > _media.sizes.phone) return pxSize / baseScreenSize * 100 + 'vw';else return pxSize / baseScreenSize * 2.5 * 100 + 'vw';
 };
