@@ -53,7 +53,7 @@ const Hind = css`
   @font-face {
     font-family: 'HindWeb';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     src: local('HindWebSemiBold'), url(${fontSemiBoldWOFF2}) format('woff2'),
       url(${fontSemiBoldWOFF}) format('woff'),
       url(${fontSemiBoldTTF}) format('truetype'),
@@ -66,7 +66,7 @@ const Hind = css`
   @font-face {
     font-family: 'HindWeb';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     src: local('HindWebBold'), url(${fontBoldWOFF2}) format('woff2'),
       url(${fontBoldWOFF}) format('woff'),
       url(${fontBoldTTF}) format('truetype'),
