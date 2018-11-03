@@ -50,5 +50,5 @@ var fem2 = exports.fem2 = function fem2(pxSize) {
 
   if (screen.width > baseScreenSize) return pxSize + 'px';
   // srceen is bigger than 1400, return original pixel sizes
-  else if (screen.width > _media.sizes.phone) return pxSize / baseScreenSize * 100 + 'vw';else return pxSize / baseScreenSize * 2.5 * 100 + 'vw';
+  else if (screen.width > _media.sizes.phone) return pxSize / baseScreenSize * 100 + 'vw';else return pxSize / baseScreenSize * 2.5 * 100 * 1.17 + 'vw'; // cnyttan project only
 };
