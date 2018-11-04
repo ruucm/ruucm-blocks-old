@@ -58,5 +58,5 @@ var mem = exports.mem = function mem(pxSize) {
 
   if (screen.width > mBaseScreenSize) return pxSize + 'px';
   // srceen is bigger than 1400, return original pixel sizes
-  else return pxSize / baseScreenSize * 100 + 'vw'; // cnyttan project only
+  else return pxSize / mBaseScreenSize * 100 + 'vw'; // cnyttan project only
 };
