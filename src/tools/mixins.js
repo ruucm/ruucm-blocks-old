@@ -75,7 +75,7 @@ export const fem2 = pxSize => {
 export const mem = pxSize => {
   let mBaseScreenSize = 375
 
-  if (screen.width > mBaseScreenSize) return pxSize + 'px'
+  if (screen.width > sizes.tablet) return pxSize + 'px'
   // srceen is bigger than 1400, return original pixel sizes
   else return (pxSize / mBaseScreenSize) * 100 + 'vw' // cnyttan project only
 }
