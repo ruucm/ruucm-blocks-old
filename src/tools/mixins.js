@@ -69,5 +69,13 @@ export const fem2 = pxSize => {
   // srceen is bigger than 1400, return original pixel sizes
   else if (screen.width > sizes.phone)
     return (pxSize / baseScreenSize) * 100 + 'vw'
-  else return (pxSize / baseScreenSize) * 2.5 * 100 * 1.17 + 'vw' // cnyttan project only
+  else return (pxSize / baseScreenSize) * 5.181 * 100 + 'vw' // cnyttan project only
+}
+
+export const mem = pxSize => {
+  let mBaseScreenSize = 375
+
+  if (screen.width > mBaseScreenSize) return pxSize + 'px'
+  // srceen is bigger than 1400, return original pixel sizes
+  else return (pxSize / baseScreenSize) * 100 + 'vw' // cnyttan project only
 }

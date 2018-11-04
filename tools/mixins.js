@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fem2 = exports.wem2 = exports.wem = exports.centerIconA = exports.transition = exports.center = undefined;
+exports.mem = exports.fem2 = exports.wem2 = exports.wem = exports.centerIconA = exports.transition = exports.center = undefined;
 
 var _taggedTemplateLiteral2 = require('babel-runtime/helpers/taggedTemplateLiteral');
 
@@ -50,5 +50,13 @@ var fem2 = exports.fem2 = function fem2(pxSize) {
 
   if (screen.width > baseScreenSize) return pxSize + 'px';
   // srceen is bigger than 1400, return original pixel sizes
-  else if (screen.width > _media.sizes.phone) return pxSize / baseScreenSize * 100 + 'vw';else return pxSize / baseScreenSize * 2.5 * 100 * 1.17 + 'vw'; // cnyttan project only
+  else if (screen.width > _media.sizes.phone) return pxSize / baseScreenSize * 100 + 'vw';else return pxSize / baseScreenSize * 5.181 * 100 + 'vw'; // cnyttan project only
+};
+
+var mem = exports.mem = function mem(pxSize) {
+  var mBaseScreenSize = 375;
+
+  if (screen.width > mBaseScreenSize) return pxSize + 'px';
+  // srceen is bigger than 1400, return original pixel sizes
+  else return pxSize / baseScreenSize * 100 + 'vw'; // cnyttan project only
 };
