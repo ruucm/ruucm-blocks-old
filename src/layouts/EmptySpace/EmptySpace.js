@@ -15,15 +15,29 @@ const EmptySpaceWrapper = styled.div`
     )
   }};
 
+  ${props => {
+    let width = props.width + ''
+    return (
+      props.width &&
+      css`
+        width: ${width.includes('px') || width.includes('vw')
+          ? width
+          : width + 'px'};
+        display: inline-block;
+      `
+    )
+  }};
+
   ${media.phone`
     ${props => {
-      let mHeight = props.mHeight + ''
+      let mWidth = props.mWidth + ''
       return (
-        (props.mHeight || props.mHeight == 0) &&
+        (props.mWidth || props.mWidth == 0) &&
         css`
-          height: ${mHeight.includes('px') || mHeight.includes('vw')
-            ? mHeight
-            : mHeight + 'px'};
+          height: ${mWidth.includes('px') || mWidth.includes('vw')
+            ? mWidth
+            : mWidth + 'px'};
+          display: inline-block;
         `
       )
     }};
