@@ -63,6 +63,8 @@ const SliderComp = props => {
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
     speed: 500,
+    autoplay: true,
+    autoplaySpeed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: props.nextArrow ? props.nextArrow : <SampleNextArrow />,
