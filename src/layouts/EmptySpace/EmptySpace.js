@@ -48,7 +48,7 @@ const EmptySpaceWrapper = styled.div`
       return (
         (props.mWidth || props.mWidth == 0) &&
         css`
-          height: ${mWidth.includes('px') || mWidth.includes('vw')
+          width: ${mWidth.includes('px') || mWidth.includes('vw')
             ? mWidth
             : mWidth + 'px'};
           display: inline-block;

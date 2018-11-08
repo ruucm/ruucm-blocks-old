@@ -13,7 +13,7 @@ var _templateObject = (0, _taggedTemplateLiteral3.default)(['\n  ', ';\n\n  ', '
     _templateObject3 = (0, _taggedTemplateLiteral3.default)(['\n    ', ';\n  '], ['\n    ', ';\n  ']),
     _templateObject4 = (0, _taggedTemplateLiteral3.default)(['\n          height: ', ';\n        '], ['\n          height: ', ';\n        ']),
     _templateObject5 = (0, _taggedTemplateLiteral3.default)(['\n        width: ', ';\n        display: inline-block;\n      '], ['\n        width: ', ';\n        display: inline-block;\n      ']),
-    _templateObject6 = (0, _taggedTemplateLiteral3.default)(['\n          height: ', ';\n          display: inline-block;\n        '], ['\n          height: ', ';\n          display: inline-block;\n        ']);
+    _templateObject6 = (0, _taggedTemplateLiteral3.default)(['\n          width: ', ';\n          display: inline-block;\n        '], ['\n          width: ', ';\n          display: inline-block;\n        ']);
 
 var _react = require('react');
 
