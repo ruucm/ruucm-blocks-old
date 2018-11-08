@@ -15,6 +15,20 @@ const EmptySpaceWrapper = styled.div`
     )
   }};
 
+  ${media.phone`
+    ${props => {
+      let mHeight = props.mHeight + ''
+      return (
+        (props.mHeight || props.mHeight == 0) &&
+        css`
+          height: ${mHeight.includes('px') || mHeight.includes('vw')
+            ? mHeight
+            : mHeight + 'px'};
+        `
+      )
+    }};
+  `};
+
   ${props => {
     let width = props.width + ''
     return (
