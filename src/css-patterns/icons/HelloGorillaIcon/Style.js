@@ -19,6 +19,9 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .hellogorilla-youtube:before {
+    content: '\\e914';
+  }
   .hellogorilla-icon-search-24:before {
     content: '\\e911';
     color: #fff;
@@ -30,10 +33,6 @@ const Style = css`
   .hellogorilla-about-image:before {
     content: '\\e913';
     color: #fefefe;
-  }
-  .hellogorilla-cart:before {
-    content: '\\e914';
-    color: #fff;
   }
   .hellogorilla-slider-not-selected:before {
     content: '\\e915';
