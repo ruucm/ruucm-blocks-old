@@ -19,6 +19,10 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .cnyttan-next:before {
+    content: '\\e91d';
+    color: #cfcec6;
+  }
   .cnyttan-twitter-logo-silhouette:before {
     content: '\\e91c';
   }
