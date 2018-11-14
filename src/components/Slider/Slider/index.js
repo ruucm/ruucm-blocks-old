@@ -50,6 +50,8 @@ const SamplePrevArrow = props => {
 const SampleAppendDots = dots => {
   return <DotsWrapper>{dots}</DotsWrapper>
 }
+const defaultSpeed = 500
+const defaultAutoplaySpeed = 2000
 
 const Wrapper = styled.div`
   ${slickStyle};
@@ -62,9 +64,11 @@ const SliderComp = props => {
     dots: true,
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
-    speed: 500,
+    speed: props.speed ? props.speed : defaultSpeed,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: props.autoplaySpeed
+      ? props.autoplaySpeed
+      : defaultAutoplaySpeed,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: props.nextArrow ? props.nextArrow : <SampleNextArrow />,

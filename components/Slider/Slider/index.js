@@ -59,6 +59,8 @@ var SampleAppendDots = function SampleAppendDots(dots) {
     dots
   );
 };
+var defaultSpeed = 500;
+var defaultAutoplaySpeed = 2000;
 
 var Wrapper = _styledComponents2.default.div(_templateObject5, _slickStyle2.default);
 
@@ -69,9 +71,9 @@ var SliderComp = function SliderComp(props) {
     dots: true,
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
-    speed: 500,
+    speed: props.speed ? props.speed : defaultSpeed,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: props.autoplaySpeed ? props.autoplaySpeed : defaultAutoplaySpeed,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: props.nextArrow ? props.nextArrow : _react2.default.createElement(SampleNextArrow, null),
