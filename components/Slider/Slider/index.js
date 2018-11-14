@@ -72,7 +72,7 @@ var SliderComp = function SliderComp(props) {
     appendDots: props.appendDots ? props.appendDots : SampleAppendDots,
     infinite: true,
     speed: props.speed ? props.speed : defaultSpeed,
-    autoplay: props.autoplay ? props.autoplay : true,
+    autoplay: props.autoplay == false ? false : true,
     autoplaySpeed: props.autoplaySpeed ? props.autoplaySpeed : defaultAutoplaySpeed,
     slidesToShow: 1,
     slidesToScroll: 1,
