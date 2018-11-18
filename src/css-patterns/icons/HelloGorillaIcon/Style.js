@@ -19,6 +19,14 @@ const Style = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .hellogorilla-icon-close:before {
+    content: '\\e918';
+    color: #fff;
+  }
+  .hellogorilla-arrow-dropdown-selected:before {
+    content: '\\e917';
+    color: #0eb780;
+  }
   .hellogorilla-youtube:before {
     content: '\\e914';
   }
