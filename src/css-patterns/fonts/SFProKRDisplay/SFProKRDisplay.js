@@ -20,7 +20,7 @@ const SFProKRDisplay = css`
   *  SFProKRDisplay Regular
   */
   @font-face {
-    font-family: 'SFProKRDisplay-Regular';
+    font-family: 'SFProKRDisplayWeb';
     font-style: normal;
     font-weight: 400;
     src: local('SFProKRDisplayWeb'), url(${fontRegularWOFF2}) format('woff2'),
@@ -33,7 +33,7 @@ const SFProKRDisplay = css`
   *  SFProKRDisplay SemiBold
   */
   @font-face {
-    font-family: 'SFProKRDisplay-SemiBold';
+    font-family: 'SFProKRDisplayWeb';
     font-style: normal;
     font-weight: 700;
     src: local('SFProKRDisplayWebSemiBold'),
@@ -47,7 +47,7 @@ const SFProKRDisplay = css`
   *  SFProKRDisplay Bold
   */
   @font-face {
-    font-family: 'SFProKRDisplay-Bold';
+    font-family: 'SFProKRDisplayWeb';
     font-style: normal;
     font-weight: 700;
     src: local('SFProKRDisplayWebBold'), url(${fontBoldWOFF2}) format('woff2'),
