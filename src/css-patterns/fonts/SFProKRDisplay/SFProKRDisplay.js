@@ -35,7 +35,7 @@ const SFProKRDisplay = css`
   @font-face {
     font-family: 'SFProKRDisplayWeb';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     src: local('SFProKRDisplayWebSemiBold'),
       url(${fontSemiBoldWOFF2}) format('woff2'),
       url(${fontSemiBoldWOFF}) format('woff'),
